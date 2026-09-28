@@ -1,0 +1,10 @@
+dist
+node_modules
+.astro
+assets/source
+public/images
+explore/validation
+package-lock.json
+Enterprise_Website_Client_Questionnaire_EN.txt
+AGENTS.md
+.agents

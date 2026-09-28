@@ -1,0 +1,115 @@
+---
+import { t, route, ui, type Locale } from '../data/site';
+import { categories, categoryPath, type Category } from '../data/categories';
+import Photo from './Photo.astro';
+import Arrow from './Arrow.astro';
+import ProjectCTA from './ProjectCTA.astro';
+interface Props {
+  lang: Locale;
+  category: Category;
+}
+const { lang, category: c } = Astro.props;
+const content = c[lang];
+---
+
+<div class="page-container">
+  <section class="inner-hero">
+    <nav class="breadcrumb" aria-label={t(lang, 'Fir de navigare', 'Breadcrumb')}>
+      <a href={route('home', lang)}>{ui[lang].home}</a>
+      <span aria-hidden="true">/</span>
+      <a href={`${route('home', lang)}#solutii`}>{ui[lang].systems}</a>
+      <span aria-hidden="true">/</span>
+      <span>{content.name}</span>
+    </nav>
+    <div class="hero-intro">
+      <div>
+        <p class="eyebrow">
+          {c.number} / {content.name}
+        </p>
+        <h1>{content.headline}</h1>
+      </div>
+      <div class="hero-description">
+        <p>{content.description}</p>
+        <a class="button" href={`${route('contact', lang)}?systems=${c.id}`}>
+          {t(lang, 'Solicită o ofertă personalizată', 'Request a tailored quote')}
+          <Arrow />
+        </a>
+      </div>
+    </div>
+  </section>
+  <figure class="category-image">
+    <Photo
+      name={c.image}
+      eager
+      alt={t(
+        lang,
+        'Concept arhitectural ilustrativ pentru soluțiile casei.',
+        'Illustrative architectural concept for home solutions.',
+      )}
+    />
+    <figcaption>{ui[lang].concept}</figcaption>
+  </figure>
+  <section class="section editorial-split">
+    <div class="editorial-copy">
+      <p class="eyebrow">
+        {t(
+          lang,
+          'ALEGEREA POTRIVITĂ ÎNCEPE CU ÎNTREBĂRILE POTRIVITE',
+          'THE RIGHT CHOICE STARTS WITH THE RIGHT QUESTIONS',
+        )}
+      </p>
+      <h2>{t(lang, 'Ce luăm în calcul.', 'What to consider.')}</h2>
+      <p>
+        {t(
+          lang,
+          'Câteva repere utile înainte de alegerea produselor. Detaliile se stabilesc în funcție de clădire și de cerințele proiectului.',
+          'A few useful starting points before choosing products. Details depend on your building and project requirements.',
+        )}
+      </p>
+    </div>
+    <ol class="check-list">
+      {content.checks.map((item, i) => (
+        <li>
+          <span>0{i + 1}</span>
+          {item}
+        </li>
+      ))}
+    </ol>
+  </section>
+  <section class="editorial-split related-section section">
+    <div>
+      <p class="eyebrow">{t(lang, 'PARTE DINTR-UN ÎNTREG', 'PART OF THE WHOLE')}</p>
+      <h2>{t(lang, 'Gândește și legăturile.', 'Consider the connections.')}</h2>
+    </div>
+    <div class="editorial-copy">
+      <p>{content.connection}</p>
+      <p class="fine-print">{ui[lang].compatibility}</p>
+      <div class="related-list">
+        {categories
+          .filter((x) => (c.related as readonly string[]).includes(x.id))
+          .map((x) => (
+            <a href={categoryPath(x, lang)}>
+              {x[lang].name}
+              <Arrow diagonal />
+            </a>
+          ))}
+      </div>
+    </div>
+  </section>
+  <section class="faq-section section">
+    <div>
+      <p class="eyebrow">{t(lang, 'BINE DE ȘTIUT', 'GOOD TO KNOW')}</p>
+      <h2>{t(lang, 'Înainte să alegi.', 'Before you choose.')}</h2>
+    </div>
+    <div class="faq-list">
+      <details open>
+        <summary>
+          {content.question}
+          <span aria-hidden="true">+</span>
+        </summary>
+        <p>{content.answer}</p>
+      </details>
+    </div>
+  </section>
+  <ProjectCTA lang={lang} category={c.id} />
+</div>

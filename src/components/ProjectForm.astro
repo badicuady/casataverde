@@ -1,0 +1,226 @@
+---
+import { t, route, ui, type Locale } from '../data/site';
+import { formCopy } from '../data/forms';
+import SelectionFields from './SelectionFields.astro';
+import Arrow from './Arrow.astro';
+interface Props {
+  lang: Locale;
+  contact: boolean;
+}
+const { lang, contact } = Astro.props;
+const f = formCopy[lang];
+---
+
+<div class="page-container">
+  <section class="inner-hero">
+    <nav class="breadcrumb" aria-label={t(lang, 'Fir de navigare', 'Breadcrumb')}>
+      <a href={route('home', lang)}>{ui[lang].home}</a>
+      <span>/</span>
+      <span>{contact ? ui[lang].quote : ui[lang].configure}</span>
+    </nav>
+    <div class="compact-intro">
+      <p class="eyebrow">
+        {contact
+          ? t(lang, 'SĂ VORBIM DESPRE PROIECTUL TĂU', 'LET’S TALK ABOUT YOUR PROJECT')
+          : t(lang, 'CÂTEVA ALEGERI. O DIRECȚIE MAI CLARĂ.', 'A FEW CHOICES. A CLEARER DIRECTION.')}
+      </p>
+      <h1>
+        {contact
+          ? t(lang, 'De aici începe proiectul tău.', 'Your project starts here.')
+          : t(lang, 'Ce înseamnă acasă pentru tine?', 'What does home mean to you?')}
+      </h1>
+      <p>
+        {contact
+          ? t(
+              lang,
+              'Spune-ne ce ai în plan. Un singur produs, mai multe sisteme sau o idee pe care vrei să o clarifici.',
+              'Tell us what you have in mind. A single product, several systems or an idea you want to explore.',
+            )
+          : t(
+              lang,
+              'Alege ce te interesează și conturează un rezumat al proiectului. Nu ai nevoie de toate răspunsurile acum.',
+              'Choose what interests you and outline your project. You do not need all the answers yet.',
+            )}
+      </p>
+    </div>
+  </section>
+  <div class="form-page">
+    <form
+      class="project-form"
+      id="project-form"
+      data-kind={contact ? 'contact' : 'configure'}
+      data-lang={lang}
+      action={contact ? '/api/inquiries' : route('contact', lang)}
+      method={contact ? 'post' : 'get'}
+    >
+      {contact && (
+        <div class="notice" id="delivery-notice" role="status">
+          {f.unavailable}
+        </div>
+      )}
+      <SelectionFields lang={lang} />
+      {contact && (
+        <>
+          <hr class="form-divider" />
+          <p class="eyebrow">{t(lang, 'CUM PUTEM LUA LEGĂTURA', 'HOW TO REACH YOU')}</p>
+          <p class="field-help">
+            {t(
+              lang,
+              'Numele, emailul și localitatea sunt necesare pentru trimitere.',
+              'Name, email and town are required to send your inquiry.',
+            )}
+          </p>
+          <div class="field-grid">
+            {[
+              ['name', f.name, 'text', 'name', 100],
+              ['email', f.email, 'email', 'email', 254],
+              ['locality', f.locality, 'text', 'address-level2', 120],
+              ['phone', f.phone, 'tel', 'tel', 32],
+            ].map(([name, label, type, autocomplete, max]) => (
+              <label class="field" for={String(name)}>
+                <span>
+                  {label}
+                  {name === 'phone' && <span class="optional"> · {f.optional}</span>}
+                </span>
+                <input
+                  id={String(name)}
+                  name={String(name)}
+                  type={String(type) as 'text' | 'email' | 'tel'}
+                  autocomplete={String(autocomplete)}
+                  required={name !== 'phone'}
+                  maxlength={Number(max)}
+                  aria-describedby={`${name}-error`}
+                />
+                <span class="field-error" id={`${name}-error`}></span>
+              </label>
+            ))}
+            <div class="field-wide field-grid" id="professional-fields" hidden style="margin:0">
+              <label class="field" for="company">
+                <span>
+                  {f.company} <span class="optional">· {f.optional}</span>
+                </span>
+                <input id="company" name="company" autocomplete="organization" maxlength="160" />
+              </label>
+              <label class="field" for="role">
+                <span>
+                  {f.role} <span class="optional">· {f.optional}</span>
+                </span>
+                <input id="role" name="role" autocomplete="organization-title" maxlength="120" />
+              </label>
+            </div>
+            <label class="field field-wide" for="description">
+              <span>
+                {f.description} <span class="optional">· {f.optional}</span>
+              </span>
+              <textarea
+                name="description"
+                id="description"
+                maxlength="3000"
+                rows="5"
+                aria-describedby="description-help"
+              ></textarea>
+              <span class="field-help" id="description-help" style="margin:0;font-weight:400">
+                {f.descriptionHelp}
+              </span>
+            </label>
+          </div>
+          <div class="honeypot" aria-hidden="true">
+            <label>
+              Website
+              <input name="website" tabindex="-1" autocomplete="off" />
+            </label>
+          </div>
+          <p class="privacy-note">
+            {f.privacy}{' '}
+            <a href={route('privacy', lang)}>
+              {ui[lang].privacy}
+              <span aria-hidden="true"> ↗</span>
+            </a>
+          </p>
+          <div class="form-actions">
+            <button type="submit" class="button" id="send-inquiry" disabled>
+              {f.send}
+              <Arrow />
+            </button>
+          </div>
+          <div class="form-actions">
+            <button class="button button-secondary" type="button" id="copy-brief" disabled>
+              {f.copy}
+            </button>
+            <button class="button button-secondary" type="button" id="download-brief" disabled>
+              {f.download}
+              <Arrow />
+            </button>
+          </div>
+          <div
+            class="form-feedback"
+            id="form-feedback"
+            role="status"
+            aria-live="polite"
+            tabindex="-1"
+          ></div>
+        </>
+      )}
+      {!contact && (
+        <div class="form-actions">
+          <button class="button" type="submit">
+            {f.next}
+            <Arrow />
+          </button>
+        </div>
+      )}
+      <noscript>
+        <p class="notice no-js-info">
+          {contact
+            ? f.noJs
+            : t(
+                lang,
+                'Alegerile sunt transmise către pagina următoare. Fără JavaScript, verifică din nou selecțiile din formularul de contact.',
+                'Your choices will be passed to the next page. Without JavaScript, check the selections again in the contact form.',
+              )}
+        </p>
+      </noscript>
+    </form>
+    <aside class="form-sidebar" aria-label={f.summary}>
+      <p class="eyebrow">{t(lang, 'UN PUNCT DE PLECARE BUN', 'THE RIGHT STARTING POINT')}</p>
+      <h2>{f.summary}</h2>
+      <ul class="summary-list" id="selection-summary" aria-live="polite" aria-atomic="true">
+        <li>
+          <strong>{f.audience}</strong>
+          <span>{f.audienceOptions.unsure}</span>
+        </li>
+        <li>
+          <strong>{f.project}</strong>
+          <span>{f.projectOptions.exploring}</span>
+        </li>
+        <li>
+          <strong>{f.stage}</strong>
+          <span>{f.stageOptions['']}</span>
+        </li>
+        <li>
+          <strong>{f.systems}</strong>
+          <span>{f.noSystems}</span>
+        </li>
+      </ul>
+      <p class="fine-print">{ui[lang].compatibility}</p>
+      {contact && (
+        <a class="text-link" id="edit-selection" href={route('configure', lang)}>
+          {f.edit}
+          <Arrow />
+        </a>
+      )}
+      {!contact && (
+        <p class="fine-print" style="margin-top:18px">
+          {t(
+            lang,
+            'Acesta este un configurator de nevoi, fără estimări de preț sau economii.',
+            'This is a needs configurator, without price or savings estimates.',
+          )}
+        </p>
+      )}
+    </aside>
+  </div>
+</div>
+<script>
+  import '../scripts/project-form';
+</script>

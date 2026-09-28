@@ -1,0 +1,231 @@
+---
+import '../styles/global.css';
+import { site, route, t, ui, type Locale, type PageKey } from '../data/site';
+import { categories, categoryPath } from '../data/categories';
+import Arrow from '../components/Arrow.astro';
+interface Props {
+  lang: Locale;
+  title: string;
+  description: string;
+  pageKey?: PageKey;
+  alternate?: string;
+}
+const { lang, title, description, pageKey = 'home', alternate } = Astro.props;
+const otherLang = lang === 'ro' ? 'en' : 'ro';
+const alternatePath = alternate || route(pageKey, otherLang);
+const canonical = new URL(Astro.url.pathname, site.origin).href;
+const alternateUrl = new URL(alternatePath, site.origin).href;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | Casa Ta Verde</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f6f5f0" />
+    <meta name="robots" content={site.draft ? 'noindex, nofollow' : 'index, follow'} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang={lang} href={canonical} />
+    <link rel="alternate" hreflang={otherLang} href={alternateUrl} />
+    <link rel="alternate" hreflang="x-default" href={lang === 'ro' ? canonical : alternateUrl} />
+    <meta property="og:title" content={`${title} | Casa Ta Verde`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang === 'ro' ? 'ro_RO' : 'en_GB'} />
+    <meta property="og:url" content={canonical} />
+    <meta
+      property="og:image"
+      content={new URL('/images/forest-residence-1440.webp', site.origin).href}
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: site.name,
+        url: site.origin,
+        inLanguage: ['ro', 'en'],
+      }).replace(/</g, '\\u003c')}
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      {t(lang, 'Sari la conținut', 'Skip to content')}
+    </a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a
+          class="brand"
+          href={route('home', lang)}
+          aria-label={t(lang, 'Casa Ta Verde — acasă', 'Casa Ta Verde — home')}
+        >
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="35" height="36" viewBox="0 0 36 36" fill="none">
+              <path
+                d="M5 27V14L18 6l13 8v13L18 34 5 27Z"
+                stroke="currentColor"
+                stroke-width="1.7"
+              />
+              <path
+                d="m5 14 13 8 13-8M18 22v12M12 10l13 8v12"
+                stroke="currentColor"
+                stroke-width="1.7"
+              />
+            </svg>
+          </span>
+          <span>
+            casa ta verde
+            <span class="brand-tag">
+              {t(lang, 'GÂNDITĂ CA UN ÎNTREG', 'CONSIDERED AS A WHOLE')}
+            </span>
+          </span>
+        </a>
+        <nav class="desktop-nav" aria-label={t(lang, 'Navigație principală', 'Main navigation')}>
+          <a
+            href={route('residential', lang)}
+            aria-current={pageKey === 'residential' ? 'page' : undefined}
+          >
+            {ui[lang].residential}
+          </a>
+          <a
+            href={route('professional', lang)}
+            aria-current={pageKey === 'professional' ? 'page' : undefined}
+          >
+            {ui[lang].professional}
+          </a>
+          <a href={`${route('home', lang)}#solutii`}>{ui[lang].systems}</a>
+          <a href={route('about', lang)} aria-current={pageKey === 'about' ? 'page' : undefined}>
+            {ui[lang].about}
+          </a>
+        </nav>
+        <div class="header-actions">
+          <a
+            class="language-link"
+            data-language
+            href={alternatePath}
+            lang={otherLang}
+            hreflang={otherLang}
+            aria-label={t(lang, 'Switch to English', 'Schimbă în română')}
+          >
+            {otherLang.toUpperCase()}
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="button button-small header-quote" href={route('contact', lang)}>
+            {ui[lang].quote}
+            <Arrow />
+          </a>
+          <details class="mobile-menu">
+            <summary aria-label={t(lang, 'Meniu', 'Menu')}>
+              <span></span>
+              <span></span>
+            </summary>
+            <nav aria-label={t(lang, 'Mai multe pagini', 'More pages')}>
+              <a href={`${route('home', lang)}#solutii`}>{ui[lang].systems}</a>
+              <a href={route('about', lang)}>{ui[lang].about}</a>
+              <a href={route('configure', lang)}>{ui[lang].configure}</a>
+              <a href={route('contact', lang)}>{ui[lang].quote}</a>
+            </nav>
+          </details>
+        </div>
+      </div>
+      <nav class="mobile-paths" aria-label={t(lang, 'Alege parcursul', 'Choose your path')}>
+        <a href={route('residential', lang)}>
+          {ui[lang].residential}
+          <Arrow diagonal />
+        </a>
+        <a href={route('professional', lang)}>
+          {ui[lang].professional}
+          <Arrow diagonal />
+        </a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div>
+          <a class="footer-brand" href={route('home', lang)}>
+            casa ta verde<span aria-hidden="true">↗</span>
+          </a>
+          <p>
+            {t(lang, 'O casă mai bine gândită.', 'A more considered home.')}
+            <br />
+            {t(
+              lang,
+              'De la prima alegere la ultimul detaliu.',
+              'From the first choice to the final detail.',
+            )}
+          </p>
+        </div>
+        <div class="footer-links">
+          <p class="eyebrow">{t(lang, 'EXPLOREAZĂ', 'EXPLORE')}</p>
+          <a href={route('residential', lang)}>{ui[lang].residential}</a>
+          <a href={route('professional', lang)}>{ui[lang].professional}</a>
+          <a href={route('about', lang)}>{ui[lang].about}</a>
+          <a href={route('contact', lang)}>{ui[lang].quote}</a>
+        </div>
+        <div class="footer-links">
+          <p class="eyebrow">{t(lang, 'SOLUȚII', 'SOLUTIONS')}</p>
+          {categories.map((c) => (
+            <a href={categoryPath(c, lang)}>{c[lang].name}</a>
+          ))}
+        </div>
+        <div class="footer-note">
+          <span class="tiny-dot"></span>
+          <p>
+            {t(
+              lang,
+              'Energie, protecție și confort. Gândite împreună.',
+              'Energy, protection and comfort. Considered together.',
+            )}
+          </p>
+          {site.phone && (
+            <a class="text-link" href={`tel:${site.phone}`}>
+              {site.phone}
+              <Arrow />
+            </a>
+          )}
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© {new Date().getFullYear()} Casa Ta Verde</span>
+        <a href={route('privacy', lang)}>
+          {ui[lang].privacy}
+          {site.draft ? t(lang, ' · versiune de lucru', ' · draft') : ''}
+        </a>
+        <span>
+          {site.draft
+            ? t(lang, 'Versiune de prezentare · nepublicată', 'Preview version · unpublished')
+            : t(lang, 'Gândit pentru România', 'Designed for Romania')}
+        </span>
+      </div>
+    </footer>
+    {site.phone && (
+      <a class="mobile-call" href={`tel:${site.phone}`}>
+        {t(lang, 'Sună echipa', 'Call the team')}
+        <Arrow />
+      </a>
+    )}
+    <script>
+      import { readSelection, selectionParams } from '../lib/selections';
+      const languageLink = document.querySelector<HTMLAnchorElement>('[data-language]');
+      if (languageLink) {
+        const params = selectionParams(readSelection(new URLSearchParams(location.search)));
+        if (params.toString()) languageLink.search = params.toString();
+      }
+      document.querySelector('.mobile-menu')?.addEventListener('keydown', (event) => {
+        if ((event as KeyboardEvent).key === 'Escape') {
+          const menu = event.currentTarget as HTMLDetailsElement;
+          menu.open = false;
+          menu.querySelector('summary')?.focus();
+        }
+      });
+    </script>
+  </body>
+</html>

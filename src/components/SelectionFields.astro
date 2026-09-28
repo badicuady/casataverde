@@ -1,0 +1,53 @@
+---
+import { formCopy } from '../data/forms';
+import { categories } from '../data/categories';
+import type { Locale } from '../data/site';
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+const f = formCopy[lang];
+---
+
+<fieldset>
+  <legend>{f.audience}</legend>
+  <div class="choice-grid">
+    {Object.entries(f.audienceOptions).map(([value, label]) => (
+      <label class="choice">
+        <input type="radio" name="audience" value={value} checked={value === 'unsure'} />
+        <span>{label}</span>
+      </label>
+    ))}
+  </div>
+</fieldset>
+<fieldset>
+  <legend>{f.project}</legend>
+  <div class="choice-grid">
+    {Object.entries(f.projectOptions).map(([value, label]) => (
+      <label class="choice">
+        <input type="radio" name="project" value={value} checked={value === 'exploring'} />
+        <span>{label}</span>
+      </label>
+    ))}
+  </div>
+</fieldset>
+<fieldset>
+  <legend>{f.systems}</legend>
+  <p class="field-help">{f.systemsHelp}</p>
+  <div class="choice-grid">
+    {categories.map((c) => (
+      <label class="choice">
+        <input type="checkbox" name="systems" value={c.id} />
+        <span>{c[lang].name}</span>
+      </label>
+    ))}
+  </div>
+</fieldset>
+<label class="field">
+  {f.stage}
+  <select name="stage">
+    {Object.entries(f.stageOptions).map(([value, label]) => (
+      <option value={value}>{label}</option>
+    ))}
+  </select>
+</label>

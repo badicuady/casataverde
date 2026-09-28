@@ -1,0 +1,35 @@
+---
+interface Props {
+  name?: string;
+  alt: string;
+  eager?: boolean;
+  class?: string;
+  sizes?: string;
+}
+const {
+  name = 'forest-residence',
+  alt,
+  eager = false,
+  class: className = '',
+  sizes = '(max-width: 700px) 100vw, 90vw',
+} = Astro.props;
+---
+
+<picture class={className}>
+  <source
+    type="image/avif"
+    srcset={[640, 960, 1440].map((w) => `/images/${name}-${w}.avif ${w}w`).join(', ')}
+    sizes={sizes}
+  />
+  <img
+    src={`/images/${name}-1440.webp`}
+    srcset={[640, 960, 1440].map((w) => `/images/${name}-${w}.webp ${w}w`).join(', ')}
+    sizes={sizes}
+    width="1536"
+    height="1024"
+    alt={alt}
+    loading={eager ? 'eager' : 'lazy'}
+    fetchpriority={eager ? 'high' : 'auto'}
+    decoding="async"
+  />
+</picture>

@@ -1,0 +1,36 @@
+{
+  "name": "casa-ta-verde",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0",
+    "build": "astro build",
+    "start": "node ./dist/server/entry.mjs",
+    "preview": "astro preview --host 0.0.0.0",
+    "check": "astro check",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "playwright test",
+    "images": "node scripts/optimize-images.mjs",
+    "format": "prettier --write \"src/**/*.{astro,ts,css}\" \"scripts/*.mjs\" \"tests/**/*.{ts,mjs}\" *.json *.mjs playwright.config.ts",
+    "format:check": "prettier --check \"src/**/*.{astro,ts,css}\" \"scripts/*.mjs\" \"tests/**/*.{ts,mjs}\" *.json *.mjs playwright.config.ts"
+  },
+  "dependencies": {
+    "@astrojs/node": "^11.1.6",
+    "@fontsource-variable/manrope": "^5.3.0",
+    "astro": "^7.3.5",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "lighthouse": "^13.5.0",
+    "prettier": "^3.9.9",
+    "prettier-plugin-astro": "^1.1.0",
+    "typescript": "^6.0.3"
+  }
+}

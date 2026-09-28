@@ -1,0 +1,155 @@
+---
+import { t, route, ui, type Locale } from '../data/site';
+import { categories, categoryPath } from '../data/categories';
+import Photo from './Photo.astro';
+import Arrow from './Arrow.astro';
+import Process from './Process.astro';
+import ProjectCTA from './ProjectCTA.astro';
+interface Props {
+  lang: Locale;
+  professional: boolean;
+}
+const { lang, professional } = Astro.props;
+const audience = professional ? 'professional' : 'residential';
+const title = professional
+  ? t(
+      lang,
+      'Proiecte bine coordonate. De la prima specificație.',
+      'Well-coordinated projects. From the first specification.',
+    )
+  : t(
+      lang,
+      'O casă care are grijă de felul în care trăiești.',
+      'A home designed around the way you live.',
+    );
+const description = professional
+  ? t(
+      lang,
+      'Un punct comun pentru cerințe, produse și relațiile dintre sisteme. Pentru arhitecți, constructori, dezvoltatori și instalatori care privesc proiectul în ansamblu.',
+      'A shared starting point for requirements, products and system relationships. For architects, contractors, developers and installers who see the whole project.',
+    )
+  : t(
+      lang,
+      'Construiești de la zero sau regândești ce ai deja? Așază energia, confortul și protecția în același plan, cu soluții alese pentru casa ta.',
+      'Building from scratch or rethinking what you already have? Bring energy, comfort and protection into one plan, with solutions chosen for your home.',
+    );
+const points = professional
+  ? lang === 'ro'
+    ? [
+        'Specificații și interfețe: ce trebuie verificat între categorii.',
+        'Necesar de produse: tipuri, cantități și etapele proiectului.',
+        'Responsabilități și disponibilitate: de clarificat înaintea comenzii.',
+      ]
+    : [
+        'Specifications and interfaces: what needs checking between categories.',
+        'Product requirements: types, quantities and project stages.',
+        'Responsibilities and availability: clarify before ordering.',
+      ]
+  : lang === 'ro'
+    ? [
+        'Confortul dorit: temperatură, lumină și control simplu.',
+        'Clădirea existentă: izolație, acoperiș și echipamente de păstrat.',
+        'Ordinea lucrărilor: o singură etapă sau un plan în timp.',
+      ]
+    : [
+        'Your desired comfort: temperature, lighting and simple controls.',
+        'The existing building: insulation, roof and equipment to keep.',
+        'The sequence of work: one phase or a longer-term plan.',
+      ];
+---
+
+<div class="page-container">
+  <section class="inner-hero">
+    <nav class="breadcrumb" aria-label={t(lang, 'Fir de navigare', 'Breadcrumb')}>
+      <a href={route('home', lang)}>{ui[lang].home}</a>
+      <span>/</span>
+      <span>{ui[lang][audience]}</span>
+    </nav>
+    <div class="hero-intro">
+      <div>
+        <p class="eyebrow">{ui[lang][audience]}</p>
+        <h1>{title}</h1>
+      </div>
+      <div class="hero-description">
+        <p>{description}</p>
+        <a class="button" href={`${route('contact', lang)}?audience=${audience}`}>
+          {professional
+            ? t(lang, 'Solicită o ofertă pentru proiect', 'Request a project quote')
+            : t(lang, 'Solicită o ofertă personalizată', 'Request a tailored quote')}
+          <Arrow />
+        </a>
+      </div>
+    </div>
+  </section>
+  <figure class="category-image">
+    <Photo
+      eager
+      name={professional ? 'forest-residence' : 'quiet-interior'}
+      alt={t(
+        lang,
+        'Concept arhitectural pentru o proprietate contemporană.',
+        'Architectural concept for a contemporary property.',
+      )}
+    />
+    <figcaption>{ui[lang].concept}</figcaption>
+  </figure>
+  <section class="section editorial-split">
+    <div class="editorial-copy">
+      <p class="eyebrow">{t(lang, 'ÎNCEPĂM CU CE CONTEAZĂ', 'START WITH WHAT MATTERS')}</p>
+      <h2>
+        {professional
+          ? t(lang, 'Mai multă claritate în aprovizionare.', 'More clarity in procurement.')
+          : t(lang, 'Alegeri potrivite vieții tale.', 'Choices that fit your life.')}
+      </h2>
+      <p>
+        {professional
+          ? t(
+              lang,
+              'O cerere bine conturată ajută la compararea soluțiilor. Spune-ne ce categorii cauți și ce cerințe sunt deja stabilite.',
+              'A well-defined inquiry helps compare solutions. Tell us which categories you need and which requirements are already established.',
+            )
+          : t(
+              lang,
+              'Nu ai nevoie de o listă completă de echipamente. Începem de la nevoi și de la lucrurile pe care vrei să le schimbi.',
+              'You do not need a complete equipment list. Start with your needs and what you would like to change.',
+            )}
+      </p>
+    </div>
+    <ol class="check-list">
+      {points.map((p, i) => (
+        <li>
+          <span>0{i + 1}</span>
+          {p}
+        </li>
+      ))}
+    </ol>
+  </section>
+  <section class="related-section section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">{t(lang, 'ALEGE PUNCTUL DE PLECARE', 'CHOOSE A STARTING POINT')}</p>
+        <h2>{ui[lang].systems}</h2>
+      </div>
+      <p>
+        {t(
+          lang,
+          'Un singur produs sau mai multe sisteme. Parcursul pornește de la proiectul tău.',
+          'A single product or several systems. The path starts with your project.',
+        )}
+      </p>
+    </div>
+    <div class="related-list">
+      {categories.map((c) => (
+        <a href={categoryPath(c, lang)}>
+          <div>
+            <span>{c.number}</span>
+            {c[lang].name}
+          </div>
+          <Arrow diagonal />
+        </a>
+      ))}
+    </div>
+  </section>
+  <Process lang={lang} />
+  <ProjectCTA lang={lang} audience={audience} />
+</div>

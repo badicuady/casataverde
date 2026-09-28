@@ -1,0 +1,349 @@
+﻿Enterprise Website — Client Discovery Questionnaire
+1. Project Overview
+What is the project?
+1. The Scope of the Project - The project addresses the unique challenge of a multi-category inventory (heating pumps, solar panels, metal tiles, rain systems, smart home automation, and stretch ceilings) and unifies them into a single, cohesive brand position. The project involves:Brand Positioning & Narrative: Shifting the company image from a fractured "hardware store" to an integrated property ecosystem provider.Target Audience Architecture: Separating high-volume B2B professionals (builders, contractors, architects) from high-intent B2C property owners (premium renovators, eco-conscious homeowners).Negative Audience Filtering: Constructing guardrails to weed out low-margin, budget-centric, or DIY buyers early in the funnel.Customer-Centric Problem Solving: Designing a messaging loop that directly solves vendor fatigue, hardware incompatibility, and procurement friction.
+2. The Next Phase of the Project - To move this project from a strategic blueprint into active, revenue-generating assets, we need to decide what physical or digital collateral we are building next.Let me know what specific asset we are creating right now, and I will generate the exact copy or framework for it:An Investor Pitch Deck to secure capital or credit lines for inventoryThe Website Wireframe & Copy (Homepage, "About Us", and Product Landing Pages)A Sales Discovery Script for your team to qualify leads on incoming callsA B2B Partnership Proposal Template to pitch directly to general contractors
+What is the website's primary purpose?
+1. Capturing Multi-Category Leads (The "Ecosystem" Hook) - Visitors often land on your site looking for just one thing (e.g., a heat pump or a new roof). The primary job of the website is to capture that initial interest and immediately introduce them to the compounding value of your full ecosystem.The Conversion Mechanism: Interactive configuration tools or "Property Energy Calculators."The Action: Instead of a generic "Contact Us" form, visitors use an interactive tool to estimate how much they could save by pairing solar panels with a heat pump under a new metal roof. This turns cold traffic into an intent-driven lead with high average order value (AOV).
+2. Segmenting the Conversion Pathways (B2B vs. B2C) - As established in your audience architecture, a homeowner and a commercial builder cannot be sold to the same way. The website must immediately split traffic into two distinct conversion funnels upon arrival:The B2C Pathway: Focuses on immediate, emotional, and financial proof. It drives property owners to "Request a Custom Property Consultation & Savings Estimate."The B2B Pathway: Focuses on logistics, bulk pricing, and speed. It drives contractors and architects to "Apply for a Commercial Trade Account" or "Submit Blueprints for a Volume Quote."
+3. Overcoming Buying Friction (De-risking the Order) - High-ticket items cause high buying anxiety. To convert traffic into actual orders, the website’s content must systematically destroy the visitor's doubts right next to the call-to-action (CTA) buttons:Compatibility Guarantees: Explicitly state that all systems (roofing, solar, HVAC, automation) are pre-vetted to work together, eliminating the fear of the "Frankenstein system."Single-Point Accountability: Reassure the buyer that if they order through you, they have one phone number to call for logistics, warranties, and product support.
+4. Driving the Next Actionable StepTo maximize conversions, the website must avoid dead ends. Every single page must culminate in a sharp, clear, value-driven CTA.Avoid: "Submit" or "Learn More."Use instead: "Get My Custom Integration Quote", "Check System Compatibility", or "Request Bulk B2B Pricing."
+Why are you creating or redesigning the website now?
+I create the website to increase orders and revenue 
+What would make this project a	 success?
+1. High Multi-Category Attach Rates (The "Ecosystem" Sale) - Success means moving away from single-item transactions. The Target: A customer who visits your site looking for a heat pump leaves having ordered the heat pump and the smart home automation system to run it. A roofing contractor buying metal tiles routinely adds the matching rain systems and solar mounting hardware to their purchase order. The Metric: A steady increase in Average Order Value (AOV) month-over-month.
+2. Automated Inbound B2B Lead Generation - Relying solely on cold calling limits growth. Success means your digital presence turns into a magnet for high-volume commercial buyers. The Target: General contractors, architects, and solar installers actively finding your platform online and filling out "Apply for a Commercial Trade Account" forms without manual sales outreach. The Metric: A predictable monthly pipeline of qualified B2B contract requests.
+3. Pre-Qualified Traffic (Zero Waste on Cheap Leads) - Your team's time is valuable. Success means your marketing filters work so effectively that your sales team never spends hours on the phone with low-budget "quick-fix" buyers or DIY hobbyists. The Target: The leads landing in your CRM are pre-educated on the value of premium, integrated systems and have the budget required to purchase them. The Metric: High Lead-to-Opportunity conversion rates, meaning a large percentage of incoming inquiries turn into actual paid orders.
+4. Low-Friction Reorder Rates from Trade Partners - B2B clients should become recurring revenue streams. Success means the first order from a building developer is so seamless that your platform becomes their default procurement tool for every future project. The Target: Long-term Customer Lifetime Value (LTV) growth, driven by contractors who reorder your roofing, rain, and smart systems for every new housing development they build.
+What is the single most important action a visitor should take?
+Create an order or calling for more information about products
+Are there important secondary actions?
+Contact the sales team
+2. Business Context
+What does the company do?
+We are a one-stop integration partner for sustainable, smart properties. Essentially, we source and deliver everything needed to make a building energy-independent, protected, and modern—combining green tech like solar panels and heat pumps with smart home automation and advanced roofing systems.
+What products or services do you offer?
+1. Renewable Energy & Climate Systems
+2. Advanced Building Envelopes & Protection
+3. Smart Home Automation
+4. Modern Interior Finishes
+Which products/services should receive the most attention?
+All of them
+What differentiates you from competitors?
+1. The "Single Ecosystem" Advantage
+2. Curated, High-Performance Procurement
+3. Seamless Exterior-to-Interior Continuity
+4. Optimization Over Standardization
+What are your strongest competitive advantages?
+1. Integrated Product Synergy: We eliminate the risk of hardware incompatibility. Our entire product matrix is pre-vetted to ensure that the solar panel brackets match the metal roof tiles, the rain systems route flawlessly around the exterior, and the heat pumps communicate natively with the smart home automation hub.
+2. The "One-Vendor" Efficiency: We drastically reduce procurement friction, administrative overhead, and logistics costs for builders and property owners.
+3. Manufacturer-Agnostic Curation: Unlike single-brand distributors who must push their own factory lines, our allegiance is entirely to the customer.
+4. Cross-Functional Optimization: We possess the technical expertise to optimize a property’s entire energy loop.
+Are there claims we should NOT make?
+Recommend
+3. Target Audience
+Who is the primary audience?
+1. The B2B Audience: Professionals & Builders
+2. The B2C Audience: Premium Property Owners
+Are there multiple important audiences?
+Recommend 
+Who is NOT the target audience?
+1. Ultra-Low-Budget or "Quick-Fix" Buyers
+2. Traditional Interior Decor Purists
+3. Off-Grid Outliers and Non-Property Owners
+What problem is the visitor trying to solve?
+1. The Homeowner's Problems (B2C)The "Frankenstein" System Anxiety: They want solar panels, a new roof, a heat pump, and smart automation, but they are terrified that if they buy them from different places, the systems won't talk to each other, the roof will leak, or the smart hub won't control the heating.Vendor Fatigue: They do not want to manage five different contractors, schedule five different delivery dates, or deal with five different customer service lines when something goes wrong.Skyrocketing Operating Costs: They are facing unpredictable, rising energy bills and are looking for a reliable, structured way to achieve long-term financial predictability and energy independence.Aesthetic Disruption: They want cutting-edge smart technology and efficient climate routing, but they don't want their home interior ruined by ugly, exposed wires and messy retrofitted conduits.
+2. The Contractor or Builder's Problems (B2B)Procurement Friction & Delays: Managing separate supply lines for roofing, drainage, HVAC, and automation creates massive administrative overhead and scheduling bottlenecks that eat into their profit margins.Finger-Pointing & Liability: If a solar bracket damages a metal tile, the solar company blames the roofing company, and the roofing company blames the installer. The B2B visitor wants a single point of accountability.Staying Competitive in a "Green" Market: Builders and architects need to deliver modern, eco-friendly, "smart" buildings to satisfy current market demands, but they lack the time to research, vet, and source individual green-tech components themselves.
+What usually prevents them from choosing your company?
+Recommend
+What questions do potential customers ask before buying?
+Recommend
+What objections do customers commonly have?
+Recommend
+4. Customer Journey
+How do people currently discover you?
+1. The Power of Your Current Pipeline - High Trust, High Conversion: When a general contractor or a homeowner recommends you, the new lead skips the "skeptical" phase. They already trust that your solar panels work seamlessly with your metal tiles and that your heat pumps are high-quality. Organic B2B Networks: In the construction and trade industries, professionals talk. A roofing installer tells an automation specialist about your single-source procurement, leading to natural, high-volume B2B growth.
+2. The Hidden Traps of "Recommendation-Only" Discovery While referrals are excellent, they present major bottlenecks for scaling actual sales: The Invisibility Bottleneck: When a referred client hears about you, the very first thing they do is search your name online. Right now, because the website does not exist, they hit a digital dead end. This causes you to lose highly qualified sales simply because you lack visual proof of legitimacy. The "Game of Telephone": A person recommending you might just say, "They sell great roofing" or "They hooked me up with a heat pump." They often fail to mention your biggest competitive advantage: the full smart-green property ecosystem. The lead arrives misunderstanding your full value. Unpredictable Revenue: You cannot turn up the volume on recommendations. You are entirely dependent on when your past clients happen to strike up a conversation with someone else.
+3. The Next Step: Digitizing the Handshake - Your upcoming website project isn't replacing your recommendations—it is amplifying them. The website will serve as the landing pad where referred clients can instantly validate your business, explore the full product matrix (from rain systems to stretch ceilings), and place actual orders.
+What happens before someone visits the website?
+Recommend
+What should happen after someone visits?
+Recommend
+What should a first-time visitor understand within 5–10 seconds?
+1. The Core Offering (What You Do)The Concept: You are not a fragmented hardware vendor; you are an integrated solutions provider. What they must realize: This company provides everything needed to build a modern, energy-independent, and structurally protected property—from the exterior solar roof down to the interior smart automation and finishes.
+2. The Unique Value Proposition (Why You)The Concept: You completely eliminate the friction of dealing with multiple incompatible suppliers.What they must realize: Choosing this company means zero compatibility issues, unified shipping, and a single point of contact for an entire property upgrade.
+3. The Audience Fit (Is This for Me?)The Concept: The site instantly speaks to both trade professionals and premium property owners.What they must realize: Whether I am a homeowner looking to slash utility bills or a contractor looking for a reliable B2B procurement partner, I am in the right place.
+The 5-Second Visual & Text Blueprint (Hero Section Copy) - To turn this strategy into immediate visual reality, here is the exact copy and layout framework your website homepage should use above the fold: Main Headline (The Hook):The Complete Smart & Sustainable Property Ecosystem. Subheadline (The Clarifier): We engineer, curate, and supply fully integrated green building technologies. From high-efficiency solar roofs and climate heat pumps to intelligent home automation and flawless stretch ceilings—all sourced from a single, reliable partner with guaranteed compatibility.
+What should they understand after approximately one minute?
+Recommend
+What should convince them to take action?
+The Financial Proof: A custom, data-driven calculation showing exactly how much money they will save on monthly utility bills by combining your solar panels and heat pumps.
+The "Zero-Friction" Guarantee: Explicit assurance that every component—from the metal roof tiles to the smart automation hub—is pre-vetted to work together perfectly, eliminating the risk of costly installation errors.
+A Clear, Direct Path: A single, low-commitment action tailored to who they are—offering a Free Custom Integration Blueprint for homeowners or Instant Wholesale Volume Pricing for contractors.
+What evidence creates trust?
+Recommend
+5. Content
+Do you already have website content?
+No. Recommend.
+What content already exists?
+No content. Recommend.
+Who will provide missing content?
+Internet search.
+Which pages are required?
+Recommend
+Are there pages you explicitly do NOT want?
+Recommend
+6. Brand
+Do you already have a brand identity?
+“Casa Ta Verde” (Romanian for “Your Green House”)
+Do you have brand guidelines?
+Recommend
+What brand assets are available?
+Recommend
+Which brands do you consider visually aligned with your company?
+1. Apple (The Benchmark for Ecosystem Integration)The Aesthetic: Ultra-clean layouts, abundant whitespace, precise typography, and a hyper-focus on structural product cross-compatibility.Why it aligns: Apple doesn't just sell phones; they sell a unified ecosystem. Your website should mirror this visual layout—presenting your solar panels, heat pumps, and stretch ceilings not as separate hardware items, but as part of a single, beautiful property network.
+2. Tesla / Tesla Energy (The Benchmark for Premium Green-Tech)The Aesthetic: Moody, high-contrast imagery, dark-mode elements mixed with striking architectural backdrops, and sleek, minimalist hardware close-ups.Why it aligns: Tesla stripped away the boring, utilitarian imagery of solar panels and batteries, transforming green infrastructure into a highly desirable status symbol. Your site should use this blueprint by showcasing sleek metal tiles and concealed stretch ceilings integrated into luxury modern architecture.
+3. Nest / Google Home (The Benchmark for Intuitive Smart Automation)The Aesthetic: Soft-minimalism, lifestyle-first photography, friendly but crisp font choices, and clean, modular feature dashboards.Why it aligns: Nest visualizes complex internet-of-things (IoT) automation as an effortless, natural part of everyday home life. Your interface should use this approachable, highly intuitive visual style when explaining how your smart automation hub intelligently communicates with your heat pumps.
+Ditch the "Hardware Store" Traps: Strictly ban clip-art icons of houses with green leaves, generic photos of smiling people holding clipboards, or messy bullet-pointed tables.
+Use Architectural Lifestyle Imagery: Prioritize high-resolution photography featuring modern, sleek homes where the metal roof lines are crisp, the gutters run flawlessly, and interior stretch ceilings neatly conceal custom lighting elements.
+Incorporate Interactive UI Mockups: When displaying your smart home automation, present it using elegant, sleek glassmorphism dashboard concepts or tablet interfaces set against a luxurious interior backdrop.
+What do you like about them?
+Recommend
+Which brands or websites do you dislike?
+Recommend
+What specifically do you dislike?
+Recommend
+7. Visual Personality
+Choose up to 8 characteristics that should describe the website.
+Integrated Ecosystem Design: Showcases the diverse catalog not as random individual hardware items, but as one unified, interconnected property solution.
+Conversion-First Architecture: Keeps frictionless lead-capture forms and value-driven call-to-action buttons front and center to turn traffic into actual orders.
+Dual-Path Segmentation: Welcomes visitors with instantly clear, distinct navigation pathways customized for either B2B Trade Contractors or B2C Property Owners.
+Premium Tech Minimalism: Uses clean typography, intentional whitespace, and crisp, high-end layouts that project an elite, engineered aesthetic.
+Frictionless User Experience: Features intuitive navigation, zero dead-ends, and clear, simple language accessible to both technical builders and everyday homeowners.
+Architectural Lifestyle Imagery: Relies on high-resolution, modern architectural photography rather than generic, low-quality stock photos or cluttered hardware listings.
+Interactive Value Demonstration: Integrates dynamic system configuration fields or property savings estimators to visually prove the financial return on investment.
+Single-Source Authority: Projects absolute trust and structural legitimacy by emphasizing pre-vetted system cross-compatibility and a single point of accountability.
+Which characteristics should the website NOT have?
+Recommend
+If the website were a physical place, what would it feel like?
+If the website were a physical space, it would feel like a luxury, eco-architectural showroom nestled in a pristine forest—a space where raw nature perfectly interfaces with cutting-edge engineering.It would combine the technical sophistication of an Apple Store with the calming, grounding atmosphere of a high-end wellness retreat.
+How should visitors feel? Choose up to 5.
+Relieved: They instantly realize they can stop chasing five separate suppliers and finally manage their entire project through one single, trusted partner.
+Empowered: The interactive configuration tools give them complete, clear control over choosing the exact system combination for their property.
+Assured: The premium minimalism and crisp architectural proof destroy all anxiety regarding product quality and system cross-compatibility.
+Inspired: The sleek, high-tech visual design makes them excited to upgrade their property into a modern, energy-independent asset.
+Confident: They feel absolutely secure that making this investment will yield definitive, long-term financial savings and structural protection.
+8. Design References
+Please provide 3–10 websites you like and explain what you like.
+1. BILKA Romania (The Blueprint for Roof Systems & Rainwater Management) https://www.bilka.ro
+What to emulate: B2B trade segmentation and complete packaging.
+Why it works: Bilka doesn’t just sell individual metal tiles; they showcase fully integrated roofing systems complete with rain gutters, flashing, and installation accessories. They also provide a flawless blueprint for balancing consumer inspiration with dedicated portals and calculators built strictly for trade professionals and installers.
+2. Ferroli International (The Blueprint for Heat Pumps & Climate Control) https://www.ferroli.com
+What to emulate: Dual-audience navigation pathways (B2B vs. B2C).
+Why it works: Ferroli splits its homepage cleanly into two worlds: "For your home comfort" for retail consumers and "For your projects" tailored for trade specifiers, designers, and distributors. They treat high-efficiency climate tech as a tailored well-being experience rather than cold, industrial machinery.
+3. Case Smart Romania (The Blueprint for Smart Automation Solutions) https://case-smart.ro
+What to emulate: Problem-focused cross-selling and ecosystem packages.
+Why it works: They excel at breaking down complex smart home technicalities into simple, bite-sized benefits (security, energy tracking, comfort). They show how easy it is to pair a hub with multiple smart sensors, which is exactly how you should pitch your automation hubs controlling your heat pumps.
+4. Tavane Etero (The Blueprint for Premium Interior Finishes) https://www.tavanetero.ro
+What to emulate: Visual portfolios and structural hidden utility.
+Why it works: This layout showcases how stretch ceilings transform messy construction spaces into flawless, modern design visuals. You should use this clean aesthetic to prove how stretch ceilings seamlessly mask the complex automation wiring and lighting beneath them.
+Are there particular elements you want?
+Recommend
+Are there design techniques you explicitly do NOT want?
+Recommend
+9. Imagery
+What type of imagery should the website use?
+To match the premium, high-converting nature of your business and align with the standards of brands like Tesla and Apple, your website must strictly avoid generic hardware store photos. Instead, it should use a carefully curated mix of architectural lifestyle photography, integrated technical cross-sections, and clean digital dashboard mockups. Scan the indicated websites for more images.
+Do you already have suitable photography?
+Recommend
+Are there restrictions on image usage?
+Recommend
+Are there people/products/locations that must appear?
+Recommend
+10. Motion & Interaction
+How important is animation?
+1. Visualizing the "Invisible" Product Synergy (Critical)The biggest hurdle in your business model is explaining how solar panels, metal roof tiles, heat pumps, smart automation, and stretch ceilings relate to one another. Static images cannot show a connection, but simple scroll-triggered animations can: The Animation: As the user scrolls down, a 3D architectural cross-section of a house gently expands. The user sees solar panels locking into the metal roof tiles, lines of clean energy flowing down to a heat pump, and smart automation signals passing hidden behind a flawless stretch ceiling. The Conversion Impact: It instantly transforms a complicated technical concept into a clear, satisfying "Aha!" moment for the visitor.
+2. Dynamic Financial Proof (High Conversion)Static tables showing energy savings are boring and easily ignored. Interactive, animated calculators make the financial returns feel real. The Animation: When a visitor adjusts a slider to increase their home square footage or changes their monthly energy bill estimation, the counter animations fluidly spin up to reveal their projected long-term financial savings and return on investment (ROI).The Conversion Impact: It gamifies the buying experience, keeping the user on the page longer and creating an emotional pull to hit the "Get My Custom Integration Quote" button.
+3. Demonstrating Smart Automation in Real-TimeSmart home tech is entirely about active control, which cannot be captured by a frozen screenshot.The Animation: A clean, looping UI animation showing a smartphone dashboard interface. The user watches a digital toggle switch flip, causing a nearby graphic of a heat pump to transition into an eco-saving state, illustrating effortless control.The Conversion Impact: It makes the technical ecosystem feel incredibly simple, modern, and user-friendly.
+The "Golden Rule" for Your Web Designer: Smooth & Subtle - To match the high-end minimalism of brands like Apple or Tesla, you must avoid flashy, distracting, or slow web animations. Do not use: Bouncing text blocks, spinning icons, or loading screens that delay the user from finding information. Do use: Subtle fade-ins, smooth micro-interactions on buttons, and purposeful transitions that guide the user’s eyes straight to your call-to-action buttons.
+Which types of motion interest you?
+1. Multi-Layered Parallax Scrolling - Instead of just moving background images at different speeds, use parallax to physically reveal how your product catalog integrates inside a building envelope. How it works: As the visitor scrolls, the exterior layers of a modern house (the metal roof tiles and rain systems) glide upwards slightly faster than the inner structure. This reveals the hidden layers underneath—the integrated solar panel wiring, the climate-control heat pump conduits, and the smart home automation networks tucked neatly behind the stretch ceilings. Why it works: It feels incredibly high-tech and visually mimics the act of unboxing or peeling back a complex piece of architecture.
+2. Scroll-Bound Component Assemblies ("Exploded Views") - High-end tech buyers love seeing how products are engineered. You can use scroll-linked motion to assemble products right before the visitor's eyes. How it works: On a product landing page, a solar panel and a metal roof tile start as separate floating pieces on the screen. As the user scrolls down, the pieces smoothly lock into each other, showcasing exactly how the custom mounting brackets guarantee structural compatibility. Why it works: It provides absolute visual proof of your "system synergy" without requiring the user to read dense paragraphs of text.
+3. Fluid UI Micro-Interactions - Every button, form field, and interactive slider must feel highly responsive and premium to the touch.How it works: When a visitor hovers over your primary CTA ("Request a Property Savings Estimate"), the button background doesn't just flash a new color; it expands with a smooth, dampening spring animation. When they adjust a slider on your energy calculator, the numerical figures fluidly count up or down with a slight motion blur effect.Why it works: It makes the digital interface feel premium, tactile, and deeply satisfying to interact with, which psychologically lowers the friction to submit an order.
+4. Elegant Line-Drawing Layout Transitions - To guide the visitor's eye down the page and connect your diverse categories, use clean, moving vector lines. How it works: A simple, glowing animated line represents "clean energy." It originates from the solar panels at the top of the page, traces its way down the margins as the user scrolls, passes through the smart home automation hub, and terminates directly into the heat pump section. Why it works: It acts as a subtle visual anchor that literally connects the dots between your exterior energy production and your interior climate utility.
+Where should motion be concentrated?
+Recommend
+What should animation never feel like?
+Do not induce dizziness. Recommend.
+Should the website remain fully understandable with animation disabled?
+Recommend
+11. Functionality
+What must visitors be able to do?
+Just be amazed about the products and the interaction
+Are there integrations?
+While making your visitors say "Wow!" through striking visuals and smooth parallax scrolling is an excellent way to capture their attention, amazement alone won’t pay the bills. To convert that initial awe into high-margin sales, the website must channel that excitement into concrete actions. Amazement should be the hook, but actionable conversion must be the destination.
+By combining visual amazement with clear, strategic actions, you ensure the website isn't just an expensive digital museum—it becomes a highly efficient, automated engine for your business.Now that we have locked in the complete strategic, visual, emotional, and interactive blueprint for your brand, we are ready to build.
+12. Technical Context
+Is there an existing website?
+No
+Is there an existing technology stack?
+No
+Must we use an existing platform?
+No
+Are there technical restrictions?
+The sky is the limit
+Who will maintain the website after launch?
+The client. IMPORTANT Do not create any admin module
+How frequently will content change?
+1. Focus on Core Solutions, Not Changing Model Numbers Instead of listing highly specific hardware part numbers that manufacturers update every few months (e.g., "Model X-900 Solar Panel"), focus entirely on system capabilities and performance tiers.What to write: "High-Efficiency Monocrystalline Solar Arrays" or "Advanced Air-to-Water Heat Pump Systems."Why it works: When a manufacturer releases a new version of a heat pump, your website text remains 100% accurate because the core utility and integration method haven't changed.
+2. Shift from Rigid Pricing to Interactive Value Discovery Fixed price tags expire quickly due to supply chain shifts, inflation, or seasonal tariffs. To keep the website offer-agnostic while still driving actual orders, replace static price tags with dynamic action steps.What to use: Instead of writing "Solar Roof Package: €12,000," use value-driven calls to action like "Request a Custom Property Integration Blueprint" or "Get a Volume-Based B2B Quote. "Why it works: It forces the visitor to interact and submit a lead form to get pricing, keeping your site maintenance-free while feeding your sales team fresh, qualified inquiries.
+3. Structure Portfolios by Architectural TypologyIf you showcase case studies or past work, do not tie them to specific dates, seasons, or temporary promotions. Group them by the type of problem they solve. The Framework: Create evergreen portfolio buckets such as "Residential Energy Retofits", "New Construction Smart Ecosystems", or "Modern Interior Transformations."Why it works: A beautiful, parallax-driven visual of a metal roof seamlessly integrated with solar panels and a stretch ceiling interior looks just as impressive and convincing three years from now as it does today.
+4. Eliminate the "Content Maintenance" TrapsTo achieve a "once a year at most" update schedule, you must strictly exclude elements that require constant feeding:No "Latest News" or Blog Feed: A blog section where the last post was written 18 months ago makes a premium company look abandoned.No Seasonal Banners: Avoid "Spring Savings" or "Winter Readiness" graphics that instantly date your website if left up past the season.No Timer Countdowns: Keep the focus on long-term, compounding asset value rather than artificial, high-pressure deadlines.
+13. Performance
+How important is website speed?
+Very important. 
+1. Smart Asset Management (Base64 vs. Next-Gen Formats)While Base64 encoding is excellent for eliminating HTTP requests, it should be used selectively. Base64 increases file size by roughly 33%, which can slow down your site if used incorrectly. Where to use Base64: Convert small visual anchors like SVGs, brand icons, logo vectors, and tiny UI loading indicators directly into Base64 strings inside your inline CSS. This allows the core structure of the page to render instantly without waiting for external asset downloads.Where NOT to use Base64: Never use Base64 for your heavy architectural lifestyle photography. Instead, compress these images using next-gen formats like WebP or AVIF, and serve them dynamically based on the user's screen size.
+2. Bulletproof Service Worker Pre-Caching Since your content will change once a year at most, you can turn your website into a lightning-fast Progressive Web App (PWA).The Blueprint: Implement a Service Worker utilizing a Cache-First strategy via libraries like Workbox. The Result: The very first time a visitor arrives, the website pre-caches the main JavaScript, global CSS, UI icons, and core parallax frameworks. On all subsequent visits, the site loads instantly (under 500ms) directly from the user's local storage, bypassing the network entirely.
+3. Scroll-Linked Code Splitting & Lazy Component Hydration Your parallax animations and interactive energy calculators require heavy JavaScript libraries. Don't make the user download them all at the beginning. The Blueprint: Use code-splitting to only load the critical HTML and CSS needed for the "above-the-fold" Hero section.The Result: Use an Intersection Observer API to "lazy-hydrate" components. The heavy JavaScript required to run the interactive calculator or the 3D roof assembly animation only downloads and executes when the user actively scrolls down toward those sections.
+4. Hardware-Accelerated Parallax Animations Poorly optimized parallax effects cause "jank" (stuttering) during scrolling, which ruins the premium Apple/Tesla feel. The Blueprint: Never animate properties like top, left, margin, or background-position, as they force the browser to recalculate the entire page layout on every scroll tick.The Result: Restrict all scroll animations strictly to CSS transform: translate3d() and opacity. This forces the user's device to handle the animation processing via GPU hardware acceleration, keeping the scroll fluid at 60+ frames per second.
+5. Edge Delivery & Content Delivery Networks (CDNs)The Blueprint: Host the static website on modern edge-computing platforms like Vercel, Netlify, or Cloudflare Pages.The Result: These platforms replicate your entire time-agnostic site across thousands of global servers. When a local contractor in Romania clicks your link, the website files are served from a data center just a few miles away, dropping your Time to First Byte (TTFB) to nearly zero.
+Are there performance targets?
+Recommend
+Should sophisticated animation be reduced when necessary to preserve performance?
+Yes and Recommend
+14. Responsive Experience
+Which devices are important?
+Mobile first, but should work on any device (including TVs and desktop, all in one chip machine like Raspberry PI)
+Do you know what percentage of users are mobile?
+Recommend
+Should mobile have a different composition from desktop?
+Recommend
+Are there mobile-specific requirements?
+Recommend
+15. Accessibility
+Are there accessibility requirements?
+Recommend
+Are there known accessibility requirements for your industry or customers?
+Recommend
+Should reduced-motion preferences be supported?
+Recommend
+16. SEO
+Is organic search important?
+Yes, organic search is critically important for online visibility
+What search terms are important?
+Recommend
+Does the existing website already rank for important searches?
+No
+Are existing URLs required to remain unchanged?
+No
+Do you have existing SEO data?
+No
+17. Trust & Credibility
+Which trust signals are available?
+Recommend______________________________________________________________________________________________
+Which trust signal is strongest?
+1. Technical Foundations HTTPS Protocol: Active SSL certificate showing the secure padlock icon. Core Web Vitals: Fast load times, responsive mobile design, and stable layouts. Legal Disclosures: Clear links to Privacy Policies and Terms of Service.
+2. Transparency & Identity Real Team Visibility: "About Us" pages with genuine staff photos rather than stock images. Clear Contact Info: Physical business address, active phone numbers, and matching social links.Upfront Pricing: No hidden fees, matched with clear, low-risk refund policies.
+3. Expertise & Authority (E-E-A-T) Author Bios: Documented creator credentials and links to professional profiles. Unique Insights: Original data, case studies, or first-hand expert opinions. Schema Markup: Clean structured code to explicitly verify your brand identity to search engines.
+Are there important statistics we should communicate?
+Recommend
+Are there specific customers or projects we should feature?
+Recommend
+18. Competitors
+Who are your main competitors?
+Recommend
+Which competitor websites do you consider good?
+Recommend
+Which competitor websites do you consider poor?
+Recommend
+What should our website do differently from competitors?
+Recommend
+Is there anything competitors do that we should explicitly avoid?
+Recommend
+19. Language & Geography
+Which languages are required?
+Romanian and English
+Which language is primary?
+Romanian
+Which countries/markets are targeted?
+Romania
+Should the website adapt to different markets?
+No
+24. Priorities & Trade-offs
+Rank these priorities from 1 (most important) to 8 (least important).
+Conversion-First Architecture - Why it’s #1: Visual amazement means nothing if it doesn't generate revenue. Strategically placed, frictionless calls to action are the ultimate engine for driving sales.
+Frictionless User Experience Why it’s #2: If your navigation is confusing or difficult to use, visitors will bounce before seeing your products, entirely defeating the purpose of the website.
+Dual-Path Segmentation Why it’s #3: Because B2B contractors and B2C homeowners buy for entirely different reasons, splitting them into tailored funnels early ensures maximum conversion efficiency.
+Integrated Ecosystem Design Why it’s #4: This is your core value proposition. The website must immediately show that your five product categories are engineered to work together as a single system.
+Interactive Value Demonstration Why it’s #5: High-ticket green tech requires financial justification. An interactive savings calculator visually proves the return on investment, shifting the conversation from cost to value.
+Premium Tech Minimalism Why it’s #6: This establishes your brand position. An Apple- or Tesla-style minimalist layout communicates elite, high-end engineering without distracting clutter.
+Single-Source Authority Why it’s #7: Trust is vital, but it is naturally built as a byproduct of your premium design, clear ecosystem integration, and frictionless user pathways.
+Architectural Lifestyle Imagery Why it’s #8: While beautiful imagery is highly important for setting a luxury tone, it acts as the visual packaging. It must serve to support the structural layout and conversion mechanisms ranked above it.
+If visual sophistication conflicts with performance, what should happen?
+Prioritize performance
+If an impressive animation makes the website slower, what should happen?
+Prioritize performance
+If a requested design element makes UX worse, should the design team challenge it?
+Yes, design team challenge it. Prioritize performance
+How much creative freedom should the design team have?
+Recommend
+25. Things We Must Avoid
+What should the website definitely NOT look like?
+1. A Cluttered "Hardware Store" or Wholesale Catalog
+2. A Low-Budget "Local Contractor" Blog
+3. A High-Pressure E-Commerce Shop
+4. A Generic Corporate Stock Photo Archive
+The Anti-Design Manifesto for Your Web DevelopersGive these exact rules to your design and development team to ensure they never accidentally build a low-converting platform:
+No Gridlines or Boxy Outlines: Avoid trapping content inside rigid, square boxes with visible black borders. Use open layout whitespace to guide the eyes smoothly down the page.
+No Default Fonts: Never use default web typography like Arial, Times New Roman, or generic sans-serif fonts. Enforce a single, premium, sharp geometric typeface (like Inter, SF Pro, or Roboto Flex) to maintain an engineered, high-tech aesthetic.
+No Unoptimized Heavy Assets: Do not allow the developers to upload raw, uncompressed 10MB JPEG files. It will cause the website to stutter during your parallax scrolling transitions, completely ruining the smooth, luxury Apple/Tesla experience.
+
+Are there common website patterns you dislike?
+1. Automatic Hero Carousels (The Conversion Killer)The Pattern: A slider at the very top of the homepage that automatically rotates through 3 to 5 different banners every few seconds. Why it fails: Data proves that auto-sliding carousels cause "slider blindness." Visitors rarely read past the first slide, and the constant moving movement distracts them from your main message. Furthermore, loading multiple massive architectural images simultaneously above the fold completely destroys your website's initial loading speed.
+2. Over-Animated "Scroll-Jacking"The Pattern: Altering the natural speed or friction of the user's mouse scroll wheel to force a slow-motion or sudden frame-by-frame jump effect. Why it fails: While subtle parallax scrolling adds beautiful depth, overriding a user's physical control of their own mouse makes the website feel heavy, unresponsive, and incredibly frustrating to navigate. It creates digital lag and drives high-intent B2B contractors off your page instantly.
+3. Aggressive "Intrusion Pop-Ups" & Cookie Walls The Pattern: Triggering a full-screen "Subscribe to our Newsletter" pop-up or a giant, poorly formatted cookie banner the exact microsecond a user lands on the site. Why it fails: It interrupts the critical 5-to-10-second window where a visitor is trying to understand what you do. Forcing a user to click "X" to close a promotional window before they even know you sell integrated roof and solar systems destroys immediate consumer trust.
+4. The "Click-to-Reveal" Mystery Navigation The Pattern: Hiding primary, critical navigation links behind a "hamburger" menu icon (the three horizontal lines) on desktop layouts, or using overly vague menu titles like "Solutions" instead of explicit links.Why it fails: It forces users to perform unnecessary clicks just to see what you offer. To maintain your Dual-Path Segmentation priority, your desktop header should always clearly, openly display links for "B2B Trade Program" and "Residential Ecosystems" without hiding them.
+5. Intrusive Chatbots with Fake Typing IndicatorsThe Pattern: A support bubble that aggressively pops up in the bottom corner with a loud chime, pretending to be a real human named "Sarah" typing in real-time. Why it fails: It feels cheap, gimmicky, and completely misaligned with a premium engineering brand. Since your site is explicitly designed to be time- and offer-agnostic, an aggressive automated chatbot creates an expectation of instant customer service that can date your operations if not monitored 24/7.
+Are any design elements mandatory?
+Recommend
+Are any design elements forbidden?
+Recommend
+26. Final Creative Direction
+Our website should feel like…
+Our website should feel like stepping into an elite architectural sanctuary where clean engineering seamlessly honors nature. It should capture the tactile satisfaction of an Apple product box opening, combined with the awe of touring a multi-million dollar eco-villa. To translate this exact feeling directly into the digital user interface, the website must deliver these four distinct experiences:
+1. Effortless and Weightless (The Speed)The second a visitor clicks your link, the page doesn't just load; it snaps onto the screen instantly. Thanks to selective Base64 optimization for icons and a Cache-First service worker architecture, there is zero lag, zero buffering, and zero rendering delays. It feels as solid, fast, and responsive as a premium native mobile app running on high-end hardware.
+2. Deep and Cinematic (The Interaction)As the visitor moves their mouse or scrolls down the page, a highly precise multi-layered parallax effect breathes life into the screen.The flat webpage transforms into a three-dimensional blueprint.The heavy, protective layers of the metal roofing tiles and rainwater systems subtly shift to reveal the high-tech solar panel integration layers and climate networks lying underneath.It feels like a smooth, premium machinery assembly happening fluidly right before their eyes, running at a flawless 60+ frames per second.
+3. Intuitively Minimal (The Layout) The digital showroom is completely free of clutter, messy borders, or annoying popup boxes. It embraces vast whitespace, razor-sharp typography, and rich, natural architectural imagery.There are no confusing multi-choice menus or overwhelming product grids. The layout feels incredibly calm, simple, and intentional.It naturally guides the visitor down two crystal-clear paths: one structured for the high-volume procurement needs of B2B builders, and another tailored to the dream-home aspirations of B2C property owners.
+4. Mentally Clarifying (The Narrative) The site strips away the exhausting "Frankenstein anxiety" of home renovations. Within 5 seconds, the copy cleanly explains that everything—from the solar roof down to the interior stretch ceilings hiding the smart automation wiring—is pre-engineered to connect perfectly. The visitor instantly transitions from feeling overwhelmed by technical specifications to feeling completely assured, relieved, and empowered to place an actual order.
+Our website should never feel like…
+Recommend
+When someone sees the website for the first time, we want them to think…
+"Finally—a single company that has actually engineered the entire property ecosystem to work together. This completely eliminates the nightmare of managing multiple contractors."
+1. "This is premium engineering, not a generic hardware store."The visual language—inspired by Apple and Tesla—instantly communicates elite status and master curation. By using crisp, architectural lifestyle imagery instead of isolated factory parts, the visitor realizes they aren't looking at cheap components; they are looking at a highly sophisticated asset upgrade for their property.
+2. "Everything is guaranteed to fit and communicate perfectly."The website's focus on integrated ecosystem design systematically destroys their buying anxiety. Whether they are looking at how the solar arrays lock into the premium metal tiles or how the smart home automation intelligently runs the heat pumps, they immediately think, "If I buy from this partner, I won't have to worry about hardware incompatibility or installation errors."
+3. "They know exactly who I am and what I need."Because of the prominent dual-path segmentation, the visitor doesn't waste time hunting for information. A B2B contractor or architect instantly thinks: "This is my ultimate procurement shortcut to access wholesale volume pricing and clear blueprint specs. "A B2C homeowner instantly thinks: "This is how I future-proof my home, maximize my monthly financial savings, and get a flawless, modern interior finish."
+After exploring the website, we want them to believe…
+Recommend
+The one thing we absolutely cannot get wrong is…
+Recommend
+If the website could communicate only one message, it would be…
+"We provide a completely integrated, pre-engineered property ecosystem from a single trusted partner—eliminating vendor fragmentation, hardware incompatibility, and installation risk."
+27. Reference Material
+Competitor websites
+https://www.bilka.ro
+https://www.ferroli.com
+https://case-smart.ro
+https://www.tavanetero.ro
+https://solarhev.ro
+
+GOAL:
+Build a comprehensive, high-converting strategic blueprint and website messaging framework for an evergreen, premium green-technology value-added reseller.
+Synthesize a diverse product catalog—covering solar panels, heat pumps, metal roof tiles, rain systems, smart home automation, and stretch ceilings—into
+a unified brand narrative.
+Enforce the following structural pillars:
+Integrated Product Synergy: Grouping diverse items into a single, cohesive property ecosystem.
+Dual-Path Audience Segmentation: Creating distinct conversion funnels for B2B trade contractors and B2C property owners.
+Premium Tech Minimalism: Aligning visuals with the elite design language of brands like Apple and Tesla.
+Functional Motion Design: Pitching multi-layered parallax scrolling and exploded component animations to visually prove system compatibility.
+Time-Agnostic Infrastructure: Ensuring all copy and conversion elements remain 100% evergreen to require website maintenance once a year at most.
+Advanced Speed Performance: Recommending selective Base64 optimization, caching service workers, and GPU-driven animations to guarantee instant page loads.

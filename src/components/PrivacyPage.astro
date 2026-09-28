@@ -1,0 +1,93 @@
+---
+import { t, route, ui, type Locale } from '../data/site';
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+---
+
+<div class="page-container">
+  <section class="inner-hero">
+    <nav class="breadcrumb" aria-label={t(lang, 'Fir de navigare', 'Breadcrumb')}>
+      <a href={route('home', lang)}>{ui[lang].home}</a>
+      <span>/</span>
+      <span>{ui[lang].privacy}</span>
+    </nav>
+    <div class="compact-intro">
+      <p class="eyebrow">{t(lang, 'VERSIUNE DE LUCRU', 'DRAFT')}</p>
+      <h1>{t(lang, 'Informații despre confidențialitate.', 'Privacy information.')}</h1>
+    </div>
+  </section>
+  <article class="prose">
+    <div class="notice">
+      {t(
+        lang,
+        'Această pagină descrie versiunea locală de prezentare. Nu este o politică juridică finală. Identitatea operatorului, destinatarul cererilor și condițiile de prelucrare trebuie completate înainte de activarea trimiterii.',
+        'This page describes the local preview. It is not a final legal policy. The controller identity, inquiry recipient and processing terms must be completed before delivery is enabled.',
+      )}
+    </div>
+    <h2>{t(lang, 'Ce se întâmplă în această versiune', 'What happens in this version')}</h2>
+    <p>
+      {t(
+        lang,
+        'Configuratorul păstrează în adresă doar tipul proiectului, audiența, etapa și categoriile selectate. Numele, emailul, telefonul și descrierea nu sunt adăugate în URL și nu sunt salvate de aplicație în cookies sau în stocarea browserului.',
+        'The configurator includes only project type, audience, stage and selected categories in the address. Names, email addresses, phone numbers and descriptions are not added to URLs or saved by the application in cookies or browser storage.',
+      )}
+    </p>
+    <p>
+      {t(
+        lang,
+        'Copierea și descărcarea creează un rezumat pe dispozitivul tău; nu îl trimit echipei. Formularul verifică disponibilitatea livrării. Dacă aceasta nu este activată, datele completate nu sunt trimise către un destinatar de vânzări.',
+        'Copying and downloading create a brief on your device; they do not send it to the team. The form checks delivery availability. When delivery is not enabled, entered details are not sent to a sales recipient.',
+      )}
+    </p>
+    <h2>
+      {t(
+        lang,
+        'Ce trebuie clarificat înainte de publicare',
+        'What must be resolved before publication',
+      )}
+    </h2>
+    <ul>
+      <li>
+        {t(
+          lang,
+          'Operatorul datelor: [identitate juridică și date de contact de completat].',
+          'Data controller: [legal identity and contact details to be supplied].',
+        )}
+      </li>
+      <li>
+        {t(
+          lang,
+          'Scopul, temeiul de prelucrare și informațiile obligatorii pentru cerere.',
+          'Purpose, processing basis and information required for an inquiry.',
+        )}
+      </li>
+      <li>
+        {t(
+          lang,
+          'Destinatarii, furnizorii de găzduire și livrare, perioada de păstrare.',
+          'Recipients, hosting and delivery providers, and retention period.',
+        )}
+      </li>
+      <li>
+        {t(
+          lang,
+          'Procedura și contactul pentru solicitări privind datele personale.',
+          'Procedure and contact for personal data requests.',
+        )}
+      </li>
+    </ul>
+    <h2>{t(lang, 'Servicii din această versiune', 'Services in this version')}</h2>
+    <p>
+      {t(
+        lang,
+        'Aplicația nu include analytics, publicitate, cookies de urmărire sau formulare de abonare. Fonturile și imaginile sunt găzduite local. Infrastructura de găzduire aleasă la publicare poate avea propriile loguri, care trebuie incluse în informarea finală.',
+        'The application includes no analytics, advertising, tracking cookies or mailing-list forms. Fonts and images are hosted locally. The hosting infrastructure selected for publication may keep its own logs, which must be covered in the final notice.',
+      )}
+    </p>
+    <a class="text-link" href={route('contact', lang)}>
+      {t(lang, 'Înapoi la proiectul tău', 'Back to your project')} →
+    </a>
+  </article>
+</div>

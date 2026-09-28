@@ -1,0 +1,84 @@
+---
+import { t, route, ui, type Locale } from '../data/site';
+import Photo from './Photo.astro';
+import Process from './Process.astro';
+import ProjectCTA from './ProjectCTA.astro';
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+---
+
+<div class="page-container">
+  <section class="inner-hero">
+    <nav class="breadcrumb" aria-label={t(lang, 'Fir de navigare', 'Breadcrumb')}>
+      <a href={route('home', lang)}>{ui[lang].home}</a>
+      <span>/</span>
+      <span>{ui[lang].about}</span>
+    </nav>
+    <div class="hero-intro">
+      <div>
+        <p class="eyebrow">CASA TA VERDE</p>
+        <h1>{t(lang, 'Privim casa ca pe un întreg.', 'We see the home as a whole.')}</h1>
+      </div>
+      <div class="hero-description">
+        <p>
+          {t(
+            lang,
+            'Suntem un partener de selecție și furnizare pentru proprietăți sustenabile și inteligente. Aducem energia, protecția și confortul în aceeași conversație.',
+            'We are a selection and supply partner for sustainable, intelligent properties. We bring energy, protection and comfort into the same conversation.',
+          )}
+        </p>
+      </div>
+    </div>
+  </section>
+  <figure class="category-image">
+    <Photo
+      name="forest-residence"
+      eager
+      alt={t(
+        lang,
+        'Concept arhitectural: casă contemporană integrată în peisajul natural.',
+        'Architectural concept: a contemporary house within a natural landscape.',
+      )}
+    />
+    <figcaption>{ui[lang].concept}</figcaption>
+  </figure>
+  <section class="section editorial-split">
+    <div>
+      <p class="eyebrow">{t(lang, 'CE NE GHIDEAZĂ', 'WHAT GUIDES US')}</p>
+      <h2>
+        {t(
+          lang,
+          'Produsele sunt începutul. Legăturile fac diferența.',
+          'Products are the beginning. Connections make the difference.',
+        )}
+      </h2>
+    </div>
+    <div class="editorial-copy">
+      <p>
+        {t(
+          lang,
+          'O casă nu este o listă de echipamente. Acoperișul influențează montarea panourilor. Izolația contează pentru încălzire. Iluminatul și automatizarea cer trasee gândite înainte de finisaje.',
+          'A home is more than an equipment list. The roof influences solar mounting. Insulation matters for heating. Lighting and automation need routes planned before the finishes.',
+        )}
+      </p>
+      <p>
+        {t(
+          lang,
+          'Rolul nostru este să aducem aceste alegeri în același cadru: cerințe clare, produse relevante și întrebările tehnice potrivite. Compatibilitatea se analizează pentru fiecare configurație.',
+          'Our role is to bring these choices into one discussion: clear requirements, relevant products and the right technical questions. Compatibility is assessed for each configuration.',
+        )}
+      </p>
+      <p>
+        {t(
+          lang,
+          'Responsabilitățile de proiectare, instalare, livrare și suport trebuie stabilite explicit în oferta fiecărui proiect. Website-ul nu reprezintă un angajament de instalare sau o garanție de performanță.',
+          'Design, installation, delivery and support responsibilities must be explicitly established in each project quote. The website does not constitute an installation commitment or performance guarantee.',
+        )}
+      </p>
+    </div>
+  </section>
+  <Process lang={lang} />
+  <ProjectCTA lang={lang} />
+</div>

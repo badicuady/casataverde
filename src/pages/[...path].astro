@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Home from '../components/Home.astro';
+import CategoryPage from '../components/CategoryPage.astro';
+import AudiencePage from '../components/AudiencePage.astro';
+import AboutPage from '../components/AboutPage.astro';
+import PrivacyPage from '../components/PrivacyPage.astro';
+import ProjectForm from '../components/ProjectForm.astro';
+import { locales, routes, t, ui, type Locale, type PageKey } from '../data/site';
+import { categories, categoryPath, type Category } from '../data/categories';
+export function getStaticPaths() {
+  return locales.flatMap((lang) => [
+    ...Object.entries(routes).map(([key, paths]) => ({
+      params: { path: paths[lang].replace(/^\/|\/$/g, '') || undefined },
+      props: { lang, pageKey: key as PageKey },
+    })),
+    ...categories.map((category) => ({
+      params: { path: categoryPath(category, lang).replace(/^\/|\/$/g, '') },
+      props: { lang, pageKey: 'category', category },
+    })),
+  ]);
+}
+interface Props {
+  lang: Locale;
+  pageKey: PageKey | 'category';
+  category?: Category;
+}
+const { lang, pageKey, category } = Astro.props;
+const titles = {
+  home: t(
+    lang,
+    'Soluții pentru o casă sustenabilă și inteligentă',
+    'Solutions for a sustainable, intelligent home',
+  ),
+  residential: ui[lang].residential,
+  professional: ui[lang].professional,
+  about: ui[lang].about,
+  contact: ui[lang].quote,
+  configure: ui[lang].configure,
+  privacy: ui[lang].privacy,
+};
+const descriptions = {
+  home: t(
+    lang,
+    'Panouri fotovoltaice, pompe de căldură, acoperișuri, sisteme pluviale, automatizări și tavane extensibile. Soluții gândite împreună, pentru casa sau proiectul tău.',
+    'Solar panels, heat pumps, roofing, rainwater systems, automation and stretch ceilings. Solutions considered together for your home or professional project.',
+  ),
+  residential: t(
+    lang,
+    'Confort, energie și protecție pentru construcții noi și renovări. Descoperă soluțiile Casa Ta Verde și pregătește o cerere personalizată.',
+    'Comfort, energy and protection for new homes and renovations. Explore Casa Ta Verde solutions and prepare a tailored inquiry.',
+  ),
+  professional: t(
+    lang,
+    'Un punct comun pentru specificații, categorii și necesar de produse. Soluții pentru arhitecți, constructori, dezvoltatori și instalatori.',
+    'A shared starting point for specifications, categories and product requirements. Solutions for architects, contractors, developers and installers.',
+  ),
+  about: t(
+    lang,
+    'Casa Ta Verde: partener de selecție și furnizare pentru proprietăți sustenabile și inteligente.',
+    'Casa Ta Verde: a selection and supply partner for sustainable, intelligent properties.',
+  ),
+  contact: t(
+    lang,
+    'Pregătește o cerere de ofertă pentru produsele și sistemele proiectului tău.',
+    'Prepare a quote request for the products and systems in your project.',
+  ),
+  configure: t(
+    lang,
+    'Alege audiența, tipul proiectului și soluțiile dorite. Configurează un rezumat al nevoilor tale.',
+    'Choose your audience, project type and desired solutions. Build a brief around your needs.',
+  ),
+  privacy: t(
+    lang,
+    'Informații de lucru despre datele din configurator și formularul de cerere.',
+    'Draft information about data in the configurator and inquiry form.',
+  ),
+};
+const title = category ? category[lang].name : titles[pageKey as PageKey];
+const description = category ? category[lang].description : descriptions[pageKey as PageKey];
+---
+
+<Layout
+  lang={lang}
+  title={title}
+  description={description}
+  pageKey={pageKey === 'category' ? 'home' : pageKey}
+  alternate={category ? categoryPath(category, lang === 'ro' ? 'en' : 'ro') : undefined}
+>
+  {pageKey === 'home' && <Home lang={lang} />}
+  {category && <CategoryPage lang={lang} category={category} />}
+  {(pageKey === 'residential' || pageKey === 'professional') && (
+    <AudiencePage lang={lang} professional={pageKey === 'professional'} />
+  )}
+  {pageKey === 'about' && <AboutPage lang={lang} />}
+  {pageKey === 'privacy' && <PrivacyPage lang={lang} />}
+  {(pageKey === 'configure' || pageKey === 'contact') && (
+    <ProjectForm lang={lang} contact={pageKey === 'contact'} />
+  )}
+</Layout>

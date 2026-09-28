@@ -1,0 +1,41 @@
+---
+import { t, route, ui, type Locale } from '../data/site';
+import Arrow from './Arrow.astro';
+interface Props {
+  lang: Locale;
+  audience?: string;
+  category?: string;
+}
+const { lang, audience, category } = Astro.props;
+const params = new URLSearchParams();
+if (audience) params.set('audience', audience);
+if (category) params.set('systems', category);
+---
+
+<section class="project-cta section">
+  <p class="eyebrow">{t(lang, 'URMĂTORUL PAS, ÎN RITMUL TĂU', 'THE NEXT STEP, AT YOUR PACE')}</p>
+  <h2>
+    {t(lang, 'Casa ta începe', 'Your home starts')}
+    <br />
+    <span class="soft-text">{t(lang, 'cu o conversație.', 'with a conversation.')}</span>
+  </h2>
+  <p>
+    {t(
+      lang,
+      'Un singur sistem sau un proiect complet. Spune-ne ce ai în plan.',
+      'One system or a complete project. Tell us what you have in mind.',
+    )}
+  </p>
+  <div class="button-row">
+    <a class="button" href={`${route('contact', lang)}?${params}`}>
+      {audience === 'professional'
+        ? t(lang, 'Solicită o ofertă pentru proiect', 'Request a project quote')
+        : t(lang, 'Solicită o ofertă personalizată', 'Request a tailored quote')}
+      <Arrow />
+    </a>
+    <a class="text-link" href={`${route('configure', lang)}?${params}`}>
+      {ui[lang].configure}
+      <Arrow />
+    </a>
+  </div>
+</section>

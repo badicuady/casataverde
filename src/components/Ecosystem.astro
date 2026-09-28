@@ -1,0 +1,96 @@
+---
+import { categories, categoryPath } from '../data/categories';
+import { t, ui, type Locale } from '../data/site';
+import House from './House.astro';
+import Arrow from './Arrow.astro';
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+---
+
+<section class="section ecosystem" id="ecosistem" data-ecosystem>
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">{t(lang, '01 / O PRIVIRE DE ANSAMBLU', '01 / THE BIGGER PICTURE')}</p>
+      <h2>
+        {t(lang, 'O singură casă.', 'One home.')}
+        <br />
+        <span class="soft-text">{t(lang, 'Totul în legătură.', 'Everything connected.')}</span>
+      </h2>
+    </div>
+    <p>
+      {t(
+        lang,
+        'Fiecare alegere influențează întregul. Descoperă unde se întâlnesc energia, protecția și confortul casei tale.',
+        'Every choice shapes the whole. Discover where energy, protection and comfort meet in your home.',
+      )}
+    </p>
+  </div>
+  <div class="ecosystem-grid">
+    <div class="diagram-panel">
+      <House lang={lang} />
+      <p class="diagram-caption">
+        {t(
+          lang,
+          'Ilustrație de principiu · nu reprezintă un proiect tehnic',
+          'Concept illustration · not a construction drawing',
+        )}
+      </p>
+    </div>
+    <div class="system-list">
+      {categories.map((c, i) => (
+        <details class="system-item" data-system={c.id} open={i === 0}>
+          <summary>
+            <span class="number">{c.number}</span>
+            <span>{c[lang].name}</span>
+            <span class="expand" aria-hidden="true">
+              +
+            </span>
+          </summary>
+          <div class="system-copy">
+            <p>{c[lang].short}</p>
+            <p class="small">{c[lang].connection}</p>
+            <a class="text-link" href={categoryPath(c, lang)}>
+              {ui[lang].discover}
+              <Arrow />
+            </a>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+  <p class="fine-print compatibility">{ui[lang].compatibility}</p>
+</section>
+<script>
+  const section = document.querySelector<HTMLElement>('[data-ecosystem]');
+  if (section) {
+    const lowMotion =
+      matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      matchMedia('(pointer: coarse)').matches ||
+      navigator.hardwareConcurrency <= 4 ||
+      (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
+    if (lowMotion) section.classList.add('low-motion');
+    const items = [...section.querySelectorAll<HTMLDetailsElement>('[data-system]')];
+    const activate = (id: string) => {
+      section
+        .querySelectorAll('[data-layer], [data-marker]')
+        .forEach((el) =>
+          el.classList.toggle(
+            'selected',
+            el.getAttribute('data-layer') === id || el.getAttribute('data-marker') === id,
+          ),
+        );
+    };
+    activate('solar');
+    items.forEach((item) =>
+      item.addEventListener('toggle', () => {
+        if (!item.open) return;
+        items.forEach((other) => {
+          if (other !== item) other.open = false;
+        });
+        activate(item.dataset.system!);
+      }),
+    );
+  }
+</script>

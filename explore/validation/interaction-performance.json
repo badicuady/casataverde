@@ -1,0 +1,211 @@
+{
+  "cpuSlowdown": 4,
+  "viewport": "390x844",
+  "home": {
+    "timings": [
+      {
+        "name": "pointerdown",
+        "duration": 24
+      },
+      {
+        "name": "pointerup",
+        "duration": 24
+      },
+      {
+        "name": "click",
+        "duration": 24
+      },
+      {
+        "name": "pointerdown",
+        "duration": 16
+      },
+      {
+        "name": "pointerup",
+        "duration": 16
+      },
+      {
+        "name": "click",
+        "duration": 16
+      },
+      {
+        "name": "pointerdown",
+        "duration": 16
+      },
+      {
+        "name": "pointerup",
+        "duration": 16
+      },
+      {
+        "name": "click",
+        "duration": 16
+      },
+      {
+        "name": "pointerdown",
+        "duration": 16
+      },
+      {
+        "name": "pointerup",
+        "duration": 16
+      },
+      {
+        "name": "click",
+        "duration": 16
+      },
+      {
+        "name": "pointerdown",
+        "duration": 16
+      },
+      {
+        "name": "pointerup",
+        "duration": 16
+      },
+      {
+        "name": "click",
+        "duration": 16
+      },
+      {
+        "name": "pointerdown",
+        "duration": 16
+      },
+      {
+        "name": "pointerup",
+        "duration": 16
+      },
+      {
+        "name": "click",
+        "duration": 16
+      }
+    ],
+    "lowMotion": true,
+    "scripts": [
+      {
+        "name": "http://localhost:4321/_astro/Layout.astro_astro_type_script_index_0_lang.DJTXfCaz.js",
+        "bytes": 351
+      },
+      {
+        "name": "http://localhost:4321/_astro/selections.BSk2y77g.js",
+        "bytes": 949
+      }
+    ],
+    "images": [
+      {
+        "name": "http://localhost:4321/images/forest-residence-640.avif",
+        "bytes": 38431
+      }
+    ]
+  },
+  "form": {
+    "timings": [
+      {
+        "name": "pointerdown",
+        "duration": 16
+      },
+      {
+        "name": "pointerup",
+        "duration": 16
+      },
+      {
+        "name": "click",
+        "duration": 16
+      },
+      {
+        "name": "pointerdown",
+        "duration": 16
+      },
+      {
+        "name": "pointerup",
+        "duration": 16
+      },
+      {
+        "name": "click",
+        "duration": 16
+      },
+      {
+        "name": "pointerdown",
+        "duration": 16
+      },
+      {
+        "name": "pointerup",
+        "duration": 16
+      },
+      {
+        "name": "click",
+        "duration": 16
+      },
+      {
+        "name": "pointerdown",
+        "duration": 16
+      },
+      {
+        "name": "pointerup",
+        "duration": 16
+      },
+      {
+        "name": "click",
+        "duration": 16
+      },
+      {
+        "name": "pointerdown",
+        "duration": 16
+      },
+      {
+        "name": "pointerup",
+        "duration": 16
+      },
+      {
+        "name": "click",
+        "duration": 16
+      },
+      {
+        "name": "pointerdown",
+        "duration": 24
+      },
+      {
+        "name": "pointerup",
+        "duration": 24
+      },
+      {
+        "name": "click",
+        "duration": 24
+      },
+      {
+        "name": "pointerdown",
+        "duration": 16
+      },
+      {
+        "name": "pointerup",
+        "duration": 16
+      },
+      {
+        "name": "click",
+        "duration": 16
+      },
+      {
+        "name": "pointerdown",
+        "duration": 16
+      },
+      {
+        "name": "pointerup",
+        "duration": 16
+      },
+      {
+        "name": "click",
+        "duration": 16
+      }
+    ],
+    "scripts": [
+      {
+        "name": "http://localhost:4321/_astro/Layout.astro_astro_type_script_index_0_lang.DJTXfCaz.js",
+        "bytes": 351
+      },
+      {
+        "name": "http://localhost:4321/_astro/ProjectForm.astro_astro_type_script_index_0_lang.D6Ft95vw.js",
+        "bytes": 20587
+      },
+      {
+        "name": "http://localhost:4321/_astro/selections.BSk2y77g.js",
+        "bytes": 949
+      }
+    ]
+  }
+}

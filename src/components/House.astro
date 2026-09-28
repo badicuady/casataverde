@@ -1,0 +1,138 @@
+---
+import type { Locale } from '../data/site';
+import { t } from '../data/site';
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+---
+
+<svg
+  class="house-drawing"
+  viewBox="0 0 760 550"
+  role="img"
+  aria-label={t(
+    lang,
+    'Secțiune conceptuală a unei case: panouri pe acoperiș, sistem pluvial, pompă de căldură, automatizări și tavan interior.',
+    'Concept section of a house: rooftop solar, rainwater system, heat pump, automation and an interior ceiling.',
+  )}
+>
+  <defs>
+    <pattern
+      id="roof-seams"
+      width="22"
+      height="22"
+      patternUnits="userSpaceOnUse"
+      patternTransform="skewY(27)"
+    >
+      <path d="M0 0V22" stroke="#77887a" stroke-width="1" />
+    </pattern>
+    <pattern
+      id="solar-cells"
+      width="23"
+      height="19"
+      patternUnits="userSpaceOnUse"
+      patternTransform="matrix(1 .48 -.7 .7 0 0)"
+    >
+      <rect width="23" height="19" fill="#2b443a" />
+      <path d="M0 0H23V19H0Z" stroke="#9caf9b" stroke-width=".6" />
+    </pattern>
+  </defs>
+  <g fill="none" stroke="#c5cdbf" stroke-width="1">
+    <path d="m38 397 361 127 327-182M63 432l64-33m489-34 65 27M84 388l263-145 329 118" />
+    <path d="M72 456h70m-35-6v12M655 395h42m-21-5v10" />
+  </g>
+  <path d="m94 357 306 144 299-165-306-136Z" fill="#dce2d3" />
+  <path d="m118 333 276 132 277-156-277-129Z" fill="#eae8dc" stroke="#9ca994" />
+  <path d="M118 333V209l276 131v125Z" fill="#f3f0e7" stroke="#8e9c88" />
+  <path d="m394 465 277-156V187L394 340Z" fill="#dedfd1" stroke="#8e9c88" />
+  <path d="m415 425 232-130v-89L415 335Z" fill="#f8f6ef" />
+  <path d="M150 329v-89l82 39v88Z" fill="#9ba99a" />
+  <path d="m155 323 71 34v-73l-71-34Z" fill="#c8d1bf" />
+  <path d="M190 267v73m-36-52 73 35" fill="none" stroke="#657b69" stroke-width="3" />
+  <path d="M264 386V295l102 49v91Z" fill="#a3b2a0" stroke="#7e927e" />
+  <path d="M298 311v91m34-75v91" stroke="#657b69" stroke-width="3" />
+  <path d="m435 407 188-105-72-35-187 106Z" fill="#d3c8af" />
+  <path d="m486 354 63-35 38 17-63 36Z" fill="#ece9de" stroke="#a4ab97" />
+  <path d="M486 354v19l38 18v-19m0 19 63-36v-19" fill="#dfdecd" stroke="#a4ab97" />
+  <path d="m596 270 29-16v34l-29 17Z" fill="#94a184" />
+  <path
+    d="m609 269 2-36m0 12c-25 2-27-24-7-16m7 8c15-28 28-13 0 5"
+    stroke="#6b8663"
+    stroke-width="3"
+    fill="none"
+  />
+  <g data-layer="ceiling">
+    <path d="m413 322 243-135-29-13-243 134Z" fill="#fbfaf4" stroke="#6d876c" stroke-width="2" />
+    <path d="m419 322 219-122" stroke="#a2b48a" stroke-width="3" />
+  </g>
+  <path d="M118 209 249 108l145 232Z" fill="#e3dfcf" stroke="#8e9c88" />
+  <g data-layer="roof">
+    <path d="m103 208 148-117 284 131-139 127Z" fill="#5d7160" stroke="#344f3b" stroke-width="2" />
+    <path d="m251 91 277-62 151 152-144 41Z" fill="#adb99e" stroke="#5a7056" />
+    <path d="m103 208 148-117 284 131-139 127Z" fill="url(#roof-seams)" />
+    <path d="m102 208 294 141v10L102 218Z" fill="#3f5a46" />
+    <path d="m251 91 277-62" stroke="#5c7355" stroke-width="3" />
+  </g>
+  <g data-layer="solar">
+    <path
+      d="m211 194 55-52 178 85-55 52Z"
+      fill="url(#solar-cells)"
+      stroke="#c4d0bc"
+      stroke-width="2"
+    />
+    <path d="m297 182-54 53m118-24-55 54" fill="none" stroke="#a9bda5" stroke-width="1.4" />
+  </g>
+  <g data-layer="rain" fill="none" stroke="#597461" stroke-linejoin="round">
+    <path d="m107 222 283 136v82l17 9" stroke-width="7" />
+    <path d="m541 228 135-42v118l14 9" stroke-width="6" />
+  </g>
+  <g data-layer="heat">
+    <path
+      d="m120 365 62-35 43 20v64l-62 36-43-21Z"
+      fill="#edf0e5"
+      stroke="#718568"
+      stroke-width="2"
+    />
+    <path d="m163 450 62-36v-64l-62 35Z" fill="#c6d1bd" stroke="#718568" />
+    <ellipse cx="193" cy="396" rx="20" ry="25" transform="rotate(22 193 396)" fill="#85997e" />
+    <path d="m184 377 20 33m-27-15 34-8m-19-13 0 42" stroke="#e6ecdf" stroke-width="3" />
+    <path d="m220 379 37 19v-15l40 18" fill="none" stroke="#9caa7e" stroke-width="3" />
+  </g>
+  <g data-layer="smart">
+    <path d="m439 331 22-13v29l-22 13Z" fill="#31533f" stroke="#a0b193" />
+    <path d="m444 334 12-7v9l-12 7Z" fill="#c6d8b0" />
+    <path d="m462 320 10-6m-5 16 11-7" stroke="#7b936b" stroke-width="2" />
+  </g>
+  <g
+    class="diagram-markers"
+    font-family="Manrope, sans-serif"
+    font-size="13"
+    font-weight="600"
+    text-anchor="middle"
+  >
+    {[
+      { id: 'solar', x: 317, y: 194, n: '01' },
+      { id: 'heat', x: 116, y: 382, n: '02' },
+      { id: 'roof', x: 490, y: 141, n: '03' },
+      { id: 'rain', x: 395, y: 386, n: '04' },
+      { id: 'smart', x: 481, y: 304, n: '05' },
+      { id: 'ceiling', x: 585, y: 226, n: '06' },
+    ].map((p) => (
+      <g data-marker={p.id}>
+        <circle cx={p.x} cy={p.y} r="19" fill="#f6f5f0" stroke="#395f43" />
+        <text x={p.x} y={p.y + 4} fill="#244b38">
+          {p.n}
+        </text>
+      </g>
+    ))}
+  </g>
+  <g fill="#667760" font-family="Manrope,sans-serif" font-size="10" letter-spacing="2">
+    <text x="48" y="506">
+      CASA TA VERDE
+    </text>
+    <text x="551" y="480">
+      {t(lang, 'SECȚIUNE CONCEPT', 'CONCEPT SECTION')}
+    </text>
+  </g>
+</svg>

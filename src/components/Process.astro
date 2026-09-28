@@ -1,0 +1,61 @@
+---
+import { t, type Locale } from '../data/site';
+interface Props {
+  lang: Locale;
+}
+const { lang } = Astro.props;
+const steps =
+  lang === 'ro'
+    ? [
+        [
+          'Pornim de la tine.',
+          'O casă nouă, o renovare sau o etapă dintr-un proiect. Ne spui ce contează și ce ai deja.',
+        ],
+        [
+          'Privim întregul.',
+          'Discutăm cerințele și punctele de întâlnire dintre sisteme. Compatibilitatea se verifică pentru fiecare proiect.',
+        ],
+        [
+          'Clarificăm următorii pași.',
+          'Produse, cantități, disponibilitate și responsabilități — de stabilit în oferta pentru proiectul tău.',
+        ],
+      ]
+    : [
+        [
+          'Start with your needs.',
+          'A new home, a renovation or one stage of a project. Tell us what matters and what is already in place.',
+        ],
+        [
+          'Consider the whole.',
+          'Discuss requirements and the points where systems meet. Compatibility is reviewed for each project.',
+        ],
+        [
+          'Define the next steps.',
+          'Products, quantities, availability and responsibilities — to be established in your project quote.',
+        ],
+      ];
+---
+
+<section class="section process">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">{t(lang, 'O COLABORARE CLARĂ', 'A CLEAR WAY TO WORK')}</p>
+      <h2>
+        {t(lang, 'Mai puține necunoscute.', 'Fewer unknowns.')}
+        <br />
+        <span class="soft-text">
+          {t(lang, 'Un punct de plecare comun.', 'A shared starting point.')}
+        </span>
+      </h2>
+    </div>
+  </div>
+  <ol class="process-steps">
+    {steps.map((s, i) => (
+      <li>
+        <span class="step-number">0{i + 1}</span>
+        <h3>{s[0]}</h3>
+        <p>{s[1]}</p>
+      </li>
+    ))}
+  </ol>
+</section>
