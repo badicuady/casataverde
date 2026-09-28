@@ -1,0 +1,56 @@
+[
+  {
+    "name": "desktop",
+    "width": 1440,
+    "height": 1000,
+    "start": "-32.53px",
+    "end": "48.32px",
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "mobile",
+    "width": 390,
+    "height": 844,
+    "start": "-23.68px",
+    "end": "18.28px",
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "tablet",
+    "width": 820,
+    "height": 1180,
+    "start": "-16.03px",
+    "end": "14.37px",
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "category",
+    "width": 1440,
+    "height": 1000,
+    "start": "-35.15px",
+    "end": "50.48px",
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "narrow",
+    "width": 320,
+    "height": 900,
+    "start": "-34.89px",
+    "end": "5.64px",
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "wide",
+    "width": 2560,
+    "height": 1440,
+    "start": "5.79px",
+    "end": "68.31px",
+    "errors": [],
+    "overflow": false
+  }
+]

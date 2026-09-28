@@ -5,6 +5,7 @@ interface Props {
   eager?: boolean;
   class?: string;
   sizes?: string;
+  parallax?: 'wide' | 'detail';
 }
 const {
   name = 'forest-residence',
@@ -12,10 +13,11 @@ const {
   eager = false,
   class: className = '',
   sizes = '(max-width: 700px) 100vw, 90vw',
+  parallax = 'wide',
 } = Astro.props;
 ---
 
-<picture class={className}>
+<picture class:list={[className, 'parallax-media']} data-parallax={parallax}>
   <source
     type="image/avif"
     srcset={[640, 960, 1440].map((w) => `/images/${name}-${w}.avif ${w}w`).join(', ')}

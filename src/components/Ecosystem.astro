@@ -65,12 +65,6 @@ const { lang } = Astro.props;
 <script>
   const section = document.querySelector<HTMLElement>('[data-ecosystem]');
   if (section) {
-    const lowMotion =
-      matchMedia('(prefers-reduced-motion: reduce)').matches ||
-      matchMedia('(pointer: coarse)').matches ||
-      navigator.hardwareConcurrency <= 4 ||
-      (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
-    if (lowMotion) section.classList.add('low-motion');
     const items = [...section.querySelectorAll<HTMLDetailsElement>('[data-system]')];
     const activate = (id: string) => {
       section

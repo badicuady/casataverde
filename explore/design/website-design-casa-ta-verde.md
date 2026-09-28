@@ -11,7 +11,7 @@ A calm architectural showroom moves from a desirable home to an understandable s
 
 Composition: broad margins and a left-aligned text spine; split headline/description above a wide architectural panorama. A horizontal family index bridges into the interactive section. Alternate open pale sections, a forest audience panel and a final quiet call to action.
 
-Motion: brief local response to a deliberate selection; the drawing gently separates only the selected layer. Static text and native links provide the complete story.
+Motion: framed architectural photographs travel with native scrolling; section groups settle into place and the house systems assemble once on entry. Selected systems retain their local response. Text stays fully opaque throughout. See website-motion-casa-ta-verde.md for device policies and timings.
 
 Distinctiveness: section-drawing vocabulary, six consistent numbered system markers, a panoramic gabled forest house and the relationship between warm architectural material and technical precision.
 

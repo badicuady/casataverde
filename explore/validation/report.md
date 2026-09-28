@@ -19,7 +19,7 @@ Project selections survive language switching and browser back. Contact offers a
 | Astro/TypeScript | 0 errors, 0 warnings, 0 hints |
 | Prettier source check | Passed |
 | Server/selection contract tests | 10 passed |
-| Playwright browser tests | 24 passed |
+| Playwright browser tests | 30 passed (including 6 motion checks) |
 | Responsive route matrix | 26 pages × 7 widths = 182 passing combinations |
 | Axe WCAG-tagged scans | 26 pages × 2 widths = 52 scans, zero violations |
 | Internal links, equivalent language routes, images, 404 | Passed |
@@ -33,19 +33,27 @@ Viewport widths: 320, 390, 768, 1024, 1440, 1920 and 2560 CSS pixels. Rendered r
 
 Browser flows include category-prefilled inquiries, conditional professional fields, configuration editing/back, unknown-query filtering, both-language validation/pending/retry/success fixtures, network failure, false-200 rejection, copy/download and denied-clipboard recovery, no browser persistence, and export when randomUUID is unavailable. Fixtures use synthetic test data and do not send messages to a real recipient.
 
-## Final mobile performance measurements
+## Mobile performance measurements from the first motion pass
 
-Lighthouse 13.5 / Chrome 154, simulated mobile, 4× CPU slowdown, 150ms RTT, ~1.6 Mbps. Single final run per route against a local server. These are **lab measurements**, not field Core Web Vitals or measured field INP.
+Lighthouse 13.5 / Chrome 154, simulated mobile, 4× CPU slowdown, 150ms RTT, ~1.6 Mbps. Single run per route against a local server, before the later stronger-travel refinement. That refinement has separate current scroll measurements in `motion/scroll-performance.json`. These are **lab measurements**, not field Core Web Vitals or measured field INP.
 
 | Page | Performance | LCP | CLS | Total blocking time | Transferred |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Romanian home | 99 | 2.10s | 0 | 0ms | 179,810 B |
-| English home | 99 | 1.95s | 0 | 0ms | 163,615 B |
-| Romanian contact | 99 | 1.65s | 0 | 0ms | 101,579 B |
+| Romanian home | 99 | 2.10s | 0 | 0ms | 187,303 B |
+| English home | 99 | 1.95s | 0 | 0ms | 171,108 B |
+| Romanian contact | 99 | 1.65s | 0 | 0ms | 109,149 B |
 
-Initial homepage script budget: about 1.3KB external modules plus 590B inline diagram code. Forms add a separate ~21KB module. Images and fonts account for most of the useful payload. No third-party requests, continuous animation, client UI framework, scroll listener or service worker.
+Homepage scripts now total about 5.7KB external modules plus the small inline diagram-selection code. Forms add a separate ~21KB module. Images and fonts account for most of the useful payload. The design-only enhancement adds a shared native motion controller: framed photo parallax, opaque text entrances, house assembly and micro-interactions. Scroll updates use cached geometry and requestAnimationFrame only when needed. No animation library, third-party requests, continuous idle loop, client UI framework or service worker.
 
-Event Timing samples with 4× CPU slowdown: maximum recorded interaction duration 24ms for system selection and configurator controls. Coarse-pointer motion was disabled. This small synthetic sample cannot establish real-user INP or performance on physical Raspberry Pi hardware.
+Event Timing samples with 4× CPU slowdown: maximum recorded interaction duration 24ms for system selection and configurator controls. These interaction samples are from the initial implementation. Current parallax uses reduced travel on mobile and is disabled for reduced-motion, save-data and low-core modes. This small synthetic sample cannot establish real-user INP or performance on physical Raspberry Pi hardware.
+
+## Animation and parallax enhancement
+
+The requested design-only pass, including the subsequent stronger-motion refinement, adds photographic parallax to home/category/audience/about pages in both languages, staged section entrances, one-time house assembly, animated process rules and polished navigation/button/disclosure feedback. The stronger version uses ±160px desktop photo travel (previously ±64px), entrances up to 72px over 1400ms, a 2400ms hero zoom and longer house assembly paths. Mobile travel is also increased. Text stays fully opaque. Forms remain stationary while visitors use them. Native scrolling, keyboard access and static rendering remain intact.
+
+[Motion review and refinements](../design/motion-enhancement-review.md) records the 14-step review. Final responsive temporal screenshots and scroll metrics are in `motion/`. The 4× CPU scroll check covers 1440×1000 and 390×844; it is a synthetic check, not field INP. Targeted tests verify image coverage, actual parallax movement, interrupted/one-time animation, live preference changes, mobile resize, stationary forms and device fallbacks.
+
+Refinements removed fading text after it failed contrast during movement, removed retained animation states from process lines, centralized the live device policy and made parallax travel read its CSS distance. The stronger iteration moves the family index with its border and settles entrances on keyboard-visible focus without moving a pointer target between press and release; a paused-entrance click regression check passes. Motion-enabled accessibility scans now pass without delaying or disabling animation for the audit.
 
 ## Issues corrected
 
@@ -60,10 +68,12 @@ Event Timing samples with 4× CPU slowdown: maximum recorded interaction duratio
 
 ## Evidence
 
-- `final-checks.log`: final static/unit/browser run.
-- `browser-results.json`: all 24 final browser results.
+- `motion/stronger-motion-checks.log`: latest static checks and 30 passing browser tests. `motion/final-checks.log` records the first motion pass; the original `final-checks.log` records the initial implementation.
+- `browser-results.json`: all 30 final browser results.
 - `accessibility-390.json`, `accessibility-1440.json`: final zero-violation scans.
 - `performance-summary.json`, `lighthouse-*.json`: final performance results.
+- `motion/scroll-performance.json`: current throttled desktop/mobile scroll samples.
+- `motion/visual-checks.json`, `motion/*-initial.png`, `motion/*-scroll.png`, and entering/settled section images: final motion-aware visual inspection.
 - `interaction-performance.json`: synthetic interaction samples.
 - `desktop-home-viewport.png`, `mobile-home-viewport.png`, `tablet-home-viewport.png`: homepage composition.
 - `desktop-ecosystem.png`: custom section drawing and controls.

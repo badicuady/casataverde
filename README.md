@@ -33,7 +33,9 @@ Browser tests use `/usr/bin/google-chrome`. Set `CHROME_PATH` for another Chrome
 - `src/data/forms.ts`: all form labels and feedback in both languages.
 - `src/components/Home.astro`, `AudiencePage.astro`, `AboutPage.astro`: editorial narrative.
 - `src/components/PrivacyPage.astro`: clearly marked draft, must be replaced with approved business-specific information before inquiry delivery is enabled.
-- `src/styles/global.css`: centralized visual tokens, typography, layout and motion rules.
+- `src/styles/global.css`: centralized visual tokens, typography and layout.
+- `src/styles/motion.css`: parallax distances, responsive travel, hover/focus feedback and reduced-motion overrides.
+- `src/scripts/motion.ts`: shared entrances, house assembly and scroll parallax. The selector groups define which editorial sections enter; text stays opaque and form controls remain stationary.
 - `src/components/House.astro`: original conceptual house drawing. Native HTML details provide full explanations; no scroll library is required.
 
 Update both languages together. Route mappings handle equivalent-page language switching. Category IDs are stable, nontranslated identifiers used in URLs, form data and related links. Do not turn concept imagery into project evidence or add unverified affiliations/guarantees.
@@ -88,3 +90,7 @@ Keep annual editorial review separate from ongoing dependency/security maintenan
 ## Design and validation
 
 The supplied plan and questionnaire are preserved. Implementation decisions, researched sources and sequential skill reviews are recorded in [explore/design/website-casa-ta-verde.md](explore/design/website-casa-ta-verde.md). Visual and motion specifications sit alongside it. The validation report is [explore/validation/report.md](explore/validation/report.md).
+
+The subsequent design-only animation enhancement is recorded in [explore/design/motion-enhancement-review.md](explore/design/motion-enhancement-review.md). It adds framed image parallax, staged editorial entrances, one-time house assembly and interaction polish across both languages. Native scrolling is preserved. Mobile uses shorter travel; reduced-motion/save-data/low-core devices receive a static presentation. Content is visible without JavaScript, and keyboard focus settles active entrances immediately.
+
+With the built site running on port 4321, `node scripts/inspect-motion.mjs` captures entering/settled responsive views, and `node scripts/motion-performance.mjs` measures synthetic scrolling under 4× CPU slowdown. Results are in `explore/validation/motion/`. `tests/browser/motion.spec.ts` checks image coverage, scroll movement, interrupted animation, live preference changes and stationary form controls.

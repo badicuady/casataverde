@@ -1,5 +1,7 @@
 # Casa Ta Verde — implementation record
 
+This records the initial implementation. The later user-requested animation/parallax enhancement and its current validation are documented in [motion-enhancement-review.md](motion-enhancement-review.md); its motion decisions supersede the selection-only decisions below.
+
 ## 1. Discovery snapshot
 - Slug: `casa-ta-verde`. Greenfield local website; no existing implementation or assets. Node 24.19.0, npm 11.17.0 and Google Chrome available. No Git repository; no existing build/lint/test scripts. Referenced LEAN-CTX.md not found in project or parent locations.
 - Authority: original client questionnaire (preserved), AGENTS.md, and supplied `website-casa-ta-verde-plan.md`. The plan's decisions are carried forward; its historical Plan Mode restriction no longer applies.

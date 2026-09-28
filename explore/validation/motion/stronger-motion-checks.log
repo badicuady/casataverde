@@ -1,0 +1,61 @@
+
+> casa-ta-verde@1.0.0 check
+> astro check
+
+20:30:33 [@astrojs/node] Enabling sessions with filesystem storage
+20:30:33 [types] Generated 40ms
+20:30:33 [check] Getting diagnostics for Astro files in /home/adrian/Repos/learn/casataverde...
+Result (27 files): 
+- 0 errors
+- 0 warnings
+- 0 hints
+
+
+> casa-ta-verde@1.0.0 format:check
+> prettier --check "src/**/*.{astro,ts,css}" "scripts/*.mjs" "tests/**/*.{ts,mjs}" *.json *.mjs playwright.config.ts
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> casa-ta-verde@1.0.0 test:browser
+> playwright test
+
+
+Running 30 tests using 2 workers
+
+(node:74996) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:74995) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/browser/motion.spec.ts:9:1 › a pointer click still navigates while its hero entrance is unfinished (722ms)
+  ✓   3 tests/browser/motion.spec.ts:22:1 › photography moves within covered frames across localized marketing templates (12.4s)
+  ✓   4 tests/browser/motion.spec.ts:62:1 › section entrances and house assembly run once and settle before selection (3.9s)
+  ✓   2 tests/browser/accessibility.spec.ts:8:3 › WCAG automated scan on every page at 390px (18.1s)
+  ✓   5 tests/browser/motion.spec.ts:101:1 › changing reduced motion immediately stops entrances and scroll effects (995ms)
+  ✓   7 tests/browser/motion.spec.ts:123:1 › mobile parallax is bounded after resize and form controls stay stationary (5.4s)
+  ✓   8 tests/browser/motion.spec.ts:167:1 › save-data removes motion and low-core devices remove parallax (2.5s)
+  ✓   9 tests/browser/site.spec.ts:7:3 › all 26 localized pages fit 320px (7.2s)
+  ✓  10 tests/browser/site.spec.ts:7:3 › all 26 localized pages fit 390px (5.0s)
+  ✓   6 tests/browser/accessibility.spec.ts:8:3 › WCAG automated scan on every page at 1440px (25.7s)
+  ✓  11 tests/browser/site.spec.ts:7:3 › all 26 localized pages fit 768px (6.3s)
+  ✓  12 tests/browser/accessibility.spec.ts:33:1 › keyboard skips header, expands systems and completes a configuration (1.1s)
+  ✓  14 tests/browser/accessibility.spec.ts:58:1 › reduced motion and constrained devices keep all selection meaning without transforms (1.3s)
+  ✓  15 tests/browser/accessibility.spec.ts:80:1 › 200 percent equivalent zoom reflows and the form labels remain associated (467ms)
+  ✓  13 tests/browser/site.spec.ts:7:3 › all 26 localized pages fit 1024px (4.4s)
+  ✓  16 tests/browser/site.spec.ts:7:3 › all 26 localized pages fit 1440px (3.7s)
+  ✓  17 tests/browser/site.spec.ts:7:3 › all 26 localized pages fit 1920px (3.7s)
+  ✓  18 tests/browser/site.spec.ts:7:3 › all 26 localized pages fit 2560px (3.6s)
+  ✓  19 tests/browser/site.spec.ts:46:1 › all internal links, images and localized equivalents resolve (7.6s)
+  ✓  20 tests/browser/site.spec.ts:68:1 › professional configuration survives contact, locale changes, editing and browser back (1.1s)
+  ✓  21 tests/browser/site.spec.ts:92:1 › category inquiry preselects only the relevant category and unknown URLs are filtered (552ms)
+  ✓  22 tests/browser/site.spec.ts:106:1 › unavailable delivery is explicit, brief downloads locally and personal data never enters URL (425ms)
+  ✓  23 tests/browser/site.spec.ts:137:3 › ro validation, pending, error recovery and acknowledged success (2.3s)
+  ✓  24 tests/browser/site.spec.ts:137:3 › en validation, pending, error recovery and acknowledged success (2.3s)
+  ✓  25 tests/browser/site.spec.ts:178:1 › network failure is recoverable; HTTP 200 without acceptance is not success (1.3s)
+  ✓  26 tests/browser/site.spec.ts:201:1 › mobile native menu is keyboard operable and Escape returns focus (374ms)
+  ✓  27 tests/browser/site.spec.ts:212:1 › without JavaScript, marketing content, category links and native configurator remain usable (535ms)
+  ✓  28 tests/browser/site.spec.ts:228:1 › live unconfigured API returns unavailable without accepting an inquiry (17ms)
+  ✓  29 tests/browser/site.spec.ts:241:1 › clipboard export and denied clipboard recovery are explicit (1.2s)
+  ✓  30 tests/browser/site.spec.ts:262:1 › contact export works without secure-context randomUUID (288ms)
+
+  30 passed (1.3m)

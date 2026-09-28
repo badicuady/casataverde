@@ -1,0 +1,135 @@
+
+> casa-ta-verde@1.0.0 check
+> astro check
+
+19:50:02 [@astrojs/node] Enabling sessions with filesystem storage
+19:50:02 [types] Generated 39ms
+19:50:02 [check] Getting diagnostics for Astro files in /home/adrian/Repos/learn/casataverde...
+Result (27 files): 
+- 0 errors
+- 0 warnings
+- 0 hints
+
+
+> casa-ta-verde@1.0.0 format:check
+> prettier --check "src/**/*.{astro,ts,css}" "scripts/*.mjs" "tests/**/*.{ts,mjs}" *.json *.mjs playwright.config.ts
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> casa-ta-verde@1.0.0 build
+> astro build
+
+19:50:06 [@astrojs/node] Enabling sessions with filesystem storage
+19:50:06 [types] Generated 32ms
+19:50:06 [build] output: "static"
+19:50:06 [build] mode: "server"
+19:50:06 [build] directory: /home/adrian/Repos/learn/casataverde/dist/
+19:50:06 [build] adapter: @astrojs/node
+19:50:06 [build] Collecting build info...
+19:50:06 [build] ✓ Completed in 69ms.
+19:50:06 [build] Building server entrypoints...
+19:50:06 [vite] ✓ built in 153ms
+19:50:06 [vite] ✓ built in 88ms
+19:50:07 [vite] ✓ built in 27ms
+
+ prerendering static routes 
+19:50:07   ├─ /404.html (+9ms) 
+19:50:07   ├─ /robots.txt (+2ms) 
+19:50:07   ├─ /sitemap.xml (+2ms) 
+19:50:07   ├─ /index.html (+3ms) 
+19:50:07   ├─ /pentru-casa/index.html (+2ms) 
+19:50:07   ├─ /pentru-profesionisti/index.html (+1ms) 
+19:50:07   ├─ /despre/index.html (+1ms) 
+19:50:07   ├─ /contact/index.html (+2ms) 
+19:50:07   ├─ /configureaza/index.html (+2ms) 
+19:50:07   ├─ /confidentialitate/index.html (+2ms) 
+19:50:07   ├─ /solutii/panouri-fotovoltaice/index.html (+2ms) 
+19:50:07   ├─ /solutii/pompe-de-caldura/index.html (+1ms) 
+19:50:07   ├─ /solutii/tigla-metalica/index.html (+1ms) 
+19:50:07   ├─ /solutii/sisteme-pluviale/index.html (+1ms) 
+19:50:07   ├─ /solutii/casa-inteligenta/index.html (+1ms) 
+19:50:07   ├─ /solutii/tavane-extensibile/index.html (+1ms) 
+19:50:07   ├─ /en/index.html (+1ms) 
+19:50:07   ├─ /en/for-your-home/index.html (+1ms) 
+19:50:07   ├─ /en/for-professionals/index.html (+1ms) 
+19:50:07   ├─ /en/about/index.html (+1ms) 
+19:50:07   ├─ /en/contact/index.html (+1ms) 
+19:50:07   ├─ /en/configure/index.html (+1ms) 
+19:50:07   ├─ /en/privacy/index.html (+1ms) 
+19:50:07   ├─ /en/solutions/solar-panels/index.html (+1ms) 
+19:50:07   ├─ /en/solutions/heat-pumps/index.html (+1ms) 
+19:50:07   ├─ /en/solutions/metal-roofing/index.html (+1ms) 
+19:50:07   ├─ /en/solutions/rainwater-systems/index.html (+1ms) 
+19:50:07   ├─ /en/solutions/smart-home/index.html (+1ms) 
+19:50:07   ├─ /en/solutions/stretch-ceilings/index.html (+1ms) 
+19:50:07 ✓ Completed in 58ms.
+
+19:50:07 [build] Rearranging server assets...
+19:50:07 [build] ✓ Completed in 356ms.
+19:50:07 [build] Server built in 429ms
+19:50:07 [build] Complete!
+
+> casa-ta-verde@1.0.0 test
+> node --test tests/*.test.mjs
+
+✔ configuration stays unavailable until complete, HTTPS and privacy ready (0.798995ms)
+✔ nonpersonal selection allowlist strips unknown and personal parameters (0.719222ms)
+✔ allows uncertainty and a single category; strips hidden professional values (0.375851ms)
+✔ rejects malformed and oversized fields, bad selections and honeypot (0.296314ms)
+✔ unavailable never invokes delivery (19.346452ms)
+✔ requires same origin and JSON before delivery (0.750354ms)
+✔ server rejects invalid inputs and bounded request bodies (2.908856ms)
+✔ delivery must explicitly acknowledge durable acceptance (1.980789ms)
+✔ passes only validated data and preserves idempotency key (0.649857ms)
+✔ network and receiver failure never return success (0.736815ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 111.738325
+
+> casa-ta-verde@1.0.0 test:browser
+> playwright test
+
+
+Running 29 tests using 2 workers
+
+(node:62404) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:62403) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/browser/motion.spec.ts:9:1 › photography moves within covered frames across localized marketing templates (12.2s)
+  ✓   2 tests/browser/accessibility.spec.ts:8:3 › WCAG automated scan on every page at 390px (15.0s)
+  ✓   3 tests/browser/motion.spec.ts:49:1 › section entrances and house assembly run once and settle before selection (3.7s)
+  ✓   5 tests/browser/motion.spec.ts:85:1 › changing reduced motion immediately stops entrances and scroll effects (830ms)
+  ✓   6 tests/browser/motion.spec.ts:107:1 › mobile parallax is bounded after resize and form controls stay stationary (4.9s)
+  ✓   7 tests/browser/motion.spec.ts:151:1 › save-data removes motion and low-core devices remove parallax (1.7s)
+  ✓   8 tests/browser/site.spec.ts:7:3 › all 26 localized pages fit 320px (4.7s)
+  ✓   9 tests/browser/site.spec.ts:7:3 › all 26 localized pages fit 390px (6.0s)
+  ✓   4 tests/browser/accessibility.spec.ts:8:3 › WCAG automated scan on every page at 1440px (20.3s)
+  ✓  11 tests/browser/accessibility.spec.ts:33:1 › keyboard skips header, expands systems and completes a configuration (1.3s)
+  ✓  12 tests/browser/accessibility.spec.ts:58:1 › reduced motion and constrained devices keep all selection meaning without transforms (1.8s)
+  ✓  13 tests/browser/accessibility.spec.ts:80:1 › 200 percent equivalent zoom reflows and the form labels remain associated (619ms)
+  ✓  10 tests/browser/site.spec.ts:7:3 › all 26 localized pages fit 768px (6.4s)
+  ✓  14 tests/browser/site.spec.ts:7:3 › all 26 localized pages fit 1024px (3.3s)
+  ✓  15 tests/browser/site.spec.ts:7:3 › all 26 localized pages fit 1440px (3.4s)
+  ✓  16 tests/browser/site.spec.ts:7:3 › all 26 localized pages fit 1920px (3.3s)
+  ✓  17 tests/browser/site.spec.ts:7:3 › all 26 localized pages fit 2560px (3.3s)
+  ✓  18 tests/browser/site.spec.ts:46:1 › all internal links, images and localized equivalents resolve (6.3s)
+  ✓  19 tests/browser/site.spec.ts:68:1 › professional configuration survives contact, locale changes, editing and browser back (1.0s)
+  ✓  20 tests/browser/site.spec.ts:92:1 › category inquiry preselects only the relevant category and unknown URLs are filtered (505ms)
+  ✓  21 tests/browser/site.spec.ts:106:1 › unavailable delivery is explicit, brief downloads locally and personal data never enters URL (390ms)
+  ✓  22 tests/browser/site.spec.ts:137:3 › ro validation, pending, error recovery and acknowledged success (1.6s)
+  ✓  23 tests/browser/site.spec.ts:137:3 › en validation, pending, error recovery and acknowledged success (1.6s)
+  ✓  24 tests/browser/site.spec.ts:178:1 › network failure is recoverable; HTTP 200 without acceptance is not success (790ms)
+  ✓  25 tests/browser/site.spec.ts:201:1 › mobile native menu is keyboard operable and Escape returns focus (337ms)
+  ✓  26 tests/browser/site.spec.ts:212:1 › without JavaScript, marketing content, category links and native configurator remain usable (508ms)
+  ✓  27 tests/browser/site.spec.ts:228:1 › live unconfigured API returns unavailable without accepting an inquiry (19ms)
+  ✓  28 tests/browser/site.spec.ts:241:1 › clipboard export and denied clipboard recovery are explicit (695ms)
+  ✓  29 tests/browser/site.spec.ts:262:1 › contact export works without secure-context randomUUID (274ms)
+
+  29 passed (1.2m)

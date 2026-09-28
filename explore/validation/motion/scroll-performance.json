@@ -1,0 +1,28 @@
+[
+  {
+    "name": "desktop",
+    "width": 1440,
+    "height": 1000,
+    "CPUThrottle": 4,
+    "frameCount": 391,
+    "frameIntervalP95": 16.700000000000728,
+    "frameIntervalMax": 16.80000000000109,
+    "framesOver34ms": 0,
+    "longTasksDuringScroll": [],
+    "observedLayoutShiftSum": 0,
+    "remainingAnimationsAtRest": 0
+  },
+  {
+    "name": "mobile",
+    "width": 390,
+    "height": 844,
+    "CPUThrottle": 4,
+    "frameCount": 391,
+    "frameIntervalP95": 16.700000000000728,
+    "frameIntervalMax": 16.800000000000182,
+    "framesOver34ms": 0,
+    "longTasksDuringScroll": [],
+    "observedLayoutShiftSum": 0,
+    "remainingAnimationsAtRest": 0
+  }
+]
