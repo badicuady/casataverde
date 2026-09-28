@@ -4,11 +4,12 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=22.12.0"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "astro dev --host 0.0.0.0",
     "build": "astro build",
+    "build:vercel": "VERCEL=1 astro build",
     "start": "node ./dist/server/entry.mjs",
     "preview": "astro preview --host 0.0.0.0",
     "check": "astro check",
@@ -20,6 +21,7 @@
   },
   "dependencies": {
     "@astrojs/node": "^11.1.6",
+    "@astrojs/vercel": "^11.0.11",
     "@fontsource-variable/manrope": "^5.3.0",
     "astro": "^7.3.5",
     "sharp": "^0.35.5"
@@ -32,5 +34,10 @@
     "prettier": "^3.9.9",
     "prettier-plugin-astro": "^1.1.0",
     "typescript": "^6.0.3"
+  },
+  "overrides": {
+    "@vercel/routing-utils": {
+      "path-to-regexp": "6.3.0"
+    }
   }
 }

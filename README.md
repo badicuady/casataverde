@@ -4,14 +4,14 @@ A bilingual architectural showroom for a Romanian sustainable-property reseller.
 
 ## Run locally
 
-Requires Node >=22.12 (tested on 24.19) and npm >=9.
+Requires Node 24.x (tested on 24.19) and npm >=9. The Node major is pinned in `package.json` for local and Vercel builds.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Open http://localhost:4321. Astro 7 runs the development server in the background; use `npm exec -- astro dev status`, `npm exec -- astro dev logs`, or `npm exec -- astro dev stop` to manage it. The default build is a non-indexable local draft. No sales recipient or verified phone number is configured. Visitors can configure, copy and download project briefs; the site explicitly says they have not been sent.
+Open http://localhost:4321. Astro 7 runs the development server in the background; use `npm exec -- astro dev status`, `npm exec -- astro dev logs`, or `npm exec -- astro dev stop` to manage it. The default build is a non-indexable local draft. WhatsApp links directly to +40723200709; telephone links remain optional through `PUBLIC_PHONE`. No sales recipient is configured. Visitors can configure, copy and download project briefs; the site explicitly says they have not been sent.
 
 ```sh
 npm run check          # Astro + TypeScript diagnostics
@@ -19,6 +19,7 @@ npm run format:check   # source formatting check
 npm run format         # format application, scripts and tests
 npm test               # validation, selection and delivery-contract tests
 npm run build          # prerender pages and compile the Node endpoint
+npm run build:vercel   # create Vercel deployment output locally; does not deploy
 HOST=0.0.0.0 PORT=4321 npm start
 npm run test:browser   # uses the built production server; build first
 npm run images        # regenerate responsive images and copy licensed fonts
@@ -28,7 +29,7 @@ Browser tests use `/usr/bin/google-chrome`. Set `CHROME_PATH` for another Chrome
 
 ## Edit content
 
-- `src/data/site.ts`: locales, routes, navigation, origin, draft flag and verified phone.
+- `src/data/site.ts`: locales, routes, navigation, origin, draft flag, WhatsApp link and optional phone.
 - `src/data/categories.ts`: all six bilingual categories, families, benefits, selection questions, related systems and slugs.
 - `src/data/forms.ts`: all form labels and feedback in both languages.
 - `src/components/Home.astro`, `AudiencePage.astro`, `AboutPage.astro`: editorial narrative.
@@ -80,6 +81,34 @@ Both `/api/inquiries` and `/api/inquiries/` accept POST directly, without a redi
 Responses: 200 acknowledged, 400 malformed/oversized request, 403 wrong origin, 415 wrong content type, 422 validation, 503 unavailable, 502 delivery error. Responses are `no-store`; inquiry contents are not logged. Fields and local export actions lock during delivery, then recover their previous state; editing clears any old acknowledgment. Errors preserve form values. The receiver and final hosting platform own retention and operational abuse protection; configure request/rate limits before public launch. There is no production recipient in this repository.
 
 Nonpersonal selection parameters are allowlisted and preserved through configuration, language switching and browser back. Personal data stays in form memory/request bodies, never app-managed browser storage or URL parameters. Copy/download is a deliberate local export. JavaScript is required for automatic selection restoration and contact actions; static marketing pages and native category disclosures remain usable without it.
+
+## Deploy to Vercel
+
+The project includes `@astrojs/vercel` and `vercel.json`. Vercel runs `npm run build:vercel`, which selects the Vercel adapter and writes `.vercel/output`. The 26 marketing pages remain prerendered; `/api/inquiries` runs as a Node.js Vercel Function. Local `npm run build` still uses the standalone Node adapter, so `npm start` and the existing browser tests keep working. No database, session storage or extra image service is required.
+
+`package.json` overrides the adapter's `@vercel/routing-utils` dependency on `path-to-regexp` to patched 6.3.0 for [GHSA-9wv6-86v2-598j](https://github.com/pillarjs/path-to-regexp/security/advisories/GHSA-9wv6-86v2-598j). Recheck this override when updating the adapter; remove it once the upstream dependency uses a patched version.
+
+1. Run `npm ci`, `npm run check`, `npm test`, `npm run build` and `npm run build:vercel` locally. The Vercel build command uses POSIX shell environment syntax, supported by Vercel, Linux, macOS and WSL.
+2. Commit the project and lockfile, push to your Git provider, then import the repository into Vercel. Use the repository root and Astro framework preset; keep the output directory at its detected default. `vercel.json` supplies the build command and `package.json` pins Node 24.x.
+3. Add the environment variables below before deploying. Use your assigned Vercel project address or your actual custom domain, never localhost, for the hosted `PUBLIC_SITE_URL`.
+4. Deploy and verify `/`, `/en/`, both audience paths, contact pages, images and the WhatsApp button. With delivery unconfigured, `GET /api/inquiries` should return `{"available":false}` and the form should explain that online submission is unavailable.
+5. Add a custom domain under Settings > Domains and apply the DNS records Vercel provides. Update `PUBLIC_SITE_URL` and, if delivery is enabled, `INQUIRY_ALLOWED_ORIGIN` to the preferred HTTPS origin. Redeploy after changing environment variables.
+
+| Variable | Initial review deployment | Ready for production |
+| --- | --- | --- |
+| `PUBLIC_SITE_URL` | Actual HTTPS Vercel project origin | Preferred HTTPS custom-domain origin |
+| `PUBLIC_DRAFT` | `true` | `false` after launch content is approved; keep Preview `true` |
+| `PUBLIC_PHONE` | Optional verified telephone number | Same; WhatsApp already has its own configured link |
+| `INQUIRY_WEBHOOK_URL` | Leave unset | Trusted HTTPS receiver endpoint |
+| `INQUIRY_WEBHOOK_TOKEN` | Leave unset | Receiver token; mark as sensitive in Vercel |
+| `INQUIRY_ALLOWED_ORIGIN` | Leave unset | Exact website origin, without a trailing slash |
+| `INQUIRY_PRIVACY_READY` | `false` | `true` only after the approved privacy notice is published |
+
+The inquiry receiver must implement the acknowledgment contract described above; deployment alone does not enable form delivery. Set delivery credentials for Production when that receiver is ready. Leave them unset in Preview unless a separate test receiver and matching origin are deliberately configured. `PUBLIC_DRAFT=true` controls search indexing and draft copy; it does not make a deployment private.
+
+Vercel project linkage and build artifacts under `.vercel/` are ignored by Git. No account, domain or recipient is embedded in the deployment configuration, and no deployment is performed by the build command.
+
+References: [Astro Vercel adapter](https://docs.astro.build/en/guides/integrations-guide/vercel/), [Vercel environment variables](https://vercel.com/docs/environment-variables/managing-environment-variables), [Node.js versions](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions), [custom domains](https://vercel.com/docs/domains/working-with-domains/add-a-domain). Vercel Hobby is limited to personal, noncommercial use; select a commercial plan for the business website ([plan rules](https://vercel.com/docs/plans/hobby)).
 
 ## Launch boundary
 
