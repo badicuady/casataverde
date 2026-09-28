@@ -789,8 +789,8 @@ summary::-webkit-details-marker {
 }
 .whatsapp-button {
   position: fixed;
-  right: 50px;
-  bottom: 50px;
+  right: 1em;
+  bottom: 1em;
   z-index: 40;
   display: grid;
   place-items: center;
