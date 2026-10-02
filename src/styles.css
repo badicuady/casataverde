@@ -1,0 +1,164 @@
+@import '@fontsource/manrope/latin-400.css';
+@import '@fontsource/manrope/latin-ext-400.css';
+@import '@fontsource/manrope/latin-500.css';
+@import '@fontsource/manrope/latin-ext-500.css';
+@import '@fontsource/manrope/latin-600.css';
+@import '@fontsource/manrope/latin-ext-600.css';
+@import '@fontsource/manrope/latin-700.css';
+@import '@fontsource/manrope/latin-ext-700.css';
+@import '@fontsource/manrope/latin-800.css';
+@import '@fontsource/manrope/latin-ext-800.css';
+:root {
+  --bg: #0a1410;
+  --surface: #14251e;
+  --text: #edf3e9;
+  --muted: #a4afa7;
+  --accent: #c6f47a;
+  --line: #edf3e92c;
+  color-scheme: dark;
+  font-family: 'Manrope', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 32px;
+}
+body {
+  margin: 0;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+button {
+  color: inherit;
+}
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+.page-width {
+  width: calc(100% - 128px);
+  max-width: 1560px;
+  margin-inline: auto;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 18px 28px;
+  border-radius: 999px;
+  min-height: 58px;
+  font-size: 16px;
+  font-weight: 700;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.button:hover {
+  background: #d8ff9c;
+  transform: translateY(-2px);
+}
+.button app-icon {
+  transition: transform 0.2s;
+}
+.button:hover app-icon:last-child {
+  transform: translateX(3px);
+}
+.icon-button {
+  width: 52px;
+  height: 52px;
+  border: 1px solid #edf3e978;
+  border-radius: 50%;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    color 0.2s,
+    border-color 0.2s,
+    background 0.2s;
+}
+.icon-button:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: #c6f47a08;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+.skip-link {
+  position: fixed;
+  left: 20px;
+  top: -100px;
+  z-index: 100;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 16px;
+}
+.skip-link:focus {
+  top: 20px;
+}
+@media (max-width: 1000px) {
+  .page-width {
+    width: calc(100% - 72px);
+  }
+}
+@media (max-width: 760px) {
+  .page-width {
+    width: calc(100% - 48px);
+  }
+  .button {
+    font-size: 14px;
+    gap: 16px;
+    padding: 16px 23px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@media (max-width: 360px) {
+  html[lang='en'] app-energy-scene {
+    --scene-top: 320px;
+  }
+}

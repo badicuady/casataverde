@@ -1,0 +1,563 @@
+:host {
+  display: block;
+}
+.hero {
+  min-height: 850px;
+  height: 100svh;
+  max-height: 1100px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.site-header {
+  height: 96px;
+  display: flex;
+  align-items: center;
+  gap: 54px;
+  position: relative;
+  z-index: 5;
+}
+.wordmark {
+  font-size: 28px;
+  letter-spacing: -1.3px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.desktop-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 42px;
+  font-size: 15px;
+}
+.desktop-nav a,
+.back-top {
+  transition: color 0.2s;
+}
+.desktop-nav a:hover,
+.back-top:hover {
+  color: var(--accent);
+}
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.language-switch button {
+  border: 0;
+  background: none;
+  color: var(--muted);
+  padding: 12px 4px;
+  font-size: 13px;
+}
+.language-switch button.active {
+  color: var(--accent);
+  font-weight: 700;
+}
+.menu-toggle,
+.mobile-nav {
+  display: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding-top: clamp(90px, 11vh, 140px);
+  pointer-events: none;
+}
+.hero-content > * {
+  pointer-events: auto;
+}
+h1 {
+  font-weight: 700;
+  font-size: clamp(62px, 5.75vw, 96px);
+  line-height: 1.08;
+  letter-spacing: -0.062em;
+  margin: 0 0 30px;
+  max-width: 810px;
+}
+h1 span {
+  color: var(--accent);
+}
+.hero-content p {
+  font-size: clamp(18px, 1.6vw, 24px);
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 430px;
+  margin: 0 0 40px;
+}
+.hero-bottom {
+  position: absolute;
+  z-index: 2;
+  bottom: 48px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 35px;
+}
+.category-shortcuts {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 66%;
+  max-width: 950px;
+}
+.category-shortcuts a {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 18px;
+  border-right: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+.category-shortcuts a:first-child {
+  padding-left: 0;
+}
+.category-shortcuts a:last-child {
+  border: 0;
+}
+.category-shortcuts a:hover,
+.category-shortcuts a.active {
+  color: var(--accent);
+}
+.shortcut-name {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.hero-bottom > p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 195px;
+  margin: 0;
+}
+.hero-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+.motion-button {
+  width: 38px;
+  height: 38px;
+  border-color: var(--line);
+  color: var(--muted);
+}
+.motion-button app-icon {
+  width: 17px;
+  height: 17px;
+}
+.section-label {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+.solutions {
+  padding-top: 70px;
+  padding-bottom: 90px;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 50px;
+  margin-bottom: 40px;
+}
+h2 {
+  font-size: clamp(40px, 5.6vw, 86px);
+  line-height: 1.12;
+  letter-spacing: -0.053em;
+  font-weight: 500;
+  margin: 0;
+}
+.section-heading > p {
+  font-size: 20px;
+  line-height: 1.5;
+  max-width: 330px;
+  margin: 0 0 5px;
+  color: var(--muted);
+}
+.placeholder-note {
+  text-align: right;
+  color: var(--muted);
+  font-size: 11px;
+  margin: 32px 0 0;
+}
+.about {
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 100px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.about h2 {
+  font-size: clamp(28px, 3.65vw, 56px);
+}
+.about p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 5px 0 0;
+  max-width: 550px;
+}
+.contact {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--surface);
+}
+.contact-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url('/images/contact.webp') center bottom/cover no-repeat;
+}
+.contact-content {
+  min-height: 640px;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 40px;
+  padding-top: 64px;
+  padding-bottom: 75px;
+}
+.contact h2 {
+  font-size: clamp(55px, 6vw, 92px);
+}
+.contact-content > div > p {
+  font-size: 28px;
+  color: var(--muted);
+  margin: 24px 0;
+}
+.contact-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+.conversation {
+  width: 290px;
+  height: 290px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.whatsapp {
+  gap: 15px;
+  white-space: nowrap;
+}
+.phone {
+  font-size: 15px;
+  color: var(--muted);
+  letter-spacing: 0.07em;
+}
+.phone:hover {
+  color: var(--accent);
+}
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  min-height: 115px;
+  border-top: 1px solid var(--line);
+}
+.footer-brand {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+footer p {
+  font-size: 12px;
+  color: var(--muted);
+}
+.back-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+}
+.back-top app-icon {
+  width: 17px;
+}
+@media (max-width: 1150px) {
+  .site-header {
+    gap: 30px;
+  }
+  .desktop-nav {
+    gap: 25px;
+  }
+  .hero-bottom {
+    gap: 20px;
+  }
+  .category-shortcuts {
+    width: 65%;
+  }
+  .category-shortcuts a {
+    padding: 0 10px;
+  }
+  .shortcut-name {
+    font-size: 10px;
+  }
+  .hero-bottom > p {
+    font-size: 12px;
+    max-width: 125px;
+  }
+  .hero-controls {
+    flex-direction: column;
+  }
+  .about {
+    gap: 50px;
+  }
+  .about p {
+    font-size: 17px;
+  }
+  .contact-content {
+    grid-template-columns: 1.1fr 1fr;
+  }
+  .contact h2 {
+    font-size: 6vw;
+  }
+  .whatsapp {
+    font-size: 13px;
+    padding-inline: 20px;
+  }
+  .section-heading > p {
+    font-size: 17px;
+    max-width: 270px;
+  }
+}
+@media (max-width: 760px) {
+  .hero {
+    min-height: 870px;
+    max-height: none;
+    height: 100svh;
+  }
+  .site-header {
+    height: 82px;
+    gap: 16px;
+  }
+  .wordmark {
+    font-size: 22px;
+    letter-spacing: -1px;
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .language-switch {
+    margin-left: auto;
+    gap: 3px;
+  }
+  .language-switch button {
+    font-size: 12px;
+  }
+  .menu-toggle {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    border-color: var(--line);
+  }
+  .menu-toggle app-icon {
+    width: 20px;
+  }
+  .mobile-nav {
+    display: flex;
+    position: absolute;
+    top: 74px;
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    flex-direction: column;
+    padding: 16px;
+    box-shadow: 0 20px 50px #0008;
+  }
+  .mobile-nav a {
+    padding: 16px;
+    font-size: 18px;
+  }
+  .hero-content {
+    padding-top: 58px;
+  }
+  h1 {
+    font-size: clamp(40px, 9.8vw, 68px);
+    max-width: 570px;
+    line-height: 1.12;
+    letter-spacing: -0.06em;
+    margin-bottom: 24px;
+  }
+  .hero-content p {
+    font-size: 16px;
+    max-width: 310px;
+    margin-bottom: 28px;
+  }
+  .hero-bottom {
+    bottom: 28px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .category-shortcuts {
+    width: 100%;
+    max-width: none;
+  }
+  .category-shortcuts a {
+    padding: 12px 0;
+    align-items: center;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 12px;
+  }
+  .category-shortcuts a.active {
+    border-bottom-color: var(--accent);
+  }
+  .shortcut-name {
+    display: none;
+  }
+  .hero-bottom > p {
+    font-size: 12px;
+    max-width: none;
+    margin-right: auto;
+  }
+  .hero-controls {
+    flex-direction: row;
+  }
+  .hero-controls .icon-button {
+    width: 36px;
+    height: 36px;
+  }
+  .hero-controls app-icon {
+    width: 18px;
+  }
+  .solutions {
+    padding-top: 64px;
+    padding-bottom: 56px;
+  }
+  .section-label {
+    font-size: 10px;
+    margin-bottom: 18px;
+  }
+  .section-heading {
+    display: block;
+    margin-bottom: 32px;
+  }
+  h2 {
+    font-size: clamp(33px, 8vw, 48px);
+  }
+  .section-heading > p {
+    font-size: 15px;
+    max-width: 330px;
+    margin-top: 22px;
+  }
+  .placeholder-note {
+    text-align: left;
+    font-size: 10px;
+    line-height: 1.6;
+  }
+  .about {
+    display: block;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .about h2 {
+    font-size: 31px;
+  }
+  .about p {
+    font-size: 15px;
+    margin-top: 26px;
+  }
+  .contact-content {
+    min-height: 850px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 48px;
+    padding-bottom: 55px;
+  }
+  .contact h2 {
+    font-size: clamp(40px, 10vw, 66px);
+  }
+  .contact-content > div > p {
+    font-size: 19px;
+    margin-top: 20px;
+  }
+  .contact-action {
+    gap: 20px;
+  }
+  .conversation {
+    height: 160px;
+    width: 160px;
+    margin: 0;
+  }
+  .whatsapp {
+    font-size: 13px;
+    gap: 12px;
+  }
+  .whatsapp app-icon {
+    width: 20px;
+  }
+  .contact-background {
+    background-position: 28% bottom;
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+  }
+  .phone {
+    font-size: 13px;
+  }
+  footer {
+    min-height: 160px;
+    flex-wrap: wrap;
+    padding-block: 28px;
+    gap: 20px;
+  }
+  footer p {
+    order: 3;
+    width: 100%;
+    margin: 0;
+    font-size: 11px;
+  }
+  .footer-brand {
+    font-size: 11px;
+  }
+  .back-top {
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+.section-heading h2 {
+  line-height: 1.03;
+}
+@media (max-width: 760px) {
+  .section-heading h2 {
+    line-height: 1.12;
+  }
+}
+
+/* The single motion control stays available throughout the long presentation. */
+.motion-button {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 50;
+  width: 44px;
+  height: 44px;
+  background: #0a1410d9;
+  backdrop-filter: blur(16px);
+  border-color: #edf3e94a;
+  box-shadow: 0 4px 24px #0004;
+}
+@media (max-width: 760px) {
+  .motion-button {
+    right: 14px;
+    bottom: 14px;
+  }
+}

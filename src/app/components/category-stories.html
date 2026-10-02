@@ -1,0 +1,68 @@
+@for (story of stories(); track story.id; let i = $index) {
+  <section
+    [id]="'story-' + story.id"
+    class="story"
+    [class]="'story story-' + story.id"
+    [attr.aria-labelledby]="'heading-' + story.id"
+  >
+    <div class="story-line" aria-hidden="true"></div>
+    <div class="story-layout page-width">
+      <div class="story-visual">
+        <figure class="story-main">
+          <img
+            [src]="story.image"
+            [alt]="story.imageAlt"
+            loading="lazy"
+            decoding="async"
+            width="1200"
+            height="900"
+          />
+          <figcaption>
+            {{ story.concept || story.imageConcept ? copy().concept : story.brand }}
+          </figcaption>
+        </figure>
+        @if (story.id !== 'ceiling') {
+          <figure class="story-detail">
+            <img
+              [src]="story.detail"
+              [alt]="story.detailAlt"
+              loading="lazy"
+              decoding="async"
+              width="500"
+              height="500"
+            />
+          </figure>
+        }
+        <span class="outline-number" aria-hidden="true">0{{ i + 1 }}</span>
+      </div>
+      <div class="story-copy">
+        <p class="eyebrow reveal">
+          <span>0{{ i + 1 }}</span> / {{ story.category }}
+        </p>
+        <h2 class="reveal" [id]="'heading-' + story.id">
+          {{ story.title }}<br /><span>{{ story.end }}</span>
+        </h2>
+        <p class="story-description reveal">{{ story.body }}</p>
+        <dl class="features">
+          @for (feature of story.features; track $index) {
+            <div class="feature reveal">
+              <dt>{{ feature.title }}</dt>
+              <dd>{{ feature.body }}</dd>
+            </div>
+          }
+        </dl>
+        <div class="story-actions reveal">
+          <a class="story-cta" href="#contact"
+            >{{ language() === 'ro' ? 'Discută proiectul tău' : 'Let’s discuss your project'
+            }}<app-icon
+          /></a>
+          @if (!story.concept) {
+            <a class="source" [href]="story.source" target="_blank" rel="noopener noreferrer"
+              >{{ story.brand }} ↗</a
+            >
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+}

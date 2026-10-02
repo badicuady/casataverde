@@ -1,0 +1,112 @@
+<section id="ecosystem" class="directory page-width" aria-labelledby="directory-title">
+  <div class="directory-heading">
+    <p class="eyebrow"><span></span>{{ copy().label }}</p>
+    <h2 id="directory-title">
+      {{ copy().title }}<br /><span>{{ copy().end }}</span>
+    </h2>
+    <p class="intro">{{ copy().intro }}</p>
+  </div>
+  <div class="directory-controls">
+    <div
+      class="filter-group"
+      role="group"
+      [attr.aria-label]="language() === 'ro' ? 'Filtrează după categorie' : 'Filter by category'"
+    >
+      @for (category of categories; track category) {
+        <button
+          type="button"
+          [attr.aria-pressed]="activeCategory() === category"
+          [class.selected]="activeCategory() === category"
+          (click)="filter(category)"
+        >
+          {{ copy().filters[category] }}
+        </button>
+      }
+    </div>
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="10.5" cy="10.5" r="6.5" />
+        <path d="m15.5 15.5 5 5" />
+      </svg>
+      <input
+        #searchInput
+        type="search"
+        [value]="searchTerm()"
+        (input)="search(searchInput.value)"
+        [placeholder]="copy().search"
+        [attr.aria-label]="copy().search"
+      />
+      @if (searchTerm()) {
+        <button
+          type="button"
+          (click)="search(''); searchInput.focus()"
+          [attr.aria-label]="copy().clear"
+        >
+          <app-icon name="close" />
+        </button>
+      }
+    </div>
+  </div>
+  <div class="directory-meta">
+    <span aria-live="polite" aria-atomic="true"
+      >{{ filteredPartners().length }} / 6 {{ copy().results }}</span
+    ><span>CASA TA VERDE / {{ copy().label }}</span>
+  </div>
+  <div class="partner-grid">
+    @for (partner of filteredPartners(); track partner.id) {
+      <article
+        class="partner-item"
+        [attr.data-partner]="partner.id"
+        [attr.data-flip-id]="partner.id"
+        [style.--card-glow]="partner.accent"
+      >
+        <a
+          class="partner-card"
+          [class.product-card]="['ferroli', 'case-smart', 'huawei'].includes(partner.id)"
+          [href]="partner.url"
+          [attr.target]="partner.id === 'tero' ? null : '_blank'"
+          [attr.rel]="partner.id === 'tero' ? null : 'noopener noreferrer'"
+          [attr.aria-label]="copy().explore + ' ' + partner.name"
+        >
+          <img
+            class="partner-image"
+            [src]="partner.image"
+            alt=""
+            loading="lazy"
+            width="500"
+            height="400"
+          />
+          <div class="card-content">
+            <div class="brand">
+              @if (partner.logo) {
+                <img
+                  class="brand-logo"
+                  [src]="partner.logo"
+                  [alt]="partner.name"
+                  loading="lazy"
+                  width="170"
+                  height="45"
+                />
+              } @else {
+                <span class="brand-name">{{ partner.name }}</span>
+              }
+              @if (partner.id === 'huawei') {
+                <span class="brand-subtitle">FusionSolar</span>
+              }
+            </div>
+            <p class="category-label">{{ copy().filters[partner.category] }}</p>
+            <p class="partner-description">{{ partner.description[language()] }}</p>
+            <span class="card-link">{{ copy().explore }}<app-icon /></span>
+          </div>
+          <span class="corner" aria-hidden="true"></span>
+        </a>
+      </article>
+    } @empty {
+      <div class="empty-state">
+        <p>{{ copy().empty }}</p>
+        <span>{{ copy().emptyHint }}</span
+        ><button type="button" (click)="reset()">{{ copy().reset }}<app-icon /></button>
+      </div>
+    }
+  </div>
+</section>

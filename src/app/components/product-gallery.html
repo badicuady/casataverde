@@ -1,0 +1,80 @@
+<div class="explorer">
+  <div
+    class="category-list"
+    role="tablist"
+    [attr.aria-label]="text().solutions"
+    (keydown)="onTabKey($event)"
+  >
+    @for (item of items(); track item.id; let i = $index) {
+      <button
+        role="tab"
+        [id]="'category-' + i"
+        [attr.aria-selected]="active() === i"
+        aria-controls="product-panel"
+        [attr.tabindex]="active() === i ? 0 : -1"
+        [class.selected]="active() === i"
+        (click)="activeChange.emit(i)"
+      >
+        <span class="number">0{{ i + 1 }}</span
+        ><span>{{ item.name }}</span>
+      </button>
+    }
+  </div>
+  <div
+    class="gallery-panel"
+    id="product-panel"
+    role="tabpanel"
+    [attr.aria-labelledby]="'category-' + active()"
+    tabindex="0"
+  >
+    <div class="visuals" [attr.aria-label]="text().gallery">
+      <div
+        class="main-image"
+        role="img"
+        [attr.aria-label]="text().conceptual + ': ' + category().slides[slide()]"
+        [style.background-image]="artwork()"
+        [style.background-position-y]="slide() * 50 + '%'"
+      >
+        <span class="image-caption">{{ category().slides[slide()] }}</span>
+      </div>
+      <div class="thumbnails">
+        @for (label of category().slides; track $index; let i = $index) {
+          <button
+            class="thumbnail"
+            [class.selected]="slide() === i"
+            [attr.aria-label]="label"
+            [attr.aria-pressed]="slide() === i"
+            (click)="setSlide(i)"
+            [style.background-image]="artwork()"
+            [style.background-position-y]="i * 50 + '%'"
+          >
+            <span class="sr-only">{{ label }}</span>
+          </button>
+        }
+      </div>
+    </div>
+    <div class="gallery-details">
+      <div class="gallery-copy" aria-live="polite" aria-atomic="true">
+        <span class="image-label">{{ text().conceptual }}</span>
+        <h3>{{ category().title }}</h3>
+        <p>{{ category().description }}</p>
+      </div>
+      <div class="gallery-controls">
+        <button
+          class="icon-button previous"
+          (click)="setSlide(slide() - 1)"
+          [attr.aria-label]="text().previous"
+        >
+          <app-icon /></button
+        ><span aria-live="polite" class="counter">0{{ slide() + 1 }} / 03</span
+        ><button
+          class="icon-button"
+          (click)="setSlide(slide() + 1)"
+          [attr.aria-label]="text().next"
+        >
+          <app-icon />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

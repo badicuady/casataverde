@@ -1,0 +1,144 @@
+<a class="skip-link" href="#solutions">{{ text().skip }}</a>
+<div id="top" class="hero">
+  <app-energy-scene [paused]="paused()" />
+  <header class="site-header page-width">
+    <a class="wordmark" href="#top">Casa Ta Verde</a>
+    <nav class="desktop-nav" [attr.aria-label]="text().menu">
+      <a href="#solutions">{{ text().solutions }}</a
+      ><a href="#ecosystem">{{ language() === 'ro' ? 'Ecosistem' : 'Ecosystem' }}</a
+      ><a href="#about">{{ text().about }}</a
+      ><a href="#contact">{{ text().contact }}</a>
+    </nav>
+    <div class="language-switch" role="group" [attr.aria-label]="text().language">
+      <button
+        (click)="language.set('ro')"
+        [class.active]="language() === 'ro'"
+        [attr.aria-pressed]="language() === 'ro'"
+        lang="ro"
+        aria-label="Română"
+      >
+        RO</button
+      ><span aria-hidden="true">/</span
+      ><button
+        (click)="language.set('en')"
+        [class.active]="language() === 'en'"
+        [attr.aria-pressed]="language() === 'en'"
+        lang="en"
+        aria-label="English"
+      >
+        EN
+      </button>
+    </div>
+    <button
+      class="menu-toggle icon-button"
+      (click)="menuOpen.set(!menuOpen())"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="mobile-nav"
+      [attr.aria-label]="menuOpen() ? text().close : text().menu"
+    >
+      <app-icon [name]="menuOpen() ? 'close' : 'menu'" />
+    </button>
+    @if (menuOpen()) {
+      <nav
+        id="mobile-nav"
+        class="mobile-nav"
+        [attr.aria-label]="text().menu"
+        (keydown.escape)="menuOpen.set(false)"
+      >
+        <a href="#solutions" (click)="menuOpen.set(false)">{{ text().solutions }}</a
+        ><a href="#ecosystem" (click)="menuOpen.set(false)">{{
+          language() === 'ro' ? 'Ecosistem' : 'Ecosystem'
+        }}</a
+        ><a href="#about" (click)="menuOpen.set(false)">{{ text().about }}</a
+        ><a href="#contact" (click)="menuOpen.set(false)">{{ text().contact }}</a>
+      </nav>
+    }
+  </header>
+  <div class="hero-content page-width">
+    <h1>
+      {{ text().hero }}<br /><span>{{ text().green }}</span>
+    </h1>
+    <p>{{ text().intro }}</p>
+    <a class="button" href="#solutions">{{ text().explore }}<app-icon /></a>
+  </div>
+  <div class="hero-bottom page-width">
+    <div class="category-shortcuts">
+      @for (category of categories(); track category.id; let i = $index) {
+        <a
+          href="#solutions"
+          (click)="selectCategory(i)"
+          [class.active]="activeCategory() === i"
+          [attr.aria-label]="category.name"
+          ><span>0{{ i + 1 }}</span
+          ><span class="shortcut-name">{{ category.name }}</span></a
+        >
+      }
+    </div>
+    <p>{{ text().ecosystem }}</p>
+    <div class="hero-controls">
+      <a class="icon-button" href="#solutions" [attr.aria-label]="text().explore"
+        ><app-icon name="down"
+      /></a>
+    </div>
+  </div>
+</div>
+<main>
+  <app-partner-marquee [language]="language()" [paused]="paused()" />
+  <section id="solutions" class="solutions page-width" aria-labelledby="solutions-heading">
+    <div class="section-label">01 / {{ text().solutions }}</div>
+    <div class="section-heading">
+      <h2 id="solutions-heading">{{ text().heading }}<br />{{ text().headingEnd }}</h2>
+      <p>{{ text().vision }}</p>
+    </div>
+    <app-product-gallery
+      [language]="language()"
+      [active]="activeCategory()"
+      (activeChange)="activeCategory.set($event)"
+    />
+    <p class="placeholder-note">{{ text().placeholder }}</p>
+  </section>
+  <app-category-stories [language]="language()" [paused]="paused()" />
+  <app-energy-field [language]="language()" [paused]="paused()" />
+  <app-partner-directory [language]="language()" [paused]="paused()" />
+  <section id="about" class="about page-width" aria-labelledby="about-heading">
+    <h2 id="about-heading">{{ text().aboutTitle }}<br />{{ text().aboutEnd }}</h2>
+    <p>{{ text().aboutText }}</p>
+  </section>
+  <section id="contact" class="contact" aria-labelledby="contact-heading">
+    <div class="contact-background" aria-hidden="true"></div>
+    <div class="contact-content page-width">
+      <div>
+        <h2 id="contact-heading">{{ text().contactTitle }}<br />{{ text().contactEnd }}</h2>
+        <p>{{ text().talk }}</p>
+      </div>
+      <div class="contact-action">
+        <svg class="conversation" viewBox="0 0 260 260" aria-hidden="true">
+          <path
+            d="M31 185a111 111 0 1 1 37 38L14 239Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+          />
+        </svg>
+        <a class="button whatsapp" [href]="whatsappUrl()" target="_blank" rel="noopener noreferrer"
+          ><app-icon name="whatsapp" />{{ text().whatsapp }}<app-icon
+        /></a>
+        <a class="phone" href="tel:+40723200709">+40 723 200 709</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="page-width">
+  <a class="footer-brand" href="#top">Casa Ta Verde</a>
+  <p>{{ text().footer }}</p>
+  <a class="back-top" href="#top"><app-icon name="up" />{{ text().top }}</a>
+</footer>
+
+<button
+  class="icon-button motion-button"
+  (click)="paused.set(!paused())"
+  [attr.aria-label]="paused() ? text().play : text().pause"
+  [attr.aria-pressed]="paused()"
+>
+  <app-icon [name]="paused() ? 'play' : 'pause'" />
+</button>
