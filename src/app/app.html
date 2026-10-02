@@ -1,8 +1,9 @@
 <a class="skip-link" href="#solutions">{{ text().skip }}</a>
-<div id="top" class="hero">
-  <app-energy-scene [paused]="paused()" />
+<div class="header-shell" [class.is-scrolled]="headerScrolled()">
   <header class="site-header page-width">
-    <a class="wordmark" href="#top">Casa Ta Verde</a>
+    <a class="wordmark" href="#top" aria-label="Casa Ta Verde">
+      <img src="/images/logo-transparent.webp" alt="SMART VERDE" width="640" height="268" />
+    </a>
     <nav class="desktop-nav" [attr.aria-label]="text().menu">
       <a href="#solutions">{{ text().solutions }}</a
       ><a href="#ecosystem">{{ language() === 'ro' ? 'Ecosistem' : 'Ecosystem' }}</a
@@ -54,6 +55,9 @@
       </nav>
     }
   </header>
+</div>
+<div id="top" class="hero">
+  <app-energy-scene [paused]="paused()" />
   <div class="hero-content page-width">
     <h1>
       {{ text().hero }}<br /><span>{{ text().green }}</span>
@@ -129,7 +133,15 @@
   </section>
 </main>
 <footer class="page-width">
-  <a class="footer-brand" href="#top">Casa Ta Verde</a>
+  <a class="footer-brand" href="#top" aria-label="Casa Ta Verde">
+    <img
+      src="/images/logo-transparent.webp"
+      alt="SMART VERDE"
+      width="640"
+      height="268"
+      loading="lazy"
+    />
+  </a>
   <p>{{ text().footer }}</p>
   <a class="back-top" href="#top"><app-icon name="up" />{{ text().top }}</a>
 </footer>
@@ -142,3 +154,14 @@
 >
   <app-icon [name]="paused() ? 'play' : 'pause'" />
 </button>
+
+<a
+  class="floating-whatsapp"
+  [href]="whatsappUrl()"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="WhatsApp: +40 723 200 709"
+  [title]="text().whatsapp"
+>
+  <app-icon name="whatsapp" />
+</a>

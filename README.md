@@ -59,7 +59,7 @@ The directory owns its imperative CSS custom-property animation; Angular signals
 
 The original galleries remain placeholder sheets, each with three horizontal rows. The Huawei gallery is explicitly unbranded concept imagery; the newer Huawei story uses actual manufacturer renders. The supplied Tero domain did not resolve, and the user approved concept imagery. Its directory card links to the local ceiling story.
 
-`logo.jpeg` remains the untouched supplied SMART VERDE logo. The site uses the requested Casa Ta Verde name. The directory does not assert authorized reseller status or guaranteed cross-brand compatibility.
+`logo.jpeg` is the supplied SMART VERDE logo. Its transparent WebP version (`public/images/logo-transparent.webp`) appears in the header and footer, with responsive sizing and links back to the top. The gray matte was removed locally with Sharp, as approved, and the original JPEG is preserved. The header stays fixed while scrolling, with anchor offsets that keep section headings visible beneath it. The site uses the requested Casa Ta Verde name. The directory does not assert authorized reseller status or guaranteed cross-brand compatibility.
 
 ## Verification and documentation
 
@@ -68,5 +68,5 @@ Playwright covers all 18 gallery states, language/WhatsApp, category/search comb
 The Browser plugin was unavailable, so browser verification uses regular Playwright. Serena pattern navigation was used; symbolic language-server initialization was unavailable. Context7 resolver calls returned `USER_NOT_LOGGED_IN` / connector not connected; official documentation was used instead:
 
 - [Angular signals](https://angular.dev/guide/signals), [lifecycle](https://angular.dev/guide/components/lifecycle), [view queries](https://angular.dev/guide/components/queries), [NgZone](https://angular.dev/api/core/NgZone), [style bindings](https://angular.dev/guide/templates/binding).
-- [GSAP context](https://gsap.com/docs/v3/GSAP/gsap.context()/), [ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/), [FLIP](https://gsap.com/docs/v3/Plugins/Flip/).
+- [GSAP context](<https://gsap.com/docs/v3/GSAP/gsap.context()/>), [ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/), [FLIP](https://gsap.com/docs/v3/Plugins/Flip/).
 - Three.js [renderer](https://threejs.org/docs/pages/WebGLRenderer.html), [geometry](https://threejs.org/docs/pages/BufferGeometry.html), [materials](https://threejs.org/docs/pages/Material.html).

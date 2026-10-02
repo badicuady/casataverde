@@ -2,6 +2,7 @@ import {
   Component,
   NgZone,
   OnDestroy,
+  OnInit,
   afterRenderEffect,
   computed,
   effect,
@@ -31,8 +32,17 @@ import { categories, copy, Language } from './data/content';
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App implements OnDestroy {
+export class App implements OnInit, OnDestroy {
+  ngOnInit(): void {
+    this.zone.runOutsideAngular(() => {
+      this.updateHeaderScrolled();
+      window.addEventListener('scroll', this.updateHeaderScrolled, { passive: true });
+      window.addEventListener('pageshow', this.updateHeaderScrolled);
+    });
+  }
   ngOnDestroy(): void {
+    window.removeEventListener('scroll', this.updateHeaderScrolled);
+    window.removeEventListener('pageshow', this.updateHeaderScrolled);
     ScrollTrigger.killAll();
   }
   private readonly zone = inject(NgZone);
@@ -41,10 +51,17 @@ export class App implements OnDestroy {
   readonly categories = computed(() => categories[this.language()]);
   readonly activeCategory = signal(0);
   readonly menuOpen = signal(false);
+  readonly headerScrolled = signal(false);
   readonly paused = signal(false);
   readonly whatsappUrl = computed(
     () => `https://wa.me/40723200709?text=${encodeURIComponent(this.text().message)}`,
   );
+  private readonly updateHeaderScrolled = (): void => {
+    const scrolled = window.scrollY > 0;
+    if (scrolled !== this.headerScrolled()) {
+      this.zone.run(() => this.headerScrolled.set(scrolled));
+    }
+  };
   constructor() {
     afterRenderEffect(() => {
       this.language();
