@@ -63,7 +63,7 @@
         <a
           class="partner-card"
           [class.product-card]="['ferroli', 'case-smart', 'huawei'].includes(partner.id)"
-          [href]="partner.url"
+          [href]="partner.url.startsWith('#') ? partner.url : whatsappUrl()"
           [attr.target]="partner.id === 'tero' ? null : '_blank'"
           [attr.rel]="partner.id === 'tero' ? null : 'noopener noreferrer'"
           [attr.aria-label]="copy().explore + ' ' + partner.name"

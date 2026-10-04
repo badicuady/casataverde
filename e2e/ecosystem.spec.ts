@@ -86,7 +86,7 @@ test('all story images load and links, responsive grids and rapid filter transit
     .toBe(true);
   await expect(directory.locator('[data-partner="huawei"] a')).toHaveAttribute(
     'href',
-    'https://solar.huawei.com/ro/',
+    (await page.locator('.whatsapp').getAttribute('href'))!,
   );
   await expect(directory.locator('[data-partner="tero"] a')).toHaveAttribute(
     'href',

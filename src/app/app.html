@@ -101,9 +101,17 @@
     />
     <p class="placeholder-note">{{ text().placeholder }}</p>
   </section>
-  <app-category-stories [language]="language()" [paused]="paused()" />
+  <app-category-stories
+    [language]="language()"
+    [whatsappUrl]="whatsappUrl()"
+    [paused]="paused()"
+  />
   <app-energy-field [language]="language()" [paused]="paused()" />
-  <app-partner-directory [language]="language()" [paused]="paused()" />
+  <app-partner-directory
+    [language]="language()"
+    [whatsappUrl]="whatsappUrl()"
+    [paused]="paused()"
+  />
   <section id="about" class="about page-width" aria-labelledby="about-heading">
     <h2 id="about-heading">{{ text().aboutTitle }}<br />{{ text().aboutEnd }}</h2>
     <p>{{ text().aboutText }}</p>
@@ -127,7 +135,9 @@
         <a class="button whatsapp" [href]="whatsappUrl()" target="_blank" rel="noopener noreferrer"
           ><app-icon name="whatsapp" />{{ text().whatsapp }}<app-icon
         /></a>
-        <a class="phone" href="tel:+40723200709">+40 723 200 709</a>
+        <a class="phone" [href]="whatsappUrl()" target="_blank" rel="noopener noreferrer"
+          >+40 723 200 709</a
+        >
       </div>
     </div>
   </section>

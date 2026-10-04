@@ -32,6 +32,7 @@ const normalize = (value: string) =>
 })
 export class PartnerDirectory implements AfterViewInit, OnDestroy {
   readonly language = input.required<Language>();
+  readonly whatsappUrl = input.required<string>();
   readonly paused = input(false);
   readonly activeCategory = signal<PartnerCategory>('all');
   readonly searchTerm = signal('');

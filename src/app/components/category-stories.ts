@@ -24,6 +24,7 @@ import { stories, ecosystemCopy } from '../data/ecosystem';
 })
 export class CategoryStories implements AfterViewInit, OnDestroy {
   readonly language = input.required<Language>();
+  readonly whatsappUrl = input.required<string>();
   readonly paused = input(false);
   readonly stories = computed(() => stories[this.language()]);
   readonly copy = computed(() => ecosystemCopy[this.language()]);
