@@ -19,6 +19,18 @@ Scanned 2 October 2026. Public presentation assets are stored locally as optimiz
 | `logo-huawei.webp` | [Source](https://solar.huawei.com/-/media/hcomponent-solar-header/0.1.0.20241225142716/component/corporate/images/home/logo/huawei_logo.png) |
 | `roof-detail.webp` | [Source](https://www.bilka.ro/wp-content/uploads/2025/06/retro-panel-flat.jpg) |
 | `roof-architecture.webp` | [Source](https://www.bilka.ro/wp-content/uploads/photo-gallery/imported_from_media_libray/casuta_britanic-1-scaled.jpg) |
+| `logo-deye.webp` | [Source](https://deye.com/wp-content/uploads/2025/12/logo-2.webp) |
+| `deye-inverter.webp` | [Source](https://deye.com/wp-content/uploads/2026/03/hybrid-inverter.png) |
+| `logo-genway.webp` | [Source](https://www.genway.ro/wp-content/uploads/2022/04/logo.png) |
+| `genway-battery.webp` | [Source](https://www.genway.ro/wp-content/uploads/2025/06/BYD-HVS-12-2.png) — BYD battery presented by Genway, a supplier rather than the battery manufacturer. |
+
+## Partner expansion — 10 October 2026
+
+[MaxBau](https://www.maxbau.ro/) lists construction timber, OSB, masonry, mineral wool insulation, plasterboard, finishes, sanitary equipment and photovoltaics. [Deye](https://deye.com/) lists hybrid inverters, ESS batteries and Deye Cloud monitoring. [Genway](https://www.genway.ro/) lists solar equipment, EV charging, video intercoms, surveillance, alarms and gate/access automation. These are product categories, not assertions of stock or guaranteed compatibility.
+
+The user confirmed construction materials, timber and sanitary equipment for Bimicat Construct. Its supplied [company listing](https://listafirme.ro/bimicat-construct-srl-36701388/) has an inconsistent CAEN description for that range; the website copy follows the user's confirmation and does not publish a CAEN classification. MaxBau and Bimicat use plain-text names, not fabricated logos. Deye and Genway marks use the site's existing monochrome treatment for contrast.
+
+`materials-gallery.webp`, `materials-timber.webp` and `materials-sanitary.webp` are unbranded conceptual illustrations generated with the built-in Imagegen tool. The gallery is a three-row sheet; the two story images are extracted from it. Prompt: a premium photorealistic catalog triptych with three equal horizontal panels on a cool pale sage-gray studio background; construction timber/OSB, mineral wool/plasterboard/masonry, then washbasin/tap/fittings; consistent soft daylight, generous spacing, no text, logos, people or UI. These illustrate material categories, not specific partner products. The gallery and story label them as concepts.
 
 ## Concept imagery
 

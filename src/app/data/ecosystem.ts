@@ -1,10 +1,12 @@
 import { Language } from './content';
 
-export type PartnerCategory = 'all' | 'roof' | 'climate' | 'interior' | 'smart' | 'energy';
+export type PartnerCategory =
+  'all' | 'roof' | 'climate' | 'interior' | 'smart' | 'energy' | 'materials';
 export interface Partner {
   id: string;
   name: string;
   category: PartnerCategory;
+  additionalCategories?: readonly PartnerCategory[];
   url: string;
   logo?: string;
   image: string;
@@ -96,6 +98,65 @@ export const partners: readonly Partner[] = [
       en: 'Solar generation, storage and monitoring in a connected ecosystem.',
     },
   },
+  {
+    id: 'deye',
+    name: 'Deye',
+    category: 'energy',
+    url: 'https://deye.com/',
+    logo: media + 'logo-deye.webp',
+    image: media + 'deye-inverter.webp',
+    accent: '#ac93fa',
+    keywords: 'hybrid inverter invertor hibrid baterii stocare ess storage monitoring deye cloud',
+    description: {
+      ro: 'Invertoare hibride, baterii și monitorizare Deye Cloud pentru energia casei tale.',
+      en: 'Hybrid inverters, batteries and Deye Cloud monitoring for your home’s energy.',
+    },
+  },
+  {
+    id: 'genway',
+    name: 'Genway',
+    category: 'energy',
+    additionalCategories: ['smart'],
+    url: 'https://www.genway.ro/',
+    logo: media + 'logo-genway.webp',
+    image: media + 'genway-battery.webp',
+    accent: '#c6f47a',
+    keywords:
+      'solar fotovoltaice panouri baterii storage interfoane videointerfoane supraveghere video alarma security porti automatizari incarcare ev',
+    description: {
+      ro: 'Fotovoltaice și stocare, videointerfoane, supraveghere video și automatizări de acces.',
+      en: 'Solar and storage, video intercoms, video surveillance and access automation.',
+    },
+  },
+  {
+    id: 'maxbau',
+    name: 'MaxBau',
+    category: 'materials',
+    additionalCategories: ['roof', 'interior', 'energy'],
+    url: 'https://www.maxbau.ro/',
+    image: media + 'materials-timber.webp',
+    accent: '#9bead6',
+    keywords:
+      'constructii lemn osb izolatii gips carton zidarie finisaje sanitare timber insulation building materials fotovoltaice',
+    description: {
+      ro: 'Lemn, izolații, finisaje și echipamente fotovoltaice pentru construcție și renovare.',
+      en: 'Timber, insulation, finishes and photovoltaic equipment for building and renovation.',
+    },
+  },
+  {
+    id: 'bimicat',
+    name: 'Bimicat Construct',
+    category: 'materials',
+    url: 'https://listafirme.ro/bimicat-construct-srl-36701388/',
+    image: media + 'materials-sanitary.webp',
+    accent: '#75e7f0',
+    keywords:
+      'bimicat construct srl constructii materiale lemn sanitare timber building materials sanitary',
+    description: {
+      ro: 'Materiale de construcții, lemn și echipamente sanitare pentru proiectul casei tale.',
+      en: 'Construction materials, timber and sanitary equipment for your home project.',
+    },
+  },
 ];
 export const ecosystemCopy = {
   ro: {
@@ -118,13 +179,14 @@ export const ecosystemCopy = {
       interior: 'Interior',
       smart: 'Smart Home',
       energy: 'Energie',
+      materials: 'Construcții',
     },
     marquee: 'Tehnologii care se completează.',
     directory: 'Explorează ecosistemul',
     connected: 'Totul este',
     connectedEnd: 'conectat.',
     connection: 'De la energia de pe acoperiș la confortul din fiecare cameră.',
-    fieldLabel: 'Șase perspective. O singură casă.',
+    fieldLabel: 'Șapte perspective. O singură casă.',
     source: 'Imagini de prezentare',
     concept: 'Imagine conceptuală',
   },
@@ -148,13 +210,14 @@ export const ecosystemCopy = {
       interior: 'Interior',
       smart: 'Smart Home',
       energy: 'Energy',
+      materials: 'Construction',
     },
     marquee: 'Technologies that work together.',
     directory: 'Explore the ecosystem',
     connected: 'Everything is',
     connectedEnd: 'connected.',
     connection: 'From the energy on your roof to the comfort in every room.',
-    fieldLabel: 'Six perspectives. One home.',
+    fieldLabel: 'Seven perspectives. One home.',
     source: 'Presentation images',
     concept: 'Concept image',
   },
@@ -172,6 +235,8 @@ export interface Story {
   detail: string;
   imageAlt: string;
   detailAlt: string;
+  imageBrand?: string;
+  detailBrand?: string;
   concept?: boolean;
   imageConcept?: boolean;
 }
@@ -200,14 +265,16 @@ const storyMedia = [
   },
   {
     id: 'storage',
-    brand: 'Huawei FusionSolar',
+    brand: 'Huawei FusionSolar · Deye',
+    imageBrand: 'Huawei FusionSolar',
+    detailBrand: 'Deye',
     source: 'https://solar.huawei.com/ro/',
     image: media + 'huawei-battery.webp',
-    detail: media + 'huawei-inverter.webp',
+    detail: media + 'deye-inverter.webp',
   },
   {
     id: 'smart',
-    brand: 'Case Smart',
+    brand: 'Case Smart · Genway',
     source: 'https://case-smart.ro/',
     image: media + 'smart-concept.webp',
     detail: media + 'smart-curtain.webp',
@@ -215,10 +282,19 @@ const storyMedia = [
   },
   {
     id: 'solar',
-    brand: 'SolarHev',
+    brand: 'SolarHev · Genway',
+    imageBrand: 'SolarHev',
     source: 'https://solarhev.ro/',
     image: media + 'solar-detail.webp',
     detail: media + 'solar-panels.webp',
+  },
+  {
+    id: 'materials',
+    brand: 'MaxBau · Bimicat Construct',
+    source: 'https://www.maxbau.ro/',
+    image: media + 'materials-timber.webp',
+    detail: media + 'materials-sanitary.webp',
+    imageConcept: true,
   },
 ];
 const ro = [
@@ -283,32 +359,32 @@ const ro = [
     detailAlt: 'Concepte de finisaje pentru tavane extensibile',
   },
   {
-    category: 'HUAWEI · ENERGIE ȘI STOCARE',
+    category: 'HUAWEI & DEYE · ENERGIE ȘI STOCARE',
     title: 'Soarele apune.',
     end: 'Energia continuă.',
-    body: 'Producție, stocare, consum. Explorează cum se leagă bateriile LUNA2000, invertoarele și monitorizarea FusionSolar într-un sistem ales pentru casa ta.',
+    body: 'Producție, stocare, consum. Huawei FusionSolar și Deye oferă opțiuni pentru energia casei tale. Alegem invertorul, bateria și monitorizarea în funcție de proiect și de compatibilitatea echipamentelor.',
     features: [
       {
         title: 'Stocare rezidențială',
-        body: 'Energia produsă în timpul zilei poate fi păstrată pentru un consum ulterior.',
+        body: 'Baterii Huawei LUNA2000 sau Deye ESS pentru a păstra energia zilei și a o folosi mai târziu.',
       },
       {
-        title: 'Conversie și control',
-        body: 'Invertorul conectează producția fotovoltaică la utilizarea energiei în locuință.',
+        title: 'Invertoare hibride',
+        body: 'Huawei SUN2000 și invertoare hibride Deye, selectate împreună cu baterii compatibile.',
       },
       {
         title: 'Monitorizare',
-        body: 'Urmărește producția și consumul pentru a înțelege cum funcționează sistemul.',
+        body: 'FusionSolar sau Deye Cloud: urmărește producția, stocarea și consumul în platforma sistemului ales.',
       },
     ],
     imageAlt: 'Baterie rezidențială Huawei LUNA2000 S1',
-    detailAlt: 'Invertor Huawei SUN2000 MAP0',
+    detailAlt: 'Invertor hibrid Deye, imagine din prezentarea producătorului',
   },
   {
     category: 'SMART HOME ȘI INSTALAȚII ELECTRICE',
     title: 'Un gest mic.',
     end: 'O casă care răspunde.',
-    body: 'Lumina potrivită, temperatura dorită, draperiile care urmăresc programul tău. Automatizările pornesc de la rutinele tale și de la o instalație electrică bine proiectată.',
+    body: 'Lumina potrivită, draperii automate și acces controlat. Echipamentele Case Smart și soluțiile de securitate Genway completează o instalație electrică bine proiectată, în jurul rutinei tale.',
     features: [
       {
         title: 'Control tactil',
@@ -319,8 +395,12 @@ const ro = [
         body: 'Senzori, relee și control pentru iluminat, temperatură și draperii.',
       },
       {
-        title: 'Baza electrică',
-        body: 'Circuite, protecții și echipamente selectate pentru proiect și compatibilitatea sistemului.',
+        title: 'Supraveghere și alarmă',
+        body: 'Camere video și sisteme de alarmă din portofoliul Genway, alese pentru spațiile de protejat.',
+      },
+      {
+        title: 'Acces și interfonie',
+        body: 'Videointerfoane, control de acces și automatizări pentru porți batante sau culisante.',
       },
     ],
     imageAlt: 'Concept de locuință inteligentă cu întrerupător tactil și draperii automatizate',
@@ -330,7 +410,7 @@ const ro = [
     category: 'FOTOVOLTAICE ȘI ENERGIE REGENERABILĂ',
     title: 'Mai mult soare.',
     end: 'Mai multe posibilități.',
-    body: 'Panourile sunt începutul. Invertoarele, stocarea, structurile de montaj și conexiunile completează un sistem fotovoltaic adaptat acoperișului și consumului tău.',
+    body: 'Panourile sunt începutul. Cu echipamente SolarHev și Genway, producția, stocarea și încărcarea mașinii electrice pot fi planificate în jurul acoperișului și consumului tău.',
     features: [
       {
         title: 'Captează',
@@ -344,9 +424,35 @@ const ro = [
         title: 'Conectează',
         body: 'Montaj, cablare și protecții: detaliile care leagă întregul sistem.',
       },
+      {
+        title: 'Încarcă',
+        body: 'Stații de încărcare pentru mașini electrice din oferta Genway, dimensionate pentru instalația disponibilă.',
+      },
     ],
     imageAlt: 'Panouri fotovoltaice la apus, imagine de prezentare SolarHev',
     detailAlt: 'Panouri fotovoltaice din prezentarea SolarHev',
+  },
+  {
+    category: 'MATERIALE DE CONSTRUCȚII ȘI FINISAJE',
+    title: 'O casă bună.',
+    end: 'Strat cu strat.',
+    body: 'Eficiența începe cu materialele potrivite. MaxBau și Bimicat Construct aduc în portofoliu soluții pentru construcție și amenajare, de la lemn și izolație la finisaje și echipamente sanitare.',
+    features: [
+      {
+        title: 'Lemn și structură',
+        body: 'Lemn pentru construcții și plăci OSB, alături de materiale pentru zidărie din oferta MaxBau.',
+      },
+      {
+        title: 'Izolații și finisaje',
+        body: 'Vată minerală, sisteme de gips-carton, pardoseli și finisaje MaxBau pentru anvelopă și interior.',
+      },
+      {
+        title: 'Materiale și sanitare',
+        body: 'Materiale de construcții, lemn și echipamente sanitare Bimicat Construct, selectate pentru proiect.',
+      },
+    ],
+    imageAlt: 'Imagine conceptuală cu lemn pentru construcții și plăci OSB',
+    detailAlt: 'Imagine conceptuală cu lavoar, baterie și accesorii sanitare',
   },
 ];
 const en = [
@@ -414,32 +520,32 @@ const en = [
     detailAlt: 'Stretch ceiling finish concepts',
   },
   {
-    category: 'HUAWEI · ENERGY AND STORAGE',
+    category: 'HUAWEI & DEYE · ENERGY AND STORAGE',
     title: 'The sun sets.',
     end: 'The energy stays.',
-    body: 'Generation, storage, consumption. Explore how LUNA2000 batteries, inverters and FusionSolar monitoring connect in a system selected for your home.',
+    body: 'Generation, storage, consumption. Huawei FusionSolar and Deye offer options for your home’s energy. Inverters, batteries and monitoring are selected for your project and equipment compatibility.',
     features: [
       {
         title: 'Residential storage',
-        body: 'Energy generated during the day can be stored for use later.',
+        body: 'Huawei LUNA2000 or Deye ESS batteries store daytime generation for use later.',
       },
       {
-        title: 'Conversion and control',
-        body: 'The inverter connects photovoltaic generation to energy use in your home.',
+        title: 'Hybrid inverters',
+        body: 'Huawei SUN2000 and Deye hybrid inverters, selected alongside compatible batteries.',
       },
       {
         title: 'Monitoring',
-        body: 'Follow generation and consumption to understand how the system works.',
+        body: 'FusionSolar or Deye Cloud: follow generation, storage and consumption in your chosen system’s platform.',
       },
     ],
     imageAlt: 'Huawei LUNA2000 S1 residential battery',
-    detailAlt: 'Huawei SUN2000 MAP0 inverter',
+    detailAlt: 'Deye hybrid inverter, manufacturer presentation image',
   },
   {
     category: 'SMART HOME AND ELECTRICAL SYSTEMS',
     title: 'One small gesture.',
     end: 'A home that responds.',
-    body: 'The right light, your favourite temperature, curtains that follow your schedule. Automation starts with your routines and a well-designed electrical installation.',
+    body: 'The right light, automated curtains and controlled access. Case Smart equipment and Genway security solutions complement a well-designed electrical installation, built around your routines.',
     features: [
       {
         title: 'Touch control',
@@ -450,8 +556,12 @@ const en = [
         body: 'Sensors, relays and controls for lighting, temperature and curtains.',
       },
       {
-        title: 'The electrical foundation',
-        body: 'Circuits, protection and equipment selected for the project and system compatibility.',
+        title: 'Surveillance and alarms',
+        body: 'Video cameras and alarm systems from Genway’s range, selected for the spaces you want to protect.',
+      },
+      {
+        title: 'Access and intercoms',
+        body: 'Video intercoms, access control and automation for swing or sliding gates.',
       },
     ],
     imageAlt: 'Smart home concept with touch control and automated blinds',
@@ -461,7 +571,7 @@ const en = [
     category: 'PHOTOVOLTAICS AND RENEWABLE ENERGY',
     title: 'More sunlight.',
     end: 'More possibilities.',
-    body: 'Panels are the beginning. Inverters, storage, mounting structures and connections complete a photovoltaic system adapted to your roof and energy use.',
+    body: 'Panels are the beginning. SolarHev and Genway equipment lets you plan generation, storage and electric vehicle charging around your roof and energy use.',
     features: [
       {
         title: 'Capture',
@@ -472,9 +582,35 @@ const en = [
         title: 'Connect',
         body: 'Mounting, cabling and protection: the details that bring the whole system together.',
       },
+      {
+        title: 'Charge',
+        body: 'Electric vehicle charging stations from Genway’s range, sized for the available electrical installation.',
+      },
     ],
     imageAlt: 'Solar panels at sunset, SolarHev presentation image',
     detailAlt: 'Photovoltaic panels presented by SolarHev',
+  },
+  {
+    category: 'CONSTRUCTION MATERIALS AND FINISHES',
+    title: 'A better home.',
+    end: 'Layer by layer.',
+    body: 'Efficiency starts with the right materials. MaxBau and Bimicat Construct expand the portfolio with building and finishing solutions, from timber and insulation to finishes and sanitary equipment.',
+    features: [
+      {
+        title: 'Timber and structure',
+        body: 'Construction timber and OSB boards, alongside masonry materials from MaxBau’s range.',
+      },
+      {
+        title: 'Insulation and finishes',
+        body: 'MaxBau mineral wool, plasterboard systems, flooring and finishes for the building envelope and interior.',
+      },
+      {
+        title: 'Materials and sanitary',
+        body: 'Bimicat Construct construction materials, timber and sanitary equipment, selected for your project.',
+      },
+    ],
+    imageAlt: 'Concept image of construction timber and OSB boards',
+    detailAlt: 'Concept image of a washbasin, mixer tap and sanitary fittings',
   },
 ];
 export const stories: Record<Language, readonly Story[]> = {

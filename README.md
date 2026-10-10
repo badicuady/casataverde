@@ -24,10 +24,10 @@ Build output: `dist/casa-ta-verde/browser`. Deploy its contents to a static host
 ## Experience
 
 - Architectural hero with a 2D canvas energy ribbon and parallax.
-- Six galleries with three conceptual views each, thumbnails, previous/next and keyboard navigation.
-- Six descriptive category stories: roofing, climate/hot water, stretch ceilings, Huawei storage, smart home/electrical installations, photovoltaics.
-- Source images from Ferroli, BILKA, Case Smart, SolarHev and Huawei, plus clearly labeled ceiling/smart-home concepts.
-- Seamless six-brand marquee; pause on focus, hover, offscreen and hidden tabs.
+- Seven galleries with three conceptual views each, thumbnails, previous/next and keyboard navigation.
+- Seven descriptive category stories: roofing, climate/hot water, stretch ceilings, Huawei/Deye storage, smart home/security, photovoltaics/EV charging, and construction materials/finishes.
+- Source images from Ferroli, BILKA, Case Smart, SolarHev, Huawei, Deye and Genway, plus clearly labeled ceiling/smart-home/materials concepts.
+- Seamless ten-partner marquee including MaxBau and Bimicat Construct; pause on focus, hover, offscreen and hidden tabs.
 - Ecosystem directory with combined category/search signals, diacritic-insensitive search, empty/reset states, external source links and GSAP FLIP layout transitions.
 - A lazy-loaded Three.js particle torus with scroll-controlled rotation, a custom point shader and a static fallback if WebGL is unavailable.
 - Complete Romanian/English content, persisted language, document metadata and mobile navigation.
@@ -63,7 +63,7 @@ The original galleries remain placeholder sheets, each with three horizontal row
 
 ## Verification and documentation
 
-Playwright covers all 18 gallery states, language/WhatsApp, category/search combinations, rapid filtering, empty/reset, source links, image loading, 320–1536px layouts, parallax, pause, reduced motion, marquee focus, WebGL fallback and explicit teardown hooks (geometry/material disposal, cancelled RAF and zero remaining ScrollTriggers). Teardown checks use Angular's development debug API; they do not add production test hooks. Tests do not send messages or verify WhatsApp account registration.
+Playwright covers all 21 gallery states, language/WhatsApp, category/search combinations (including partners in multiple categories), rapid filtering, empty/reset, source links, image loading, 320–1536px layouts, parallax, pause, reduced motion, marquee focus, WebGL fallback and explicit teardown hooks (geometry/material disposal, cancelled RAF and zero remaining ScrollTriggers). Teardown checks use Angular's development debug API; they do not add production test hooks. Tests do not send messages or verify WhatsApp account registration.
 
 The Browser plugin was unavailable, so browser verification uses regular Playwright. Serena pattern navigation was used; symbolic language-server initialization was unavailable. Context7 resolver calls returned `USER_NOT_LOGGED_IN` / connector not connected; official documentation was used instead:
 

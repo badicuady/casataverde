@@ -31,10 +31,10 @@ export const categories: Record<Language, readonly Category[]> = {
     },
     {
       id: 'storage',
-      name: 'Huawei: energie & stocare',
+      name: 'Huawei & Deye: stocare',
       title: 'Energia zilei. Păstrată pentru tine.',
       description:
-        'Baterii și soluții solare Huawei. Imaginile sunt ilustrative și nu reprezintă modele Huawei.',
+        'Baterii, invertoare hibride și monitorizare Huawei FusionSolar sau Deye, alese în funcție de proiect. Imagini conceptuale.',
       slides: ['Stocare rezidențială', 'Invertoare solare', 'Energie integrată'],
     },
     {
@@ -42,7 +42,7 @@ export const categories: Record<Language, readonly Category[]> = {
       name: 'Smart Home & electric',
       title: 'Casa care ține pasul cu tine.',
       description:
-        'Automatizări Smart Home, instalații electrice moderne și echipamente pentru o casă conectată.',
+        'Control inteligent Case Smart, videointerfoane, supraveghere video, alarme și automatizări de porți Genway.',
       slides: ['Control inteligent', 'Întrerupătoare și prize', 'Tablouri electrice'],
     },
     {
@@ -50,8 +50,16 @@ export const categories: Record<Language, readonly Category[]> = {
       name: 'Sisteme fotovoltaice',
       title: 'Un nou început. Cu energie solară.',
       description:
-        'Echipamente complete pentru sisteme fotovoltaice și soluții de energie regenerabilă.',
+        'Panouri, acumulatori și echipamente fotovoltaice SolarHev și Genway, completate de stații de încărcare pentru mașini electrice.',
       slides: ['Panouri fotovoltaice', 'Structuri de montaj', 'Conversie și conectare'],
+    },
+    {
+      id: 'materials',
+      name: 'Construcții & finisaje',
+      title: 'O casă bună. Strat cu strat.',
+      description:
+        'Lemn, izolații, zidărie și finisaje MaxBau, alături de materiale de construcții, lemn și echipamente sanitare Bimicat Construct.',
+      slides: ['Lemn și plăci OSB', 'Izolații și zidărie', 'Echipamente sanitare'],
     },
   ],
   en: [
@@ -78,10 +86,10 @@ export const categories: Record<Language, readonly Category[]> = {
     },
     {
       id: 'storage',
-      name: 'Huawei: energy & storage',
+      name: 'Huawei & Deye: storage',
       title: 'Today’s energy. Saved for you.',
       description:
-        'Huawei batteries and solar solutions. Images are illustrative and do not depict Huawei models.',
+        'Batteries, hybrid inverters and monitoring from Huawei FusionSolar or Deye, selected for your project. Concept images.',
       slides: ['Home battery storage', 'Solar inverters', 'Integrated energy'],
     },
     {
@@ -89,15 +97,24 @@ export const categories: Record<Language, readonly Category[]> = {
       name: 'Smart Home & electrical',
       title: 'A home that moves with you.',
       description:
-        'Smart Home automation, modern electrical installations and equipment for a connected home.',
+        'Case Smart controls, plus Genway video intercoms, video surveillance, alarms and gate automation.',
       slides: ['Smart controls', 'Switches and sockets', 'Distribution boards'],
     },
     {
       id: 'solar',
       name: 'Photovoltaic systems',
       title: 'A new beginning. Powered by sunlight.',
-      description: 'Complete equipment for photovoltaic systems and renewable energy solutions.',
+      description:
+        'SolarHev and Genway panels, batteries and photovoltaic equipment, complemented by electric vehicle charging stations.',
       slides: ['Photovoltaic panels', 'Mounting systems', 'Conversion and connection'],
+    },
+    {
+      id: 'materials',
+      name: 'Construction & finishes',
+      title: 'A better home. Layer by layer.',
+      description:
+        'MaxBau timber, insulation, masonry and finishes, alongside construction materials, timber and sanitary equipment from Bimicat Construct.',
+      slides: ['Timber and OSB boards', 'Insulation and masonry', 'Sanitary equipment'],
     },
   ],
 };
@@ -113,9 +130,9 @@ export const copy = {
     ecosystem: 'O casă. Un ecosistem complet.',
     heading: 'Tot ce are nevoie',
     headingEnd: 'o casă de mâine.',
-    vision: 'Șase direcții. Aceeași viziune: confort, eficiență și energie curată.',
+    vision: 'Șapte direcții. Aceeași viziune: confort, eficiență și energie curată.',
     conceptual: 'Imagine conceptuală',
-    placeholder: 'Selecție demonstrativă · Produsele vor fi adăugate în curând.',
+    placeholder: 'Imagini conceptuale · Echipamentele se aleg în funcție de proiect.',
     aboutTitle: 'Tehnologia potrivită.',
     aboutEnd: 'Pentru felul tău de a locui.',
     aboutText:
@@ -149,9 +166,9 @@ export const copy = {
     ecosystem: 'One home. A complete ecosystem.',
     heading: 'Everything a home',
     headingEnd: 'of tomorrow needs.',
-    vision: 'Six directions. One vision: comfort, efficiency and clean energy.',
+    vision: 'Seven directions. One vision: comfort, efficiency and clean energy.',
     conceptual: 'Concept image',
-    placeholder: 'Illustrative selection · Products coming soon.',
+    placeholder: 'Concept images · Equipment is selected for each project.',
     aboutTitle: 'The right technology.',
     aboutEnd: 'For the way you live.',
     aboutText:

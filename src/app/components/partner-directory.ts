@@ -37,6 +37,7 @@ export class PartnerDirectory implements AfterViewInit, OnDestroy {
   readonly activeCategory = signal<PartnerCategory>('all');
   readonly searchTerm = signal('');
   readonly copy = computed(() => ecosystemCopy[this.language()]);
+  readonly partnerCount = partners.length;
   readonly categories: readonly PartnerCategory[] = [
     'all',
     'roof',
@@ -44,6 +45,7 @@ export class PartnerDirectory implements AfterViewInit, OnDestroy {
     'interior',
     'smart',
     'energy',
+    'materials',
   ];
   readonly filteredPartners = computed(() => {
     const query = normalize(this.searchTerm().trim());
@@ -51,9 +53,11 @@ export class PartnerDirectory implements AfterViewInit, OnDestroy {
     const lang = this.language();
     return partners.filter(
       (p) =>
-        (category === 'all' || p.category === category) &&
+        (category === 'all' ||
+          p.category === category ||
+          p.additionalCategories?.includes(category)) &&
         normalize(
-          `${p.name} ${p.description[lang]} ${p.keywords} ${this.copy().filters[p.category]}`,
+          `${p.name} ${p.description[lang]} ${p.keywords} ${[p.category, ...(p.additionalCategories ?? [])].map((key) => this.copy().filters[key]).join(' ')}`,
         ).includes(query),
     );
   });

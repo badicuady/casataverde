@@ -101,11 +101,7 @@
     />
     <p class="placeholder-note">{{ text().placeholder }}</p>
   </section>
-  <app-category-stories
-    [language]="language()"
-    [whatsappUrl]="whatsappUrl()"
-    [paused]="paused()"
-  />
+  <app-category-stories [language]="language()" [whatsappUrl]="whatsappUrl()" [paused]="paused()" />
   <app-energy-field [language]="language()" [paused]="paused()" />
   <app-partner-directory
     [language]="language()"
@@ -138,6 +134,8 @@
         <a class="phone" [href]="whatsappUrl()" target="_blank" rel="noopener noreferrer"
           >+40 723 200 709</a
         >
+        <a class="phone" href="tel:+40768004004">+40 768 004 004</a>
+        <a class="phone" href="mailto:casataverde.ro@gmail.com">casataverde.ro@gmail.com</a>
       </div>
     </div>
   </section>

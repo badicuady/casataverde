@@ -21,6 +21,7 @@
 }
 .directory {
   padding-block: 110px 120px;
+  container-type: inline-size;
 }
 .eyebrow {
   font-size: 11px;
@@ -144,14 +145,38 @@ input::-webkit-search-cancel-button {
   text-transform: uppercase;
 }
 .partner-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
-  gap: 22px;
+  --columns: 1;
+  --partner-gap: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--partner-gap);
   min-height: 344px;
   align-items: start;
+  align-content: start;
 }
 .partner-item {
   min-width: 0;
+  flex: 0 0 calc((100% - (var(--columns) - 1) * var(--partner-gap)) / var(--columns));
+}
+@container (min-width: 782px) {
+  .partner-grid {
+    --columns: 2;
+  }
+}
+@container (min-width: 1184px) {
+  .partner-grid {
+    --columns: 3;
+  }
+}
+/* Preserve full-width single results and equal halves for two filtered results. */
+.partner-grid:has(> .partner-item:only-child) {
+  --columns: 1;
+}
+@container (min-width: 782px) {
+  .partner-grid:has(> .partner-item:nth-child(2):last-child) {
+    --columns: 2;
+  }
 }
 .partner-card {
   position: relative;
@@ -239,6 +264,18 @@ input::-webkit-search-cancel-button {
   font-weight: 700;
   letter-spacing: -0.035em;
 }
+[data-partner='bimicat'] .brand-name {
+  font-size: 23px;
+}
+[data-partner='deye'] .brand-logo {
+  height: 32px;
+}
+[data-partner='deye'] .brand-logo {
+  filter: brightness(0) invert(1);
+}
+[data-partner='genway'] .brand-logo {
+  filter: grayscale(1) invert(1) brightness(1.4);
+}
 .brand-subtitle {
   font-size: 11px;
   margin-top: 5px;
@@ -280,7 +317,7 @@ input::-webkit-search-cancel-button {
   border-radius: 0 0 10px 0;
 }
 .empty-state {
-  grid-column: 1 / -1;
+  width: 100%;
   text-align: center;
   padding: 72px 24px;
   border: 1px dashed #75e7f040;
@@ -330,7 +367,7 @@ input::-webkit-search-cancel-button {
     display: none;
   }
   .partner-grid {
-    gap: 16px;
+    --partner-gap: 16px;
   }
   .partner-description {
     max-width: 250px;

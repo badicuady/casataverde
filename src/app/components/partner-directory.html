@@ -49,7 +49,7 @@
   </div>
   <div class="directory-meta">
     <span aria-live="polite" aria-atomic="true"
-      >{{ filteredPartners().length }} / 6 {{ copy().results }}</span
+      >{{ filteredPartners().length }} / {{ partnerCount }} {{ copy().results }}</span
     ><span>CASA TA VERDE / {{ copy().label }}</span>
   </div>
   <div class="partner-grid">
@@ -62,7 +62,9 @@
       >
         <a
           class="partner-card"
-          [class.product-card]="['ferroli', 'case-smart', 'huawei'].includes(partner.id)"
+          [class.product-card]="
+            ['ferroli', 'case-smart', 'huawei', 'deye', 'genway'].includes(partner.id)
+          "
           [href]="partner.url.startsWith('#') ? partner.url : whatsappUrl()"
           [attr.target]="partner.id === 'tero' ? null : '_blank'"
           [attr.rel]="partner.id === 'tero' ? null : 'noopener noreferrer'"
@@ -94,7 +96,12 @@
                 <span class="brand-subtitle">FusionSolar</span>
               }
             </div>
-            <p class="category-label">{{ copy().filters[partner.category] }}</p>
+            <p class="category-label">
+              {{ copy().filters[partner.category] }}
+              @if (partner.id === 'genway') {
+                · {{ copy().filters.smart }}
+              }
+            </p>
             <p class="partner-description">{{ partner.description[language()] }}</p>
             <span class="card-link">{{ copy().explore }}<app-icon /></span>
           </div>

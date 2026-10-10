@@ -29,7 +29,7 @@ import { ecosystemCopy } from '../data/ecosystem';
       </h2>
       <p class="field-description">{{ copy().connection }}</p>
       <a href="#ecosystem">{{ copy().directory }}<app-icon /></a>
-      <div class="field-index" aria-hidden="true"><span>01—06</span><span>CASA TA VERDE</span></div>
+      <div class="field-index" aria-hidden="true"><span>01—07</span><span>CASA TA VERDE</span></div>
     </div>
     <div #viewport class="field-viewport" [class.loaded]="ready()" aria-hidden="true">
       <div class="field-fallback"><span></span><span></span><span></span></div>

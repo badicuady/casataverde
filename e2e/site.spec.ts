@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('six galleries, all slides, keyboard navigation and independent selection', async ({
+test('seven galleries, all slides, keyboard navigation and independent selection', async ({
   page,
 }) => {
   const errors: string[] = [];
@@ -10,8 +10,8 @@ test('six galleries, all slides, keyboard navigation and independent selection',
   await expect(page.locator('h1')).toHaveText('Viitorul casei tale.Mai verde.');
   await page.locator('.hero-content .button').click();
   const tabs = page.getByRole('tab');
-  await expect(tabs).toHaveCount(6);
-  for (let i = 0; i < 6; i++) {
+  await expect(tabs).toHaveCount(7);
+  for (let i = 0; i < 7; i++) {
     await tabs.nth(i).click();
     await expect(tabs.nth(i)).toHaveAttribute('aria-selected', 'true');
     const labels = await page
@@ -37,7 +37,12 @@ test('six galleries, all slides, keyboard navigation and independent selection',
   await expect(tabs.nth(1)).toBeFocused();
   await expect(tabs.nth(1)).toHaveAttribute('aria-selected', 'true');
   await page.keyboard.press('End');
-  await expect(tabs.nth(5)).toBeFocused();
+  await expect(tabs.nth(6)).toBeFocused();
+  await expect(page.locator('.gallery-copy')).toContainText('Bimicat Construct');
+  await page.keyboard.press('ArrowRight');
+  await expect(tabs.nth(0)).toBeFocused();
+  await page.keyboard.press('ArrowLeft');
+  await expect(tabs.nth(6)).toBeFocused();
   await page.keyboard.press('Home');
   await expect(tabs.nth(0)).toBeFocused();
   expect(errors).toEqual([]);
@@ -116,7 +121,7 @@ test('responsive layout, mobile menu, assets and no horizontal overflow', async 
       true,
     );
   }
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 7; i++) {
     await page.getByRole('tab').nth(i).click();
   }
   await page.waitForLoadState('networkidle');

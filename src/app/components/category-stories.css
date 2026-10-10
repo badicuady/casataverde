@@ -67,6 +67,9 @@ figcaption {
   height: 100%;
   object-fit: contain;
 }
+.story-materials .story-detail img {
+  object-fit: cover;
+}
 .outline-number {
   position: absolute;
   left: -28px;

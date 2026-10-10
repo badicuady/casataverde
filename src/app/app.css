@@ -122,12 +122,13 @@ h1 span {
   gap: 35px;
 }
 .category-shortcuts {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  display: flex;
   width: 66%;
   max-width: 950px;
 }
 .category-shortcuts a {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -590,13 +591,13 @@ footer p {
   height: 56px;
   font-size: 16px;
   border-radius: 50%;
-  background: #128c7e;
+  background: #25d366;
   color: #fff;
   box-shadow: 0 6px 24px #0005;
   transition: background 0.2s;
 }
 .floating-whatsapp:hover {
-  background: #0d7569;
+  background: #1ebe5d;
 }
 .floating-whatsapp app-icon {
   width: 32px;

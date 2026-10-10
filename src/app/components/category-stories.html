@@ -18,7 +18,9 @@
             height="900"
           />
           <figcaption>
-            {{ story.concept || story.imageConcept ? copy().concept : story.brand }}
+            {{
+              story.concept || story.imageConcept ? copy().concept : story.imageBrand || story.brand
+            }}
           </figcaption>
         </figure>
         @if (story.id !== 'ceiling') {
@@ -31,6 +33,9 @@
               width="500"
               height="500"
             />
+            @if (story.detailBrand) {
+              <figcaption>{{ story.detailBrand }}</figcaption>
+            }
           </figure>
         }
         <span class="outline-number" aria-hidden="true">0{{ i + 1 }}</span>

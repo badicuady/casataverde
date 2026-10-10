@@ -7,11 +7,21 @@ test('directory combines category and diacritic-insensitive search, resets and t
   const directory = page.locator('#ecosystem');
   await directory.scrollIntoViewIfNeeded();
   const cards = directory.locator('.partner-item');
-  await expect(cards).toHaveCount(6);
+  await expect(cards).toHaveCount(10);
+  await expect(directory.locator('.directory-meta')).toContainText('10 / 10');
   await directory.getByRole('button', { name: 'Energie', exact: true }).click();
-  await expect(cards).toHaveCount(2);
+  await expect(cards).toHaveCount(5);
   await expect(cards.nth(0)).toHaveAttribute('data-partner', 'solarhev');
   await expect(cards.nth(1)).toHaveAttribute('data-partner', 'huawei');
+  await expect(cards.nth(2)).toHaveAttribute('data-partner', 'deye');
+  await directory.getByRole('button', { name: 'Smart Home', exact: true }).click();
+  await expect(cards).toHaveCount(2);
+  await expect(directory.locator('[data-partner="genway"]')).toBeVisible();
+  await directory.getByRole('button', { name: 'Construcții', exact: true }).click();
+  await expect(cards).toHaveCount(2);
+  await expect(cards.nth(0)).toHaveAttribute('data-partner', 'maxbau');
+  await expect(cards.nth(1)).toHaveAttribute('data-partner', 'bimicat');
+  await directory.getByRole('button', { name: 'Energie', exact: true }).click();
   const search = directory.getByRole('searchbox');
   await search.fill('HUAWEI');
   await expect(cards).toHaveCount(1);
@@ -25,15 +35,15 @@ test('directory combines category and diacritic-insensitive search, resets and t
   await expect(cards).toHaveCount(0);
   await expect(directory.locator('.empty-state')).toBeVisible();
   await directory.getByRole('button', { name: 'Resetează filtrele' }).click();
-  await expect(cards).toHaveCount(6);
+  await expect(cards).toHaveCount(10);
   await expect(search).toHaveValue('');
   await page.getByRole('button', { name: 'English', exact: true }).click();
   await expect(directory.locator('h2')).toHaveText('One ecosystem.More possibilities.');
   await expect(page.locator('#story-ceiling h2')).toHaveText('Look up.See things differently.');
   await expect(page.locator('#story-storage')).toContainText('Residential storage');
   await directory.getByRole('button', { name: 'Energy', exact: true }).click();
-  await expect(cards).toHaveCount(2);
-  await search.fill('storage');
+  await expect(cards).toHaveCount(5);
+  await search.fill('luna');
   await expect(cards).toHaveCount(1);
   await expect(cards).toHaveAttribute('data-partner', 'huawei');
 });
@@ -44,7 +54,7 @@ test('all story images load and links, responsive grids and rapid filter transit
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
   await page.goto('/');
-  for (const id of ['roof', 'climate', 'ceiling', 'storage', 'smart', 'solar']) {
+  for (const id of ['roof', 'climate', 'ceiling', 'storage', 'smart', 'solar', 'materials']) {
     await page.locator('#story-' + id).scrollIntoViewIfNeeded();
     await expect(page.locator('#story-' + id + ' h2')).toBeVisible();
     await expect
@@ -72,11 +82,11 @@ test('all story images load and links, responsive grids and rapid filter transit
   const positions = await directory
     .locator('.partner-item')
     .evaluateAll((items) => items.map((item) => Math.round(item.getBoundingClientRect().top)));
-  expect(new Set(positions).size).toBe(2);
+  expect(new Set(positions).size).toBe(4);
   for (const category of ['Energie', 'Interior', 'Smart Home', 'Climatizare', 'Toate']) {
     await directory.getByRole('button', { name: category, exact: true }).click({ force: true });
   }
-  await expect(directory.locator('.partner-item')).toHaveCount(6);
+  await expect(directory.locator('.partner-item')).toHaveCount(10);
   await expect
     .poll(() =>
       directory

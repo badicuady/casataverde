@@ -133,11 +133,17 @@ import { MotionScope } from './motion-scope';
         font-size: 10px;
         letter-spacing: 0.15em;
       }
+      .marquee-lane [data-brand='bimicat'] span {
+        font-size: 19px;
+      }
       .marquee-lane [data-brand='huawei'] img {
         height: 31px;
       }
       .marquee-lane [data-brand='solarhev'] img {
         filter: brightness(0) invert(1);
+      }
+      .marquee-lane [data-brand='genway'] img {
+        filter: grayscale(1) invert(1) brightness(1.4);
       }
       .still .marquee-track {
         width: 100%;

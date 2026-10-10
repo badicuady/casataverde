@@ -42,13 +42,14 @@ export class ProductGallery {
     this.slides.update((current) => ({ ...current, [this.active()]: (index + 3) % 3 }));
   }
   onTabKey(event: KeyboardEvent): void {
+    const count = this.items().length;
     const keys: Record<string, number> = {
-      ArrowDown: (this.active() + 1) % 6,
-      ArrowRight: (this.active() + 1) % 6,
-      ArrowUp: (this.active() + 5) % 6,
-      ArrowLeft: (this.active() + 5) % 6,
+      ArrowDown: (this.active() + 1) % count,
+      ArrowRight: (this.active() + 1) % count,
+      ArrowUp: (this.active() + count - 1) % count,
+      ArrowLeft: (this.active() + count - 1) % count,
       Home: 0,
-      End: 5,
+      End: count - 1,
     };
     if (!(event.key in keys)) return;
     event.preventDefault();
