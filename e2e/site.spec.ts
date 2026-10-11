@@ -72,7 +72,7 @@ test('language persists, translates content and encodes the correct WhatsApp enq
   await expect(page.locator('.whatsapp')).toContainText('Scrie-ne pe WhatsApp');
   await expect(page.locator('meta[name="description"]')).toHaveAttribute(
     'content',
-    /Consultanță pentru case la cheie în Brașov/,
+    /Planifică locuința ta cu Casa Ta Verde: consultanță/,
   );
 });
 

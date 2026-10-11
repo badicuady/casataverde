@@ -128,7 +128,7 @@ export const copy = {
     intro: 'Consultanță și management de proiect în Brașov și împrejurimi.',
     primaryCta: 'Discută proiectul',
     metaDescription:
-      'Consultanță pentru case la cheie în Brașov și împrejurimi. Management de proiect și intermediere pentru casa ta. Discută cu noi pe WhatsApp.',
+      'Planifică locuința ta cu Casa Ta Verde: consultanță pentru acoperișuri, climatizare, fotovoltaice și smart home în Brașov. Discută cu noi despre proiectul tău.',
     explore: 'Explorează soluțiile',
     ecosystem: 'Un partener pentru proiectul casei tale.',
     heading: 'Soluțiile casei tale.',
@@ -156,7 +156,7 @@ export const copy = {
     menu: 'Deschide meniul',
     close: 'Închide meniul',
     language: 'Limba site-ului',
-    title: 'Consultanță case la cheie Brașov | Casa Ta Verde',
+    title: 'Consultanță pentru case la cheie Brașov | Casa Ta Verde',
   },
   en: {
     solutions: 'Solutions',

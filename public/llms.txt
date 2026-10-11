@@ -1,0 +1,27 @@
+# Casa Ta Verde
+
+> Casa Ta Verde is a Romanian home-project consultancy serving Brașov and nearby communities. Its residential solutions cover roofing, HVAC, stretch ceilings, solar photovoltaic systems, battery storage, smart home automation, and electrical systems.
+
+The website's primary language is Romanian. The links below identify service sections on the homepage.
+
+## Homepage Overview
+
+- [Casa Ta Verde](https://www.casataverde.ro/): Residential construction and renovation consultancy, project coordination, and integrated home solutions.
+
+## Sisteme Fotovoltaice — Solar Systems
+
+- [Residential Solar Systems](https://www.casataverde.ro/#story-solar): Solar panel and inverter selection based on household consumption, roof area, and orientation, with battery storage and EV charging options.
+
+## Climatizare & Smart Home Integration
+
+- [HVAC and Indoor Climate](https://www.casataverde.ro/#story-climate): Heat pumps, air conditioning, and domestic hot water planning for residential comfort.
+- [Smart Home and Electrical Systems](https://www.casataverde.ro/#story-smart): Lighting, curtain and temperature control, intercoms, surveillance, and automated access.
+
+## Huawei Solar & Energy Storage Solutions
+
+- [Huawei and Deye Energy Storage](https://www.casataverde.ro/#story-storage): Huawei LUNA2000 batteries, SUN2000 inverters, and FusionSolar monitoring, alongside Deye storage options selected for equipment compatibility.
+
+## Acoperișuri & Tavane Extensibile — Roofing & Stretch Ceilings
+
+- [Complete Roofing Systems](https://www.casataverde.ro/#story-roof): Metal roofing, gutters, downpipes, membranes, and accessories selected as a coordinated roof system.
+- [Stretch Ceilings](https://www.casataverde.ro/#story-ceiling): Matte, glossy, and translucent stretch ceiling finishes with integrated lighting concepts.

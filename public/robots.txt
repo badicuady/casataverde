@@ -1,0 +1,33 @@
+# Casa Ta Verde
+# Usage policy:
+# search=yes permits search indexing, links and excerpts.
+# ai-input=yes permits retrieval and grounding for live AI answers.
+# ai-train=no prohibits use for model training and fine-tuning.
+
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+
+# Search indexing and user-directed retrieval.
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
+
+# Training crawlers and training-related product controls.
+# Google-Extended controls both Gemini training and grounding.
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+User-agent: Bytespider
+Disallow: /
+
+Sitemap: https://www.casataverde.ro/sitemap.xml

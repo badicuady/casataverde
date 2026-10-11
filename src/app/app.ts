@@ -78,13 +78,25 @@ export class App implements OnInit, OnDestroy {
       this.zone.runOutsideAngular(() => ScrollTrigger.refresh());
     });
     effect(() => {
-      document.documentElement.lang = this.language();
-      document.title = this.text().title;
-      document
-        .querySelector('meta[name="description"]')
-        ?.setAttribute('content', this.text().metaDescription);
+      const language = this.language();
+      const text = this.text();
+      document.documentElement.lang = language;
+      document.title = text.title;
+      const metadata = {
+        'meta[name="description"]': text.metaDescription,
+        'meta[property="og:title"]': text.title,
+        'meta[property="og:description"]': text.metaDescription,
+        'meta[property="og:locale"]': language === 'ro' ? 'ro_RO' : 'en_GB',
+        'meta[property="og:image:alt"]':
+          language === 'ro'
+            ? 'Casa Ta Verde — soluții pentru locuințe'
+            : 'Casa Ta Verde — home solutions',
+      };
+      for (const [selector, content] of Object.entries(metadata)) {
+        document.querySelector(selector)?.setAttribute('content', content);
+      }
       try {
-        localStorage.setItem('casa-ta-verde-language', this.language());
+        localStorage.setItem('casa-ta-verde-language', language);
       } catch {
         /* Storage is optional. */
       }
