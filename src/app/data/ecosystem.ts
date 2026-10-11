@@ -228,6 +228,7 @@ export interface Story {
   title: string;
   end: string;
   body: string;
+  cta: string;
   features: readonly { title: string; body: string }[];
   brand: string;
   source: string;
@@ -300,21 +301,21 @@ const storyMedia = [
 const ro = [
   {
     category: 'ACOPERIȘURI COMPLETE',
-    title: 'Prima linie de protecție.',
-    end: 'Ultimul detaliu de design.',
-    body: 'O casă începe cu un acoperiș bine gândit. Învelitoarea, evacuarea apei și accesoriile formează un sistem în care fiecare detaliu își are locul.',
+    title: 'Un acoperiș potrivit.',
+    end: 'O casă protejată.',
+    body: 'Te ajutăm să alegi învelitoarea, evacuarea apei și accesoriile ca un sistem complet, potrivit casei tale.',
     features: [
       {
         title: 'Învelitori metalice',
-        body: 'Țiglă metalică și profile cu linii contemporane, în culori și finisaje care definesc arhitectura.',
+        body: 'Consultanță pentru alegerea învelitorii, în funcție de proiect și buget.',
       },
       {
         title: 'Sisteme pluviale',
-        body: 'Jgheaburi și burlane alese împreună cu învelitoarea, pentru un ansamblu coerent.',
+        body: 'Jgheaburi și burlane analizate împreună cu învelitoarea, pentru evacuarea apei.',
       },
       {
         title: 'Accesorii și finisaje',
-        body: 'Coame, dolii, membrane și elemente de închidere care completează proiectul.',
+        body: 'Sprijin în alegerea membranelor și accesoriilor necesare unui sistem complet.',
       },
     ],
     imageAlt: 'Arhitectură rezidențială cu acoperiș metalic BILKA',
@@ -322,21 +323,21 @@ const ro = [
   },
   {
     category: 'CONFORT INTERIOR',
-    title: 'Anotimpurile se schimbă.',
-    end: 'Confortul rămâne.',
-    body: 'Dimineți de iarnă, după-amiezi de vară, rutina de fiecare zi. Încălzirea, răcirea și apa caldă se aleg în funcție de spațiu, izolație și felul în care locuiești.',
+    title: 'Confort în fiecare cameră.',
+    end: 'Soluții pentru casa ta.',
+    body: 'Te ghidăm în alegerea încălzirii, răcirii și apei calde, în funcție de locuință și de nevoile tale.',
     features: [
       {
         title: 'Pompe de căldură',
-        body: 'Un punct de plecare pentru încălzire și, în funcție de sistem, răcire și apă caldă.',
+        body: 'Opțiuni de încălzire discutate în raport cu suprafața și izolația casei.',
       },
       {
         title: 'Climatizare',
-        body: 'Soluții pentru temperatură interioară, adaptate camerelor și utilizării lor.',
+        body: 'Sprijin pentru alegerea aerului condiționat potrivit camerelor și utilizării lor.',
       },
       {
         title: 'Apă caldă menajeră',
-        body: 'Echipamente și rezervoare dimensionate pentru ritmul și nevoile locuinței.',
+        body: 'Consultanță pentru integrarea apei calde în soluția de confort a locuinței.',
       },
     ],
     imageAlt: 'Interior luminos din prezentarea Ferroli',
@@ -382,25 +383,21 @@ const ro = [
   },
   {
     category: 'SMART HOME ȘI INSTALAȚII ELECTRICE',
-    title: 'Un gest mic.',
-    end: 'O casă care răspunde.',
-    body: 'Lumina potrivită, draperii automate și acces controlat. Echipamentele Case Smart și soluțiile de securitate Genway completează o instalație electrică bine proiectată, în jurul rutinei tale.',
+    title: 'Mai puține gesturi.',
+    end: 'Mai mult control.',
+    body: 'Te ajutăm să alegi automatizări utile pentru iluminat, draperii și acces, pornind de la felul în care folosești casa.',
     features: [
       {
-        title: 'Control tactil',
-        body: 'Întrerupătoare și prize cu finisaje din sticlă, integrate în designul interior.',
+        title: 'Control la îndemână',
+        body: 'Opțiuni de întrerupătoare și comenzi adaptate spațiului și rutinei tale.',
       },
       {
         title: 'Scenarii inteligente',
-        body: 'Senzori, relee și control pentru iluminat, temperatură și draperii.',
+        body: 'Consultanță pentru iluminat, draperii și temperatură, cu funcții alese după nevoi.',
       },
       {
-        title: 'Supraveghere și alarmă',
-        body: 'Camere video și sisteme de alarmă din portofoliul Genway, alese pentru spațiile de protejat.',
-      },
-      {
-        title: 'Acces și interfonie',
-        body: 'Videointerfoane, control de acces și automatizări pentru porți batante sau culisante.',
+        title: 'Acces și siguranță',
+        body: 'Sprijin în alegerea interfoniei, supravegherii și automatizărilor de porți.',
       },
     ],
     imageAlt: 'Concept de locuință inteligentă cu întrerupător tactil și draperii automatizate',
@@ -408,25 +405,21 @@ const ro = [
   },
   {
     category: 'FOTOVOLTAICE ȘI ENERGIE REGENERABILĂ',
-    title: 'Mai mult soare.',
-    end: 'Mai multe posibilități.',
-    body: 'Panourile sunt începutul. Cu echipamente SolarHev și Genway, producția, stocarea și încărcarea mașinii electrice pot fi planificate în jurul acoperișului și consumului tău.',
+    title: 'Energia casei tale.',
+    end: 'Planificată după consum.',
+    body: 'Te ghidăm în alegerea unui sistem fotovoltaic potrivit acoperișului și consumului, cu opțiuni de stocare pentru energia produsă.',
     features: [
       {
-        title: 'Captează',
-        body: 'Panouri fotovoltaice alese în funcție de suprafață, orientare și proiect.',
+        title: 'Panouri potrivite',
+        body: 'Consultanță pornind de la consum, suprafața disponibilă și orientarea acoperișului.',
       },
       {
-        title: 'Transformă',
-        body: 'Invertoare și echipamente care fac energia solară utilizabilă în casă.',
+        title: 'Un sistem coerent',
+        body: 'Sprijin în alegerea panourilor, invertorului și echipamentelor compatibile.',
       },
       {
-        title: 'Conectează',
-        body: 'Montaj, cablare și protecții: detaliile care leagă întregul sistem.',
-      },
-      {
-        title: 'Încarcă',
-        body: 'Stații de încărcare pentru mașini electrice din oferta Genway, dimensionate pentru instalația disponibilă.',
+        title: 'Stocare și încărcare',
+        body: 'Opțiuni de baterii și încărcare auto analizate în contextul întregului proiect.',
       },
     ],
     imageAlt: 'Panouri fotovoltaice la apus, imagine de prezentare SolarHev',
@@ -614,6 +607,18 @@ const en = [
   },
 ];
 export const stories: Record<Language, readonly Story[]> = {
-  ro: ro.map((s, i) => ({ ...storyMedia[i], ...s })),
-  en: en.map((s, i) => ({ ...storyMedia[i], ...s })),
+  ro: ro.map((s, i) => ({
+    ...storyMedia[i],
+    ...s,
+    cta: [
+      'Discută despre acoperiș',
+      'Discută despre climatizare',
+      'Discută despre tavane',
+      'Discută despre stocare',
+      'Discută despre Smart Home',
+      'Discută despre fotovoltaice',
+      'Discută despre materiale',
+    ][i],
+  })),
+  en: en.map((s, i) => ({ ...storyMedia[i], ...s, cta: 'Discuss your project' })),
 };

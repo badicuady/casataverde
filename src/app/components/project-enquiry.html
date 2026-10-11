@@ -1,0 +1,71 @@
+<section id="enquiry" class="enquiry page-width" aria-labelledby="enquiry-heading">
+  <div>
+    <h2 id="enquiry-heading">
+      {{ copy().enquiryTitle }}<br /><span>{{ copy().enquiryEnd }}</span>
+    </h2>
+    <p class="intro">{{ copy().enquiryIntro }}</p>
+  </div>
+  <form (submit)="prepare($event)" (input)="clearPrepared($event)">
+    <div class="form-fields">
+      <label for="enquiry-name"
+        >{{ copy().name
+        }}<input id="enquiry-name" name="name" autocomplete="name" required maxlength="100"
+      /></label>
+      <label for="enquiry-phone"
+        >{{ copy().phone
+        }}<input
+          id="enquiry-phone"
+          name="phone"
+          type="tel"
+          autocomplete="tel"
+          required
+          maxlength="30"
+      /></label>
+      <label class="full-width" for="enquiry-service"
+        >{{ copy().service }}
+        <select
+          id="enquiry-service"
+          name="service"
+          [value]="service()"
+          (change)="selectService($any($event.target).value)"
+        >
+          @for (option of copy().services; track option.id) {
+            <option [value]="option.id">{{ option.name }}</option>
+          }
+        </select>
+      </label>
+      <label class="full-width" for="enquiry-locality"
+        >{{ copy().locality
+        }}<input
+          id="enquiry-locality"
+          name="locality"
+          autocomplete="address-level2"
+          required
+          maxlength="100"
+      /></label>
+      <label class="full-width" for="enquiry-message"
+        >{{ copy().message
+        }}<textarea
+          id="enquiry-message"
+          name="message"
+          rows="3"
+          maxlength="1000"
+          [placeholder]="copy().messageHint"
+        ></textarea>
+      </label>
+    </div>
+    <button class="button prepare-button" type="submit">{{ copy().prepare }}<app-icon /></button>
+    @if (prepared()) {
+      <div class="prepared-request">
+        <p role="status">{{ copy().ready }}</p>
+        <div class="send-actions">
+          <a class="send-link" [href]="whatsappUrl()" target="_blank" rel="noopener noreferrer"
+            >{{ copy().whatsapp }}<app-icon name="whatsapp"
+          /></a>
+          <a class="send-link" [href]="emailUrl()">{{ copy().email }}<app-icon /></a>
+        </div>
+        <p class="send-hint">{{ copy().sendHint }}</p>
+      </div>
+    }
+  </form>
+</section>

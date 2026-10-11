@@ -8,6 +8,7 @@ import {
   computed,
   inject,
   input,
+  output,
 } from '@angular/core';
 import { gsap } from 'gsap';
 import { Icon } from './icon';
@@ -26,6 +27,7 @@ export class CategoryStories implements AfterViewInit, OnDestroy {
   readonly language = input.required<Language>();
   readonly whatsappUrl = input.required<string>();
   readonly paused = input(false);
+  readonly serviceRequest = output<string>();
   readonly stories = computed(() => stories[this.language()]);
   readonly copy = computed(() => ecosystemCopy[this.language()]);
   private readonly host: ElementRef<HTMLElement> = inject(ElementRef);

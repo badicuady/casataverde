@@ -17,6 +17,9 @@ import { EnergyField } from './components/energy-field';
 import { Icon } from './components/icon';
 import { EnergyScene } from './components/energy-scene';
 import { ProductGallery } from './components/product-gallery';
+import { ProjectContext } from './components/project-context';
+import { ProjectEnquiry } from './components/project-enquiry';
+import { businessContact, businessIdentity } from './data/consultancy';
 import { categories, copy, Language } from './data/content';
 @Component({
   selector: 'app-root',
@@ -24,6 +27,8 @@ import { categories, copy, Language } from './data/content';
     Icon,
     EnergyScene,
     ProductGallery,
+    ProjectContext,
+    ProjectEnquiry,
     CategoryStories,
     PartnerMarquee,
     PartnerDirectory,
@@ -48,13 +53,15 @@ export class App implements OnInit, OnDestroy {
   private readonly zone = inject(NgZone);
   readonly language = signal<Language>(this.savedLanguage());
   readonly text = computed(() => copy[this.language()]);
+  readonly company = businessIdentity;
   readonly categories = computed(() => categories[this.language()]);
   readonly activeCategory = signal(0);
   readonly menuOpen = signal(false);
   readonly headerScrolled = signal(false);
   readonly paused = signal(false);
   readonly whatsappUrl = computed(
-    () => `https://wa.me/40723200709?text=${encodeURIComponent(this.text().message)}`,
+    () =>
+      `https://wa.me/${businessContact.whatsapp}?text=${encodeURIComponent(this.text().message)}`,
   );
   private readonly updateHeaderScrolled = (): void => {
     const scrolled = window.scrollY > 0;
@@ -73,7 +80,7 @@ export class App implements OnInit, OnDestroy {
       document.title = this.text().title;
       document
         .querySelector('meta[name="description"]')
-        ?.setAttribute('content', this.text().intro);
+        ?.setAttribute('content', this.text().metaDescription);
       try {
         localStorage.setItem('casa-ta-verde-language', this.language());
       } catch {

@@ -213,24 +213,6 @@ h2 {
   font-size: 11px;
   margin: 32px 0 0;
 }
-.about {
-  border-top: 1px solid var(--line);
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 100px;
-  padding-top: 70px;
-  padding-bottom: 70px;
-}
-.about h2 {
-  font-size: clamp(28px, 3.65vw, 56px);
-}
-.about p {
-  font-size: 20px;
-  line-height: 1.6;
-  color: var(--muted);
-  margin: 5px 0 0;
-  max-width: 550px;
-}
 .contact {
   position: relative;
   isolation: isolate;
@@ -299,6 +281,22 @@ footer p {
   font-size: 12px;
   color: var(--muted);
 }
+.footer-content {
+  min-width: 0;
+  padding-block: 28px;
+}
+.footer-content > p,
+.company-details p {
+  margin: 0;
+}
+.company-details {
+  margin-top: 16px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+.company-details p {
+  font-size: 12px;
+}
 .back-top {
   display: flex;
   align-items: center;
@@ -334,12 +332,6 @@ footer p {
   }
   .hero-controls {
     flex-direction: column;
-  }
-  .about {
-    gap: 50px;
-  }
-  .about p {
-    font-size: 17px;
   }
   .contact-content {
     grid-template-columns: 1.1fr 1fr;
@@ -482,18 +474,6 @@ footer p {
     font-size: 10px;
     line-height: 1.6;
   }
-  .about {
-    display: block;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  .about h2 {
-    font-size: 31px;
-  }
-  .about p {
-    font-size: 15px;
-    margin-top: 26px;
-  }
   .contact-content {
     min-height: 850px;
     display: flex;
@@ -535,13 +515,15 @@ footer p {
   footer {
     min-height: 160px;
     flex-wrap: wrap;
-    padding-block: 28px;
+    padding-block: 28px 80px;
     gap: 20px;
   }
-  footer p {
+  .footer-content {
     order: 3;
     width: 100%;
-    margin: 0;
+    padding: 0;
+  }
+  .footer-content > p {
     font-size: 11px;
   }
   .footer-brand img {

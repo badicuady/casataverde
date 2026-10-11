@@ -7,7 +7,7 @@
     <nav class="desktop-nav" [attr.aria-label]="text().menu">
       <a href="#solutions">{{ text().solutions }}</a
       ><a href="#ecosystem">{{ language() === 'ro' ? 'Ecosistem' : 'Ecosystem' }}</a
-      ><a href="#about">{{ text().about }}</a
+      ><a href="#why-us">{{ text().about }}</a
       ><a href="#contact">{{ text().contact }}</a>
     </nav>
     <div class="language-switch" role="group" [attr.aria-label]="text().language">
@@ -50,7 +50,7 @@
         ><a href="#ecosystem" (click)="menuOpen.set(false)">{{
           language() === 'ro' ? 'Ecosistem' : 'Ecosystem'
         }}</a
-        ><a href="#about" (click)="menuOpen.set(false)">{{ text().about }}</a
+        ><a href="#why-us" (click)="menuOpen.set(false)">{{ text().about }}</a
         ><a href="#contact" (click)="menuOpen.set(false)">{{ text().contact }}</a>
       </nav>
     }
@@ -63,7 +63,12 @@
       {{ text().hero }}<br /><span>{{ text().green }}</span>
     </h1>
     <p>{{ text().intro }}</p>
-    <a class="button" href="#solutions">{{ text().explore }}<app-icon /></a>
+    <div class="hero-actions">
+      <a class="button" href="#enquiry">{{ text().primaryCta }}<app-icon /></a>
+      <a class="hero-secondary" [href]="whatsappUrl()" target="_blank" rel="noopener noreferrer"
+        >WhatsApp<app-icon name="whatsapp"
+      /></a>
+    </div>
   </div>
   <div class="hero-bottom page-width">
     <div class="category-shortcuts">
@@ -88,6 +93,9 @@
 </div>
 <main>
   <app-partner-marquee [language]="language()" [paused]="paused()" />
+  <app-project-context section="trust" [language]="language()" [paused]="paused()" />
+  <app-project-context section="details" [language]="language()" [paused]="paused()" />
+  <app-project-context section="project" [language]="language()" />
   <section id="solutions" class="solutions page-width" aria-labelledby="solutions-heading">
     <div class="section-label">01 / {{ text().solutions }}</div>
     <div class="section-heading">
@@ -101,17 +109,19 @@
     />
     <p class="placeholder-note">{{ text().placeholder }}</p>
   </section>
-  <app-category-stories [language]="language()" [whatsappUrl]="whatsappUrl()" [paused]="paused()" />
+  <app-category-stories
+    [language]="language()"
+    [whatsappUrl]="whatsappUrl()"
+    [paused]="paused()"
+    (serviceRequest)="enquiry.selectService($event)"
+  />
   <app-energy-field [language]="language()" [paused]="paused()" />
   <app-partner-directory
     [language]="language()"
     [whatsappUrl]="whatsappUrl()"
     [paused]="paused()"
   />
-  <section id="about" class="about page-width" aria-labelledby="about-heading">
-    <h2 id="about-heading">{{ text().aboutTitle }}<br />{{ text().aboutEnd }}</h2>
-    <p>{{ text().aboutText }}</p>
-  </section>
+  <app-project-enquiry #enquiry [language]="language()" />
   <section id="contact" class="contact" aria-labelledby="contact-heading">
     <div class="contact-background" aria-hidden="true"></div>
     <div class="contact-content page-width">
@@ -150,7 +160,23 @@
       loading="lazy"
     />
   </a>
-  <p>{{ text().footer }}</p>
+  <div class="footer-content">
+    <p>
+      <a class="footer-enquiry" href="#enquiry">{{ text().footer }}</a>
+    </p>
+    <div class="company-details">
+      <p>
+        {{ company.streetAddress }} · {{ company.addressLocality }}, {{ company.addressRegion }} ·
+        {{ text().companyPostalCode }} {{ company.postalCode }}
+      </p>
+      <p>CUI {{ company.taxId }} · {{ text().companyRegister }} {{ company.tradeRegister }}</p>
+      <p>EUID {{ company.euid }}</p>
+      <p>
+        {{ text().companyFounded }}
+        <time [attr.datetime]="company.foundingDate">02.08.2022</time>
+      </p>
+    </div>
+  </div>
   <a class="back-top" href="#top"><app-icon name="up" />{{ text().top }}</a>
 </footer>
 

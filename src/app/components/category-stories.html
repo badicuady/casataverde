@@ -57,9 +57,8 @@
           }
         </dl>
         <div class="story-actions reveal">
-          <a class="story-cta" href="#contact"
-            >{{ language() === 'ro' ? 'Discută proiectul tău' : 'Let’s discuss your project'
-            }}<app-icon
+          <a class="story-cta" href="#enquiry" (click)="serviceRequest.emit(story.id)"
+            >{{ story.cta }}<app-icon
           /></a>
           @if (!story.concept) {
             <a class="source" [href]="whatsappUrl()" target="_blank" rel="noopener noreferrer"

@@ -1,6 +1,6 @@
 # Casa Ta Verde
 
-A single-page Angular presentation site for a green technology reseller. Romanian is primary, English is available from the header. Dark architectural imagery, scroll-driven stories, a partner directory and an interactive energy field.
+A single-page Angular presentation site for home consultancy, introductions and project management in Brașov and nearby areas. Romanian is primary, English is available from the header. Dark architectural imagery, scroll-driven stories, a partner directory and an interactive energy field.
 
 ## Run
 
@@ -32,6 +32,9 @@ Build output: `dist/casa-ta-verde/browser`. Deploy its contents to a static host
 - A lazy-loaded Three.js particle torus with scroll-controlled rotation, a custom point shader and a static fallback if WebGL is unavailable.
 - Complete Romanian/English content, persisted language, document metadata and mobile navigation.
 - WhatsApp enquiries to **+40 723 200 709**, with a translated prefilled message.
+- A Valea cu Flori Residence collaboration section. The owner confirmed phase 9 and over 200 completed turnkey homes in the development on 11 October 2026; these figures describe the development, not homes built solely by Casa Ta Verde.
+- Collaboration steps and a short project enquiry form. Service links preselect the relevant option. The form validates and prepares WhatsApp and email links; the visitor sends the message in their chosen app. There is no server submission, automatic delivery confirmation or storage of form data.
+- Local title/description, canonical URL and LocalBusiness structured data with the supplied address and business registration details. Visible company details and a Romanian no-JavaScript fallback include the same information; the application is still client-rendered, not prerendered.
 - Persistent pause control, dynamic reduced-motion support, keyboard focus and a skip link.
 - Component-scoped vanilla CSS, no Tailwind. Local images and self-hosted fonts; external connections occur only when a visitor opens a source/contact link.
 
@@ -46,6 +49,9 @@ The directory owns its imperative CSS custom-property animation; Angular signals
 ## Content and source files
 
 - `src/app/data/content.ts`: original gallery/hero/contact copy.
+- `src/app/data/consultancy.ts`: collaboration, process, FAQ, enquiry copy and contact destinations.
+- `src/app/components/project-context.*`: collaboration evidence, differentiators, process and FAQ.
+- `src/app/components/project-enquiry.*`: validated message preparation for WhatsApp or email.
 - `src/app/data/ecosystem.ts`: typed bilingual story and partner records; edit links/images/filter keywords here.
 - `src/app/components/category-stories.*`: category layouts and scroll sequences.
 - `src/app/components/partner-marquee.ts`: marquee and pause lifecycle.

@@ -7,8 +7,8 @@ test('seven galleries, all slides, keyboard navigation and independent selection
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('/');
   await expect(page).toHaveTitle(/Casa Ta Verde/);
-  await expect(page.locator('h1')).toHaveText('Viitorul casei tale.Mai verde.');
-  await page.locator('.hero-content .button').click();
+  await expect(page.locator('h1')).toHaveText('Casă la cheie.Un plan clar.');
+  await page.locator('.hero-controls a').click();
   const tabs = page.getByRole('tab');
   await expect(tabs).toHaveCount(7);
   for (let i = 0; i < 7; i++) {
@@ -54,7 +54,7 @@ test('language persists, translates content and encodes the correct WhatsApp enq
   await page.goto('/');
   await page.getByRole('button', { name: 'English', exact: true }).click();
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
-  await expect(page.locator('h1')).toHaveText('Your home’s future.Greener.');
+  await expect(page.locator('h1')).toHaveText('Turnkey homes.A clear plan.');
   await expect(page.getByRole('tab').first()).toContainText('Roofing systems');
   const link = page.getByRole('link', { name: 'Let’s talk on WhatsApp' });
   const href = await link.getAttribute('href');
@@ -69,7 +69,11 @@ test('language persists, translates content and encodes the correct WhatsApp enq
   await expect(page.locator('html')).toHaveAttribute('lang', 'en');
   await page.getByRole('button', { name: 'Română', exact: true }).click();
   await expect(page.locator('html')).toHaveAttribute('lang', 'ro');
-  await expect(page.locator('.whatsapp')).toContainText('Hai să vorbim pe WhatsApp');
+  await expect(page.locator('.whatsapp')).toContainText('Scrie-ne pe WhatsApp');
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute(
+    'content',
+    /Consultanță pentru case la cheie în Brașov/,
+  );
 });
 
 test('canvas animates, pause freezes it, reduced motion disables animation and parallax', async ({
