@@ -95,7 +95,7 @@
   <app-partner-marquee [language]="language()" [paused]="paused()" />
   <app-project-context section="trust" [language]="language()" [paused]="paused()" />
   <app-project-context section="details" [language]="language()" [paused]="paused()" />
-  <app-project-context section="project" [language]="language()" />
+  <app-home-build [language]="language()" [paused]="paused()" />
   <section id="solutions" class="solutions page-width" aria-labelledby="solutions-heading">
     <div class="section-label">01 / {{ text().solutions }}</div>
     <div class="section-heading">
@@ -121,6 +121,7 @@
     [whatsappUrl]="whatsappUrl()"
     [paused]="paused()"
   />
+  <app-project-context section="project" [language]="language()" />
   <app-project-enquiry #enquiry [language]="language()" />
   <section id="contact" class="contact" aria-labelledby="contact-heading">
     <div class="contact-background" aria-hidden="true"></div>

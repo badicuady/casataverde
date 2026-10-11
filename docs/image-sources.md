@@ -34,6 +34,10 @@ The user confirmed construction materials, timber and sanitary equipment for Bim
 
 ## Concept imagery
 
+`home-build.webp` is an original conceptual architectural model generated with the built-in Image Gen tool for the releveu-to-home canvas sequence. It is a transparent 1672 × 941 WebP, not a completed client project or an engineering drawing. The matching section concept is `docs/design/home-build/concept.png`. No supplied property plan was used; the animation illustrates a 12 × 8 m footprint.
+
+Concept prompt: one dark forest-green (#0a1410) website section, Manrope text, lime (#c6f47a) accents; heading “De la releveu / la casa ta.” and supporting copy “Precizie în fiecare linie. / Ritm în fiecare etapă.”; an elevated isometric single-storey house with a 12 × 8 m rectangular footprint, charcoal gable roof, three solar-panel columns, ivory stucco, timber entrance, warmly lit glazing, terrace and landscaped island; a subtle measured ground grid; native HTML four-stage timeline and replay control. Production asset prompt: extract that exact house and garden, preserve camera, geometry, materials and lighting, remove all text, controls, grid and dimension lines, centre the complete model on a transparent landscape canvas with no clipping. The extracted PNG was encoded as WebP at quality 88, preserving alpha. All plan geometry, measurements, animation, copy and controls are rendered in code.
+
 `ceiling-concept.webp` was generated from the v2 ceiling design reference: continuous sculptural luminous ceiling, concrete column, walnut wall, evening light, no UI. The supplied https://www.tavanetero.ro/ did not resolve; the user explicitly approved continuing with concept imagery. The directory links to the on-page ceiling section rather than a broken website.
 
 `smart-concept.webp` is generated, unbranded interior inspiration: charcoal wall/touch control, walnut living room, automated shades at twilight. The story labels this as a concept; the inset and directory product imagery comes from Case Smart.

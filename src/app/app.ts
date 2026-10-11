@@ -19,6 +19,7 @@ import { EnergyScene } from './components/energy-scene';
 import { ProductGallery } from './components/product-gallery';
 import { ProjectContext } from './components/project-context';
 import { ProjectEnquiry } from './components/project-enquiry';
+import { HomeBuild } from './components/home-build';
 import { businessContact, businessIdentity } from './data/consultancy';
 import { categories, copy, Language } from './data/content';
 @Component({
@@ -29,6 +30,7 @@ import { categories, copy, Language } from './data/content';
     ProductGallery,
     ProjectContext,
     ProjectEnquiry,
+    HomeBuild,
     CategoryStories,
     PartnerMarquee,
     PartnerDirectory,

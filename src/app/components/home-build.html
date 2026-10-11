@@ -1,0 +1,72 @@
+<section id="from-plan-to-home" class="home-build page-width" aria-labelledby="home-build-heading">
+  <div class="build-heading">
+    <h2 id="home-build-heading">
+      {{ copy().title }}<br /><span>{{ copy().end }}</span>
+    </h2>
+    <p>{{ copy().precision }}<br />{{ copy().pace }}</p>
+  </div>
+  <div #stage class="build-stage">
+    <canvas
+      #canvas
+      role="img"
+      [attr.aria-label]="copy().description"
+      [attr.aria-hidden]="canvasUnavailable() ? 'true' : null"
+    ></canvas>
+    @if (canvasUnavailable()) {
+      <img
+        class="build-fallback"
+        src="/images/home-build.webp"
+        [alt]="copy().description"
+        width="1672"
+        height="941"
+        loading="lazy"
+      />
+    }
+  </div>
+  <div class="build-controls">
+    <p class="build-caption">{{ copy().concept }}</p>
+    @if (!reducedMotion() && !canvasUnavailable()) {
+      <div class="playback-controls">
+        @if (!finished()) {
+          <button
+            class="build-pause"
+            type="button"
+            (click)="togglePause()"
+            [disabled]="paused()"
+            [attr.aria-label]="locallyPaused() ? copy().resume : copy().pause"
+            [attr.aria-pressed]="locallyPaused() || paused()"
+          >
+            <app-icon [name]="locallyPaused() || paused() ? 'play' : 'pause'" />
+          </button>
+        }
+        <button class="build-replay" type="button" (click)="replay()" [disabled]="paused()">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M4 9a8 8 0 1 1 .4 7M4 4v5h5" />
+          </svg>
+          {{ copy().replay }}
+        </button>
+      </div>
+    }
+  </div>
+  <ol class="build-timeline" [attr.aria-label]="copy().stagesLabel">
+    @for (label of copy().stages; track $index; let i = $index) {
+      <li
+        [class.is-current]="step() === i"
+        [class.is-complete]="step() > i"
+        [attr.aria-current]="step() === i ? 'step' : null"
+      >
+        <span class="step-marker" aria-hidden="true"></span>
+        <span class="build-number" aria-hidden="true">0{{ i + 1 }}</span>
+        <span>{{ label }}</span>
+      </li>
+    }
+  </ol>
+</section>
