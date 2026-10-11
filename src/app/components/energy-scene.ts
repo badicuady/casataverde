@@ -14,10 +14,15 @@ import {
 @Component({
   selector: 'app-energy-scene',
   template: `<div #layer class="scene-layer">
-    <img src="/images/hero.webp" alt="" fetchpriority="high" width="1536" height="1024" /><canvas
-      #canvas
-      aria-hidden="true"
-    ></canvas>
+    <img
+      src="/images/hero.webp"
+      srcset="/images/hero-768.webp 768w, /images/hero-1024.webp 1024w, /images/hero.webp 1536w"
+      sizes="(max-width: 760px) 175vw, 100vw"
+      alt=""
+      fetchpriority="high"
+      width="1536"
+      height="1024"
+    /><canvas #canvas aria-hidden="true"></canvas>
   </div>`,
   styles: [
     `
@@ -92,6 +97,7 @@ export class EnergyScene implements AfterViewInit {
         width = 0,
         height = 0,
         phase = 0,
+        documentTop = 0,
         last = 0,
         disposed = false;
       const draw = () => {
@@ -143,8 +149,9 @@ export class EnergyScene implements AfterViewInit {
         const delta = Math.min(now - last, 50);
         last = now;
         phase += delta * 0.0002;
-        const bounds = this.host.nativeElement.getBoundingClientRect();
-        this.layer.nativeElement.style.transform = `translate3d(0,${Math.max(-100, Math.min(140, -bounds.top * 0.12))}px,0)`;
+        // Cache document geometry outside the animation loop; scrolling only changes the offset.
+        const top = documentTop - window.scrollY;
+        this.layer.nativeElement.style.transform = `translate3d(0,${Math.max(-100, Math.min(140, -top * 0.12))}px,0)`;
         draw();
         frame = requestAnimationFrame(tick);
       };
@@ -158,8 +165,9 @@ export class EnergyScene implements AfterViewInit {
           frame = requestAnimationFrame(tick);
         }
       };
-      const resize = new ResizeObserver(() => {
-        const rect = canvas.getBoundingClientRect();
+      const resize = new ResizeObserver(([entry]) => {
+        const rect = entry.contentRect;
+        documentTop = this.host.nativeElement.getBoundingClientRect().top + window.scrollY;
         width = rect.width;
         height = rect.height;
         const dpr = Math.min(devicePixelRatio || 1, 2);
@@ -170,6 +178,7 @@ export class EnergyScene implements AfterViewInit {
       });
       resize.observe(canvas);
       const intersection = new IntersectionObserver((entries) => {
+        documentTop = entries[0].boundingClientRect.top + window.scrollY;
         visible = entries[0].isIntersecting;
         sync();
       });

@@ -378,13 +378,12 @@ export class EnergyField implements AfterViewInit, OnDestroy {
     );
     this.resizeObserver = new ResizeObserver(this.resize);
     this.resizeObserver.observe(this.viewport().nativeElement);
-    this.resize();
     this.zone.run(() => this.ready.set(true));
     this.sync();
   }
-  private resize = (): void => {
+  private resize = ([entry]: ResizeObserverEntry[]): void => {
     if (this.destroyed || !this.renderer || !this.camera) return;
-    const { width, height } = this.viewport().nativeElement.getBoundingClientRect();
+    const { width, height } = entry.contentRect;
     if (!width || !height) return;
     this.renderer.setSize(width, height, false);
     this.camera.aspect = width / height;

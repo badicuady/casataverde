@@ -28,14 +28,26 @@ export class ProductGallery {
   readonly slide = computed(() => this.slides()[this.active()] ?? 0);
   readonly artwork = computed(() => `url('/images/${this.category().id}-gallery.webp')`);
   constructor() {
-    afterRenderEffect(() => {
-      this.active();
-      const list = this.host.nativeElement.querySelector<HTMLElement>('.category-list');
-      const tab = list?.querySelector<HTMLElement>('[aria-selected="true"]');
-      if (list && tab && list.scrollWidth > list.clientWidth) {
-        list.scrollLeft +=
-          tab.getBoundingClientRect().left - list.getBoundingClientRect().left - 24;
-      }
+    afterRenderEffect({
+      earlyRead: () => {
+        this.active();
+        this.language();
+        const list = this.host.nativeElement.querySelector<HTMLElement>('.category-list');
+        const tab = list?.querySelector<HTMLElement>('[aria-selected="true"]');
+        if (!list || !tab || list.scrollWidth <= list.clientWidth) return null;
+        return {
+          list,
+          left:
+            list.scrollLeft +
+            tab.getBoundingClientRect().left -
+            list.getBoundingClientRect().left -
+            24,
+        };
+      },
+      write: (position) => {
+        const target = position();
+        if (target) target.list.scrollLeft = target.left;
+      },
     });
   }
   setSlide(index: number): void {

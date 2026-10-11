@@ -48,6 +48,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "manrope-latin*-wght-normal.woff2",
+                "input": "node_modules/@fontsource-variable/manrope/files",
+                "output": "/fonts/"
               }
             ],
             "styles": [

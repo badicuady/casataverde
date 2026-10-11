@@ -190,8 +190,8 @@ export class HomeBuild implements AfterViewInit {
         { threshold: 0.2 },
       );
       intersection.observe(this.stage.nativeElement);
-      const resize = new ResizeObserver(() => {
-        const rect = canvas.getBoundingClientRect();
+      const resize = new ResizeObserver(([entry]) => {
+        const rect = entry.contentRect;
         width = rect.width;
         height = rect.height;
         dpr = Math.min(devicePixelRatio || 1, 2);

@@ -75,7 +75,7 @@ export class App implements OnInit, OnDestroy {
     afterRenderEffect(() => {
       this.language();
       this.paused();
-      this.zone.runOutsideAngular(() => ScrollTrigger.refresh());
+      this.zone.runOutsideAngular(() => ScrollTrigger.refresh(true));
     });
     effect(() => {
       const language = this.language();
